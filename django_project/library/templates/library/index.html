@@ -1,0 +1,13 @@
+{% extends 'library/base.html' %}
+{% block content %}
+    {% for post in posts %}
+        <h1>{{ post.title }}</h1>
+        <p>Age
+            {{ post.age }}</p>
+        <p>By
+            {{ post.auther }}
+            On the
+            {{ post.year }}</p>
+        <p>{{ post.content }}</p>
+    {% endfor %}
+{% endblock content %}
