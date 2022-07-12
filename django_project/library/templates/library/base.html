@@ -17,52 +17,60 @@
     </head>
 
     <body>
-        <nav class="nav justify-content-center py-2">
-            <a class="nav-link active" href="{% url 'library-home' %}">Home</a>
-            <a class="nav-link" href="{% url 'library-about' %}">About</a>
-            <a class="nav-link disabled" href="#">Disabled link</a>
-        </nav>
 
-
-        <nav class="navbar navbar-expand-lg bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar scroll</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- main navbar -->
+        <nav class="bg-primary navbar navbar-dark navbar-expand-lg">
+            <div class="container">
+                <a class="fw-bold navbar-brand" href="{% url 'library-home' %}">
+                    <svg width="24" height="24" fill="currentColor" class="bi bi-bookmarks" viewbox="0 0 16 16"><path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1H4z"/><path d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1z"/></svg>
+                    Books Scroll
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarScroll">
-                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Link
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="#">Action</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                </li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled">Link</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="flex-grow-1 justify-content-end navbar-nav pe-3">
+                            <li class="nav-item">
+                                <a class="active nav-link" aria-current="page" href="{% url 'library-home' %}">home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'library-about' %}">about</a>
+                            </li>
+                            <li class="dropdown nav-item">
+                                <a class="dropdown-toggle nav-link" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    about
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                                    <li>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- isbn search navbar -->
+        <nav class="bg-light navbar shadow sticky-top">
+            <div class="container d-flex justify-content-center justify-content-lg-end">
+                <div class="input-group isbn-container my-2">
+                    <input type="text" class="form-control" placeholder="# ISBN" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Add Book</button>
                 </div>
             </div>
         </nav>
@@ -82,6 +90,21 @@
         <div class="container"> {% block content %}{% endblock content %}
             </div>
 
+
+            <div class="contain">
+                <section class="container p-5">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta fugit omnis, repellat ut porro illo ducimus amet sequi enim dolores laborum quod doloremque error nostrum optio? Pariatur quaerat velit facilis modi, dolorum saepe, eius quis tempore facere repellat officia quam? In libero nulla animi nisi cumque rerum doloremque ratione! Modi asperiores facilis harum veniam repudiandae eveniet dolor nihil at assumenda ut consequatur ratione, nobis beatae laudantium placeat consequuntur officiis illo cupiditate quia. Reprehenderit repudiandae accusantium ullam non nemo quia in quasi! Nulla impedit odit nisi autem odio quo soluta provident! Molestiae, repellendus. Aliquam atque illum velit sapiente eos natus dolorum?</p>
+                </section>
+                <section class="container p-5">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta fugit omnis, repellat ut porro illo ducimus amet sequi enim dolores laborum quod doloremque error nostrum optio? Pariatur quaerat velit facilis modi, dolorum saepe, eius quis tempore facere repellat officia quam? In libero nulla animi nisi cumque rerum doloremque ratione! Modi asperiores facilis harum veniam repudiandae eveniet dolor nihil at assumenda ut consequatur ratione, nobis beatae laudantium placeat consequuntur officiis illo cupiditate quia. Reprehenderit repudiandae accusantium ullam non nemo quia in quasi! Nulla impedit odit nisi autem odio quo soluta provident! Molestiae, repellendus. Aliquam atque illum velit sapiente eos natus dolorum?</p>
+                </section>
+                <section class="container p-5">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta fugit omnis, repellat ut porro illo ducimus amet sequi enim dolores laborum quod doloremque error nostrum optio? Pariatur quaerat velit facilis modi, dolorum saepe, eius quis tempore facere repellat officia quam? In libero nulla animi nisi cumque rerum doloremque ratione! Modi asperiores facilis harum veniam repudiandae eveniet dolor nihil at assumenda ut consequatur ratione, nobis beatae laudantium placeat consequuntur officiis illo cupiditate quia. Reprehenderit repudiandae accusantium ullam non nemo quia in quasi! Nulla impedit odit nisi autem odio quo soluta provident! Molestiae, repellendus. Aliquam atque illum velit sapiente eos natus dolorum?</p>
+                </section>
+                <section class="container p-5">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta fugit omnis, repellat ut porro illo ducimus amet sequi enim dolores laborum quod doloremque error nostrum optio? Pariatur quaerat velit facilis modi, dolorum saepe, eius quis tempore facere repellat officia quam? In libero nulla animi nisi cumque rerum doloremque ratione! Modi asperiores facilis harum veniam repudiandae eveniet dolor nihil at assumenda ut consequatur ratione, nobis beatae laudantium placeat consequuntur officiis illo cupiditate quia. Reprehenderit repudiandae accusantium ullam non nemo quia in quasi! Nulla impedit odit nisi autem odio quo soluta provident! Molestiae, repellendus. Aliquam atque illum velit sapiente eos natus dolorum?</p>
+                </section>
+            </div>
 
             <!-- script -->
             <script src="{% static 'library/js/index.js' %}"></script>
