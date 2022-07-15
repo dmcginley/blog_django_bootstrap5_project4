@@ -1,13 +1,13 @@
 {% extends 'library/base.html' %}
 {% block content %}
     {% for post in posts %}
-        <h1>{{ post.title }}</h1>
-        <p>Age
-            {{ post.age }}</p>
-        <p>By
-            {{ post.auther }}
-            On the
-            {{ post.year }}</p>
-        <p>{{ post.content }}</p>
+        <article class="py-2">
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.content }}</p>
+            <small class="text-muted">By
+                {{ post.auther }}
+                on
+                {{ post.date_posted|date:"F d, Y" }}</small>
+        </article>
     {% endfor %}
 {% endblock content %}
