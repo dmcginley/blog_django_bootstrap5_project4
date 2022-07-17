@@ -1,3 +1,8 @@
+import imp
 from django.contrib import admin
+from .models import Post
 
-# Register your models here.
+
+# models
+# add post to django admin page
+admin.site.register(Post)

@@ -1,112 +1,177 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        {% if title %}
-            <title>Library Home -
-                {{ title }}</title>
-        {% else %}
-            <title>Library Home</title>
-        {% endif %}
-        <!-- bootstrap 5 cdn -->
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
-        <link rel="stylesheet" type="text/css" href="{% static 'library/css/index.css' %}">
-    </head>
 
-    <body>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% if title %}
+    <title>Library Home - {{ title }}</title>
+    {% else %}
+    <title>Library Home</title>
+    {% endif %}
+    <!-- bootstrap 5 cdn -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'library/css/index.css' %}" />
+</head>
 
-        <!-- main navbar -->
-        <nav class="bg-primary navbar navbar-dark navbar-expand-lg">
-            <div class="container">
-                <a class="fw-bold navbar-brand" href="{% url 'library-home' %}">
-                    <svg width="24" height="24" fill="currentColor" class="bi bi-bookmarks" viewbox="0 0 16 16"><path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1H4z"/><path d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1z"/></svg>
-                    Books Scroll
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul class="flex-grow-1 justify-content-end navbar-nav pe-3">
-                            <li class="nav-item">
-                                <a class="active nav-link" aria-current="page" href="{% url 'library-home' %}">home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'library-about' %}">about</a>
-                            </li>
-                            <li class="dropdown nav-item">
-                                <a class="dropdown-toggle nav-link" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    about
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                    <li>
-                                        <a class="dropdown-item" href="#">Action</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                    </li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+<body>
+    <!-- main navbar -->
+    <nav class="bg-primary navbar navbar-dark navbar-expand-lg">
+        <div class="container">
+            <a class="fw-bold navbar-brand" href="{% url 'library-home' %}">
+                <svg width="24" height="24" fill="currentColor" class="bi bi-bookmarks" viewbox="0 0 16 16">
+                    <path
+                        d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1H4z" />
+                    <path
+                        d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1z" />
+                </svg>
+                Books Scroll
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-            </div>
-        </nav>
-        <!-- isbn search navbar -->
-        <nav class="bg-light navbar shadow sticky-top">
-            <div class="container d-flex justify-content-center justify-content-lg-end">
-                <div class="input-group isbn-container my-2">
-                    <input type="text" class="form-control" placeholder="# ISBN" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Add Book</button>
+                <div class="offcanvas-body">
+                    <ul class="flex-grow-1 justify-content-end navbar-nav pe-3">
+                        <li class="nav-item">
+                            <a class="active nav-link" aria-current="page" href="{% url 'library-home' %}">home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'library-about' %}">about</a>
+                        </li>
+                        <li class="dropdown nav-item">
+                            <a class="dropdown-toggle nav-link" href="#" id="offcanvasNavbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                about
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="#">Action</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-        </nav>
-
-
-        <div class="p-5 bg-light">
-            <div class="container">
-                <h1 class="display-3">Jumbo heading</h1>
-                <p class="lead">Jumbo helper text</p>
-                <hr class="my-2">
-                <p>More info</p>
-                <p class="lead">
-                    <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
-                </p>
             </div>
         </div>
-        <div class="container py-3"> {% block content %}{% endblock content %}
+    </nav>
+    <!-- isbn search navbar -->
+    <nav class="bg-light navbar shadow sticky-top">
+        <div class="container d-flex justify-content-center justify-content-lg-end">
+            <div class="input-group isbn-container my-2">
+                <input type="text" class="form-control" placeholder="# ISBN" aria-label="Recipient's username"
+                    aria-describedby="button-addon2" />
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                    Add Book
+                </button>
             </div>
+        </div>
+    </nav>
 
+    <!-- <div class="p-5 bg-light">
+        <div class="container">
+            <h1 class="display-3">Jumbo heading</h1>
+            <p class="lead">Jumbo helper text</p>
+            <hr class="my-2" />
+            <p>More info</p>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
+            </p>
+        </div>
+    </div> -->
+    <div class="container py-3">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% block content %}{% endblock content %}
+    </div>
 
-            <div class="contain">
-                <section class="container p-5">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta fugit omnis, repellat ut porro illo ducimus amet sequi enim dolores laborum quod doloremque error nostrum optio? Pariatur quaerat velit facilis modi, dolorum saepe, eius quis tempore facere repellat officia quam? In libero nulla animi nisi cumque rerum doloremque ratione! Modi asperiores facilis harum veniam repudiandae eveniet dolor nihil at assumenda ut consequatur ratione, nobis beatae laudantium placeat consequuntur officiis illo cupiditate quia. Reprehenderit repudiandae accusantium ullam non nemo quia in quasi! Nulla impedit odit nisi autem odio quo soluta provident! Molestiae, repellendus. Aliquam atque illum velit sapiente eos natus dolorum?</p>
-                </section>
-                <section class="container p-5">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta fugit omnis, repellat ut porro illo ducimus amet sequi enim dolores laborum quod doloremque error nostrum optio? Pariatur quaerat velit facilis modi, dolorum saepe, eius quis tempore facere repellat officia quam? In libero nulla animi nisi cumque rerum doloremque ratione! Modi asperiores facilis harum veniam repudiandae eveniet dolor nihil at assumenda ut consequatur ratione, nobis beatae laudantium placeat consequuntur officiis illo cupiditate quia. Reprehenderit repudiandae accusantium ullam non nemo quia in quasi! Nulla impedit odit nisi autem odio quo soluta provident! Molestiae, repellendus. Aliquam atque illum velit sapiente eos natus dolorum?</p>
-                </section>
-                <section class="container p-5">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta fugit omnis, repellat ut porro illo ducimus amet sequi enim dolores laborum quod doloremque error nostrum optio? Pariatur quaerat velit facilis modi, dolorum saepe, eius quis tempore facere repellat officia quam? In libero nulla animi nisi cumque rerum doloremque ratione! Modi asperiores facilis harum veniam repudiandae eveniet dolor nihil at assumenda ut consequatur ratione, nobis beatae laudantium placeat consequuntur officiis illo cupiditate quia. Reprehenderit repudiandae accusantium ullam non nemo quia in quasi! Nulla impedit odit nisi autem odio quo soluta provident! Molestiae, repellendus. Aliquam atque illum velit sapiente eos natus dolorum?</p>
-                </section>
-                <section class="container p-5">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta fugit omnis, repellat ut porro illo ducimus amet sequi enim dolores laborum quod doloremque error nostrum optio? Pariatur quaerat velit facilis modi, dolorum saepe, eius quis tempore facere repellat officia quam? In libero nulla animi nisi cumque rerum doloremque ratione! Modi asperiores facilis harum veniam repudiandae eveniet dolor nihil at assumenda ut consequatur ratione, nobis beatae laudantium placeat consequuntur officiis illo cupiditate quia. Reprehenderit repudiandae accusantium ullam non nemo quia in quasi! Nulla impedit odit nisi autem odio quo soluta provident! Molestiae, repellendus. Aliquam atque illum velit sapiente eos natus dolorum?</p>
-                </section>
-            </div>
+    <div class="contain">
+        <section class="container p-5">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta fugit
+                omnis, repellat ut porro illo ducimus amet sequi enim dolores laborum
+                quod doloremque error nostrum optio? Pariatur quaerat velit facilis
+                modi, dolorum saepe, eius quis tempore facere repellat officia quam?
+                In libero nulla animi nisi cumque rerum doloremque ratione! Modi
+                asperiores facilis harum veniam repudiandae eveniet dolor nihil at
+                assumenda ut consequatur ratione, nobis beatae laudantium placeat
+                consequuntur officiis illo cupiditate quia. Reprehenderit repudiandae
+                accusantium ullam non nemo quia in quasi! Nulla impedit odit nisi
+                autem odio quo soluta provident! Molestiae, repellendus. Aliquam atque
+                illum velit sapiente eos natus dolorum?
+            </p>
+        </section>
+        <section class="container p-5">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta fugit
+                omnis, repellat ut porro illo ducimus amet sequi enim dolores laborum
+                quod doloremque error nostrum optio? Pariatur quaerat velit facilis
+                modi, dolorum saepe, eius quis tempore facere repellat officia quam?
+                In libero nulla animi nisi cumque rerum doloremque ratione! Modi
+                asperiores facilis harum veniam repudiandae eveniet dolor nihil at
+                assumenda ut consequatur ratione, nobis beatae laudantium placeat
+                consequuntur officiis illo cupiditate quia. Reprehenderit repudiandae
+                accusantium ullam non nemo quia in quasi! Nulla impedit odit nisi
+                autem odio quo soluta provident! Molestiae, repellendus. Aliquam atque
+                illum velit sapiente eos natus dolorum?
+            </p>
+        </section>
+        <section class="container p-5">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta fugit
+                omnis, repellat ut porro illo ducimus amet sequi enim dolores laborum
+                quod doloremque error nostrum optio? Pariatur quaerat velit facilis
+                modi, dolorum saepe, eius quis tempore facere repellat officia quam?
+                In libero nulla animi nisi cumque rerum doloremque ratione! Modi
+                asperiores facilis harum veniam repudiandae eveniet dolor nihil at
+                assumenda ut consequatur ratione, nobis beatae laudantium placeat
+                consequuntur officiis illo cupiditate quia. Reprehenderit repudiandae
+                accusantium ullam non nemo quia in quasi! Nulla impedit odit nisi
+                autem odio quo soluta provident! Molestiae, repellendus. Aliquam atque
+                illum velit sapiente eos natus dolorum?
+            </p>
+        </section>
+        <section class="container p-5">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta fugit
+                omnis, repellat ut porro illo ducimus amet sequi enim dolores laborum
+                quod doloremque error nostrum optio? Pariatur quaerat velit facilis
+                modi, dolorum saepe, eius quis tempore facere repellat officia quam?
+                In libero nulla animi nisi cumque rerum doloremque ratione! Modi
+                asperiores facilis harum veniam repudiandae eveniet dolor nihil at
+                assumenda ut consequatur ratione, nobis beatae laudantium placeat
+                consequuntur officiis illo cupiditate quia. Reprehenderit repudiandae
+                accusantium ullam non nemo quia in quasi! Nulla impedit odit nisi
+                autem odio quo soluta provident! Molestiae, repellendus. Aliquam atque
+                illum velit sapiente eos natus dolorum?
+            </p>
+        </section>
+    </div>
 
-            <!-- script -->
-            <script src="{% static 'library/js/index.js' %}"></script>
-        </body>
-    </html>
+    <!-- script -->
+    <script src="{% static 'library/js/index.js' %}"></script>
+</body>
+
+</html>
