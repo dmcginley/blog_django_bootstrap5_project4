@@ -5,7 +5,8 @@
 
 // changed default colors
 $blue: #176ef0;
-$indigo: #732ff8;
+$indigo: #824af1;
+// $indigo: #b499e9;
 $purple: #4f2d8f;
 $pink: #d63384;
 $red: #f54153;
@@ -61,4 +62,9 @@ $box-shadow-lg: 0 .5rem 1rem rgba($black, .28);
     ---------------- */
 .isbn-button {
     width: 8em;
+}
+
+
+.form-container {
+    max-width: 460px;
 }

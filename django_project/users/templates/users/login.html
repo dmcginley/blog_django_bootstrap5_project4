@@ -10,21 +10,21 @@
                 <path
                     d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1z" />
             </svg>
-            Create your account
+            Please sign in
         </h2>
         <form action="" method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom pb-3">Join today</legend>
+                <legend class="border-bottom pb-3">Login</legend>
                 {{ form|crispy }}
             </fieldset>
             <div class="d-grid gap-2">
-                <button class="btn btn-primary d-block mb-3" type="submit">Create account</button>
+                <button class="btn btn-primary mb-3" type="submit">Sign in</button>
             </div>
         </form>
         <div class="border-top pt-3">
-            <small class="text-muted">Already have an account?
-                <a class="ml-2" href="{% url 'login' %}">Sign in</a>
+            <small class="text-muted">Need an account?
+                <a class="ml-2" href="{% url 'register' %}">Register</a>
             </small>
         </div>
     </div>
