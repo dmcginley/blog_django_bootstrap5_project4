@@ -27,7 +27,7 @@
                     <path
                         d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1z" />
                 </svg>
-                Books Scroll
+                Scroll
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar">
@@ -40,7 +40,13 @@
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <ul class="flex-grow-1 justify-content-end navbar-nav pe-3">
+                    <ul class="flex-grow-1 justify-content-end navbar-nav pe-3 text-capitalize">
+                        <li class="nav-item">
+                            <a class="active nav-link" aria-current="page" href="{% url 'library-home' %}">login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="active nav-link" aria-current="page" href="{% url 'library-home' %}">register</a>
+                        </li>
                         <li class="nav-item">
                             <a class="active nav-link" aria-current="page" href="{% url 'library-home' %}">home</a>
                         </li>
@@ -50,7 +56,7 @@
                         <li class="dropdown nav-item">
                             <a class="dropdown-toggle nav-link" href="#" id="offcanvasNavbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                about
+                                more
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
                                 <li>
@@ -73,7 +79,7 @@
         </div>
     </nav>
     <!-- isbn search navbar -->
-    <nav class="bg-light navbar shadow sticky-top">
+    <!-- <nav class="bg-light navbar shadow sticky-top">
         <div class="container d-flex justify-content-center justify-content-lg-end">
             <div class="input-group isbn-container my-2">
                 <input type="text" class="form-control" placeholder="# ISBN" aria-label="Recipient's username"
@@ -83,24 +89,15 @@
                 </button>
             </div>
         </div>
-    </nav>
+    </nav> -->
 
-    <!-- <div class="p-5 bg-light">
-        <div class="container">
-            <h1 class="display-3">Jumbo heading</h1>
-            <p class="lead">Jumbo helper text</p>
-            <hr class="my-2" />
-            <p>More info</p>
-            <p class="lead">
-                <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
-            </p>
-        </div>
-    </div> -->
+
     <div class="container py-3">
         {% if messages %}
         {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">
+        <div class="alert alert-dismissible fade show alert-{{ message.tags }}">
             {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         {% endfor %}
         {% endif %}
