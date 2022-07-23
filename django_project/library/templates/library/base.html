@@ -18,6 +18,7 @@
 
 <body>
     <!-- main navbar -->
+    <!-- Navbar, basically two nav menus-->
     <nav class="bg-primary navbar navbar-dark navbar-expand-lg">
         <div class="container">
             <a class="fw-bold navbar-brand" href="{% url 'library-home' %}">
@@ -33,51 +34,63 @@
                 aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="flex-grow-1 justify-content-end navbar-nav pe-3 text-capitalize">
-                        <li class="nav-item">
-                            <a class="active nav-link" aria-current="page" href="{% url 'library-home' %}">login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="active nav-link" aria-current="page" href="{% url 'library-home' %}">register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="active nav-link" aria-current="page" href="{% url 'library-home' %}">home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'library-about' %}">about</a>
-                        </li>
-                        <li class="dropdown nav-item">
-                            <a class="dropdown-toggle nav-link" href="#" id="offcanvasNavbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                more
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="#">Action</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                </li>
-                                <li>
-                                    <hr class="dropdown-divider" />
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </li>
-                            </ul>
-                        </li>
+
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+                <div class="dropdown">
+
+                    <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <!-- <img src="static/library/images/cat-1_small.jpg" class="rounded-circle" height="28"
+                            alt="Black and White Portrait of a Man" loading="lazy" /> -->
+
+                        {%  if user.is_authenticated %}
+
+                        <img src="static/library/images/cat-1_small.jpg" class="rounded-circle" height="28"
+                            alt="Black and White Portrait of a Man" loading="lazy" />
+                        <!-- <h5 class="offcanvas-title text-light fw-bold ps-3" id="offcanvasNavbarLabel">Catesby</h5> -->
+
+                        {% else %}
+                        <!-- TODO: fix icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="46" height="28" fill="#c7adf9"
+                            class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                            <path fill-rule="evenodd"
+                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                        </svg>
+                        <!-- <h3 class="offcanvas-title text-light fw-bold ps-3" id="offcanvasNavbarLabel">You are not logged
+                            in</h3> -->
+
+                        {% endif %}
+
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
+
+                        {%  if user.is_authenticated %}
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">About</a></li>
+                        <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                        {% else %}
+                        <!-- <li><a class="dropdown-item" href="#">Profile</a></li> -->
+                        <li><a class="dropdown-item" href="#">About</a></li>
+                        <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
+                        <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
+                        {% endif %}
+
+
                     </ul>
                 </div>
+
+
             </div>
+
+
         </div>
     </nav>
+
     <!-- isbn search navbar -->
     <!-- <nav class="bg-light navbar shadow sticky-top">
         <div class="container d-flex justify-content-center justify-content-lg-end">
@@ -92,6 +105,89 @@
     </nav> -->
 
 
+
+
+
+    <div class="offcanvas offcanvas-end bg-primary tabindex=" -1" id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+
+
+            <a class="d-flex align-items-center text-decoration-none" href="#">
+
+                {%  if user.is_authenticated %}
+
+                <img src="static/library/images/cat-1_small.jpg" class="rounded-circle" height="46"
+                    alt="Black and White Portrait of a Man" loading="lazy" />
+                <h5 class="offcanvas-title text-light fw-bold ps-3" id="offcanvasNavbarLabel">Catesby</h5>
+
+                {% else %}
+                <!-- TODO: fix icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="#c7adf9"
+                    class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                    <path fill-rule="evenodd"
+                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                </svg>
+                <h3 class="offcanvas-title text-light fw-bold ps-3" id="offcanvasNavbarLabel">You are not logged
+                    in</h3>
+
+                {% endif %}
+
+            </a>
+
+
+
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
+
+        </div>
+        <div class="offcanvas-body">
+            <ul class="flex-grow-1 justify-content-end navbar-nav pe-3 text-capitalize">
+                <!-- authentication for login or logout will display one or the other -->
+                {%  if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="active nav-link" aria-current="page" href="{% url 'logout' %}">logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="active nav-link" aria-current="page" href="{% url 'register' %}">register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="active nav-link" aria-current="page" href="{% url 'login' %}">login</a>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="active nav-link" aria-current="page" href="{% url 'library-home' %}">home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'library-about' %}">about</a>
+                </li>
+                <li class="dropdown nav-item">
+                    <a class="dropdown-toggle nav-link" href="#" id="offcanvasNavbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        more
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                        <li>
+                            <a class="dropdown-item" href="#">Action</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Another action</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider" />
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- message for created account -->
     <div class="container py-3">
         {% if messages %}
         {% for message in messages %}
@@ -103,6 +199,9 @@
         {% endif %}
         {% block content %}{% endblock content %}
     </div>
+
+
+
 
     <div class="contain">
         <section class="container p-5">
