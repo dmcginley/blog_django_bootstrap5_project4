@@ -5,7 +5,7 @@
 
 // changed default colors
 $blue: #176ef0;
-$indigo: #824af1;
+$indigo: #4D5382;
 // $indigo: #b499e9;
 $purple: #4f2d8f;
 $pink: #d63384;
@@ -44,10 +44,11 @@ $box-shadow-lg: 0 .5rem 1rem rgba($black, .28);
 .flex-container {
     display: flex;
     align-items: center;
-    height: 100vh;
+    // height: 100vh;
+    height: calc(100vh - 56px);
     padding-top: 40px;
     padding-bottom: 40px;
-    background-color: #f5f5f5;
+    background-color: #f7f7f7;
 }
 
 

@@ -24,6 +24,7 @@ top level folder for the project 4 containing bootstrap django and python files
 - [Django](https://www.djangoproject.com/)
 - [Python3](https://www.python.org/)
 
+
 ### Libraries used
 
 - [Popperjs](https://popper.js.org/) - tooltips in Bootstrap
@@ -62,7 +63,7 @@ top level folder for the project 4 containing bootstrap django and python files
 
 * [Bootstrap Docs](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
 
-* []()
+* [The Quick Python Book (online)](https://livebook.manning.com/book/the-quick-python-book-third-edition/chapter-23/1) - Chapter 23. Saving data, SQL databases
 * []()
 * []()
 
@@ -76,12 +77,12 @@ top level folder for the project 4 containing bootstrap django and python files
 
 #### Bootstrap
 
-* [getbootstrap Docs](https://getbootstrap.com/docs/5.2/forms/overview/) - form input
+* [getbootstrap Docs](https://getbootstrap.com/docs/5.2/forms/overview/) - Form input
 
-* [mdbootstrap](https://mdbootstrap.com/docs/standard/forms/input-fields/) - form input
+* [mdbootstrap](https://mdbootstrap.com/docs/standard/forms/input-fields/) - Form input
 
-* []()
-* []()
+* [MDB Navbar component](https://mdbootstrap.com/docs/standard/navigation/navbar/?utm_source=pocket_mylist) - Bootstrap 5 Navbar component
+* [Bootstrap Docs](https://getbootstrap.com/docs/5.0/components/alerts/?utm_source=pocket_mylist) - Alerts
 * []()
 
 

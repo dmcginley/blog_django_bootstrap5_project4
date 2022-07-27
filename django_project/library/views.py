@@ -13,3 +13,7 @@ def home(request):
 
 def about(request):
     return render(request, 'library/about.html', {'title': 'About'})
+
+
+def profile(request):
+    return render(request, 'library/profile.html', {'title': 'Profile'})

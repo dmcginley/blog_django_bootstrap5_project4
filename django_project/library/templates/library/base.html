@@ -36,60 +36,89 @@
             </button>
 
 
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <div class="d-flex justify-content-end d-none  collapse navbar-collapse" id="navbarNavDropdown">
 
                 <div class="dropdown">
-
+                    <!-- TODO: fix offset -->
                     <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        <!-- <img src="static/library/images/cat-1_small.jpg" class="rounded-circle" height="28"
-                            alt="Black and White Portrait of a Man" loading="lazy" /> -->
 
                         {%  if user.is_authenticated %}
 
-                        <img src="static/library/images/cat-1_small.jpg" class="rounded-circle" height="28"
-                            alt="Black and White Portrait of a Man" loading="lazy" />
-                        <!-- <h5 class="offcanvas-title text-light fw-bold ps-3" id="offcanvasNavbarLabel">Catesby</h5> -->
+                        <!-- <img src="static/library/images/cat-1_small.jpg" class="rounded-circle" height="40"
+                            alt="avatar, portrait of user" loading="lazy" /> -->
+                        <img src="/static/library/images/cat-1_small.jpg" class="rounded-circle" height="40"
+                            alt="avatar, portrait of user" loading="lazy" />
+
+
 
                         {% else %}
                         <!-- TODO: fix icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="46" height="28" fill="#c7adf9"
+                        <svg xmlns="http://www.w3.org/2000/svg" width="46" height="40" fill="#a6a9c0"
                             class="bi bi-person-circle" viewBox="0 0 16 16">
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                             <path fill-rule="evenodd"
                                 d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                         </svg>
-                        <!-- <h3 class="offcanvas-title text-light fw-bold ps-3" id="offcanvasNavbarLabel">You are not logged
-                            in</h3> -->
 
                         {% endif %}
 
                     </a>
 
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-
+                    <!-- dropdown-menu list of items -->
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
 
                         {%  if user.is_authenticated %}
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li><a class="dropdown-item" href="#">About</a></li>
+                        <li><a class="dropdown-item" href="{% url 'library-home' %}">home</a></li>
+                        <li><a class="dropdown-item" href="{% url 'library-profile' %}">profile</a></li>
+                        <li><a class="dropdown-item" href="{% url 'library-about' %}">about</a></li>
+                        <hr class="dropdown-divider">
                         <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
                         {% else %}
                         <!-- <li><a class="dropdown-item" href="#">Profile</a></li> -->
-                        <li><a class="dropdown-item" href="#">About</a></li>
-                        <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
-                        <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
+                        <li><a class="dropdown-item" href="{% url 'library-home' %}">home</a></li>
+                        <li><a class="dropdown-item" href="{% url 'library-about' %}">about</a></li>
+                        <hr class="dropdown-divider">
+                        <li><a class="dropdown-item" href="{% url 'register' %}">register</a></li>
+                        <li><a class="dropdown-item" href="{% url 'login' %}">login</a></li>
                         {% endif %}
-
-
                     </ul>
                 </div>
-
-
             </div>
+        </div>
+    </nav>
+
+
+
+
+
+    <!-- <div class="d-flex">
+        <div class="dropdown m-4">
+
+
+
+
+            <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset"
+                data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
+                Offset
+            </button>
+
+
+
+
+            <ul class="dropdown-menu" aria-labelledby="">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+
+
 
 
         </div>
-    </nav>
+    </div> -->
+
+
 
     <!-- isbn search navbar -->
     <!-- <nav class="bg-light navbar shadow sticky-top">
@@ -111,45 +140,54 @@
     <div class="offcanvas offcanvas-end bg-primary tabindex=" -1" id="offcanvasNavbar"
         aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
-
-
             <a class="d-flex align-items-center text-decoration-none" href="#">
-
                 {%  if user.is_authenticated %}
-
-                <img src="static/library/images/cat-1_small.jpg" class="rounded-circle" height="46"
-                    alt="Black and White Portrait of a Man" loading="lazy" />
-                <h5 class="offcanvas-title text-light fw-bold ps-3" id="offcanvasNavbarLabel">Catesby</h5>
+                <img src="/static/library/images/cat-1_small.jpg" class="rounded-circle" height="46"
+                    alt="avatar, portrait of user" loading="lazy" />
+                <h4 class="offcanvas-title text-light fw-bold ps-3" id="offcanvasNavbarLabel">Catesby</h4>
 
                 {% else %}
                 <!-- TODO: fix icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="#c7adf9"
+                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="#a6a9c0"
                     class="bi bi-person-circle" viewBox="0 0 16 16">
                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                     <path fill-rule="evenodd"
                         d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                 </svg>
-                <h3 class="offcanvas-title text-light fw-bold ps-3" id="offcanvasNavbarLabel">You are not logged
-                    in</h3>
-
+                <h4 class="offcanvas-title text-light fw-bold ps-3" id="offcanvasNavbarLabel">You are not logged
+                    in</h4>
                 {% endif %}
-
             </a>
 
-
-
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
 
         </div>
-        <div class="offcanvas-body">
+        <div class="offcanvas-body text-white">
             <ul class="flex-grow-1 justify-content-end navbar-nav pe-3 text-capitalize">
                 <!-- authentication for login or logout will display one or the other -->
                 {%  if user.is_authenticated %}
                 <li class="nav-item">
+                    <a class="active nav-link" aria-current="page" href="{% url 'library-home' %}">home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="active nav-link" aria-current="page" href="{% url 'library-profile' %}">profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'library-about' %}">about</a>
+                </li>
+                <hr class="text-white">
+                <li class="nav-item">
                     <a class="active nav-link" aria-current="page" href="{% url 'logout' %}">logout</a>
                 </li>
                 {% else %}
+                <li class="nav-item">
+                    <a class="active nav-link" aria-current="page" href="{% url 'library-home' %}">home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'library-about' %}">about</a>
+                </li>
+                <hr class="text-white">
                 <li class="nav-item">
                     <a class="active nav-link" aria-current="page" href="{% url 'register' %}">register</a>
                 </li>
@@ -157,38 +195,12 @@
                     <a class="active nav-link" aria-current="page" href="{% url 'login' %}">login</a>
                 </li>
                 {% endif %}
-                <li class="nav-item">
-                    <a class="active nav-link" aria-current="page" href="{% url 'library-home' %}">home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'library-about' %}">about</a>
-                </li>
-                <li class="dropdown nav-item">
-                    <a class="dropdown-toggle nav-link" href="#" id="offcanvasNavbarDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        more
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                        <li>
-                            <a class="dropdown-item" href="#">Action</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Another action</a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider" />
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </li>
-                    </ul>
-                </li>
             </ul>
         </div>
     </div>
 
     <!-- message for created account -->
-    <div class="container py-3">
+    <div class="container-fluid">
         {% if messages %}
         {% for message in messages %}
         <div class="alert alert-dismissible fade show alert-{{ message.tags }}">
@@ -200,71 +212,6 @@
         {% block content %}{% endblock content %}
     </div>
 
-
-
-
-    <div class="contain">
-        <section class="container p-5">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta fugit
-                omnis, repellat ut porro illo ducimus amet sequi enim dolores laborum
-                quod doloremque error nostrum optio? Pariatur quaerat velit facilis
-                modi, dolorum saepe, eius quis tempore facere repellat officia quam?
-                In libero nulla animi nisi cumque rerum doloremque ratione! Modi
-                asperiores facilis harum veniam repudiandae eveniet dolor nihil at
-                assumenda ut consequatur ratione, nobis beatae laudantium placeat
-                consequuntur officiis illo cupiditate quia. Reprehenderit repudiandae
-                accusantium ullam non nemo quia in quasi! Nulla impedit odit nisi
-                autem odio quo soluta provident! Molestiae, repellendus. Aliquam atque
-                illum velit sapiente eos natus dolorum?
-            </p>
-        </section>
-        <section class="container p-5">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta fugit
-                omnis, repellat ut porro illo ducimus amet sequi enim dolores laborum
-                quod doloremque error nostrum optio? Pariatur quaerat velit facilis
-                modi, dolorum saepe, eius quis tempore facere repellat officia quam?
-                In libero nulla animi nisi cumque rerum doloremque ratione! Modi
-                asperiores facilis harum veniam repudiandae eveniet dolor nihil at
-                assumenda ut consequatur ratione, nobis beatae laudantium placeat
-                consequuntur officiis illo cupiditate quia. Reprehenderit repudiandae
-                accusantium ullam non nemo quia in quasi! Nulla impedit odit nisi
-                autem odio quo soluta provident! Molestiae, repellendus. Aliquam atque
-                illum velit sapiente eos natus dolorum?
-            </p>
-        </section>
-        <section class="container p-5">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta fugit
-                omnis, repellat ut porro illo ducimus amet sequi enim dolores laborum
-                quod doloremque error nostrum optio? Pariatur quaerat velit facilis
-                modi, dolorum saepe, eius quis tempore facere repellat officia quam?
-                In libero nulla animi nisi cumque rerum doloremque ratione! Modi
-                asperiores facilis harum veniam repudiandae eveniet dolor nihil at
-                assumenda ut consequatur ratione, nobis beatae laudantium placeat
-                consequuntur officiis illo cupiditate quia. Reprehenderit repudiandae
-                accusantium ullam non nemo quia in quasi! Nulla impedit odit nisi
-                autem odio quo soluta provident! Molestiae, repellendus. Aliquam atque
-                illum velit sapiente eos natus dolorum?
-            </p>
-        </section>
-        <section class="container p-5">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta fugit
-                omnis, repellat ut porro illo ducimus amet sequi enim dolores laborum
-                quod doloremque error nostrum optio? Pariatur quaerat velit facilis
-                modi, dolorum saepe, eius quis tempore facere repellat officia quam?
-                In libero nulla animi nisi cumque rerum doloremque ratione! Modi
-                asperiores facilis harum veniam repudiandae eveniet dolor nihil at
-                assumenda ut consequatur ratione, nobis beatae laudantium placeat
-                consequuntur officiis illo cupiditate quia. Reprehenderit repudiandae
-                accusantium ullam non nemo quia in quasi! Nulla impedit odit nisi
-                autem odio quo soluta provident! Molestiae, repellendus. Aliquam atque
-                illum velit sapiente eos natus dolorum?
-            </p>
-        </section>
-    </div>
 
     <!-- script -->
     <script src="{% static 'library/js/index.js' %}"></script>
