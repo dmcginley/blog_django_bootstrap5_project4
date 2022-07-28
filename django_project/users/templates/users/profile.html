@@ -1,0 +1,7 @@
+{% extends 'library/base.html' %}
+{% block content %}
+<h3>Profile page</h3>
+<img class="rounded-circle" height="200" src="{{ user.profile.image.url }}" alt="users image" srcset="">
+<h1 class="text-capitalize">{{ user.username  }}</h1>
+<p class="text-capitalize">{{ user.email  }}</p>
+{% endblock content %}
