@@ -35,15 +35,12 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-
             <div class="d-flex justify-content-end d-none  collapse navbar-collapse" id="navbarNavDropdown">
-
                 <div class="dropdown">
-                    <!-- TODO: fix offset -->
 
+                    <!-- TODO: fix offset -->
                     <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
                         aria-expanded="false">
-
                         {%  if user.is_authenticated %}
                         <img src="{{ user.profile.image.url }}" class="rounded-circle text-white" height="40"
                             alt="avatar, portrait of user" loading="lazy" />
@@ -56,13 +53,10 @@
                                 d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                         </svg>
                         {% endif %}
-
                     </a>
-
 
                     <!-- dropdown-menu list of items -->
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
-
                         {%  if user.is_authenticated %}
                         <li><a class="dropdown-item" href="{% url 'library-home' %}">home</a></li>
                         <li><a class="dropdown-item" href="{% url 'profile' %}">profile</a></li>
@@ -82,38 +76,6 @@
         </div>
     </nav>
 
-
-
-
-
-    <!-- <div class="d-flex">
-        <div class="dropdown m-4">
-
-
-
-
-            <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset"
-                data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
-                Offset
-            </button>
-
-
-
-
-            <ul class="dropdown-menu" aria-labelledby="">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-
-
-
-
-        </div>
-    </div> -->
-
-
-
     <!-- isbn search navbar -->
     <!-- <nav class="bg-light navbar shadow sticky-top">
         <div class="container d-flex justify-content-center justify-content-lg-end">
@@ -126,10 +88,6 @@
             </div>
         </div>
     </nav> -->
-
-
-
-
 
     <div class="offcanvas offcanvas-end bg-primary tabindex=" -1" id="offcanvasNavbar"
         aria-labelledby="offcanvasNavbarLabel">
@@ -185,7 +143,7 @@
         {% for message in messages %}
         <!-- TODO: fix width on large screens  -->
         <div class="p-2 w-100 position-absolute">
-            <div class="alert my-3 position-relative alert-dismissible fade show alert-{{ message.tags }}">
+            <div class="alert my-2 position-relative alert-dismissible fade show alert-{{ message.tags }}">
                 {{ message }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>

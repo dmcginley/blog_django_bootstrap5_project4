@@ -1,13 +1,18 @@
 {% extends 'library/base.html' %}
 {% block content %}
-    {% for post in posts %}
-        <article class="m-2 py-4">
+{% for post in posts %}
+<div class="container mt-4 py-2">
+    <article class="container d-flex py-4 bg-beta">
+        <img src="{{ post.auther.profile.image.url }}" class="rounded-circle me-4" height="100" alt="">
+        <div>
             <h1>{{ post.title }}</h1>
             <p>{{ post.content }}</p>
             <small class="text-muted">By
                 {{ post.auther }}
                 on
                 {{ post.date_posted|date:"F dS, Y" }}</small>
-        </article>
-    {% endfor %}
+        </div>
+    </article>
+</div>
+{% endfor %}
 {% endblock content %}

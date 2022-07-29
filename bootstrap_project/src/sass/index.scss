@@ -16,15 +16,38 @@ $green: #198754;
 $teal: #20c997;
 $cyan: #0dcaf0;
 
+
+
+
+
+
 $gray-800: #343a40;
 $black: #000000;
+
+
+
+$white: #ffffff;
+// $gray-100: #f8f9fa;
+// $gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+// $gray-500: #adb5bd;
+$gray-600: #6c757d;
+// $gray-700: #495057;
+
+// $gray-900: #212529;
+
+
 
 
 // theme-color-variables
 $primary: $indigo;
 $secondary: $purple;
-$dark: $gray-800;
+
 $warning: $yellow;
+
+$gray: $gray-300;
+$dark: $gray-800;
 
 // $box-shadow: 0 .5rem 1rem rgba($black, .15);
 // $box-shadow-sm: 0 .125rem .25rem rgba($black, .075);
@@ -46,6 +69,11 @@ $box-shadow-lg: 0 .5rem 1rem rgba($black, .28);
 // }
 
 
+
+.beta {
+    color: $yellow-300;
+    background-color: $indigo-900;
+  }
 
 /* ----------------
         1. flex container

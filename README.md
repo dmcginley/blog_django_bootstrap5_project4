@@ -12,8 +12,8 @@ top level folder for the project 4 containing bootstrap django and python files
 
 ## Technologies Used
 
-- [Visual Studio Code](https://code.visualstudio.com/) IDE used for Bootstrap
-- [PyCharm](https://www.jetbrains.com/pycharm/) - IDE used for Python & Django
+- [Visual Studio Code](https://code.visualstudio.com/) IDE I used for Bootstrap, JavaScript, & Django
+- [PyCharm](https://www.jetbrains.com/pycharm/) - IDE used for Python
 - [Heroku](https://www.heroku.com/)
 - [GitHub](https://github.com/)
 
@@ -69,6 +69,9 @@ top level folder for the project 4 containing bootstrap django and python files
 
 #### Django
 
+* [Django documentation](https://docs.djangoproject.com/en/4.0/)
+* []()
+
 #### Python
 
 ## Credits
@@ -84,10 +87,15 @@ top level folder for the project 4 containing bootstrap django and python files
 * [MDB Navbar component](https://mdbootstrap.com/docs/standard/navigation/navbar/?utm_source=pocket_mylist) - Bootstrap 5 Navbar component
 * [Bootstrap Docs](https://getbootstrap.com/docs/5.0/components/alerts/?utm_source=pocket_mylist) - Alerts
 * []()
+* []()
+
 
 
 #### Django
 
+* [Django docs - How to manage static files](https://docs.djangoproject.com/en/4.0/howto/static-files/)
+* []()
+* []()
 #### Python
 
 ## Credits
