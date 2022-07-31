@@ -34,25 +34,28 @@
 // custom default colors
 
 $purple-d: rgb(151, 21, 123);
+$red-d: rgb(211, 19, 45);
 $blue-d: rgb(64, 64, 230);
-$red-d: rgb(212, 109, 41);
+$orange-d: rgb(240, 172, 84);
 
 $white-d: #ffffff;
-$gray-d: #f4f7fa;
+$gray-b-d: #465461;
 $dark-d: #313338;
 $black-d: #2c2c2c;
 
 
 // $white: #ffffff;
-// $gray-100: #f8f9fa;
-// $gray-200: #e9ecef;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
 $gray-300: #dee2e6;
-// $gray-400: #ced4da;
-// $gray-500: #adb5bd;
-// $gray-600: #6c757d;
-// $gray-700: #495057;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
 $gray-800: #2e3235;
-// $gray-900: #212529;
+$gray-900: #212529;
+// $gray-900: #f7f7f785;
+
 
 
 
@@ -61,10 +64,10 @@ $primary: $purple-d;
 $secondary: $blue-d;
 // $success: $green;
 // $info: $cyan;
-$warning: $red-d;
-// $danger: $red;
-// $light: $gray-100;
-$gray: $gray-d;
+$warning: $orange-d;
+$danger: $red-d;
+$light: $gray-100;
+// $l-gray: $gray;
 $dark: $dark-d;
 $white: $white-d;
 $black: $black-d; 
@@ -104,9 +107,6 @@ $black: $black-d;
     padding-bottom: 40px;
     background-color: #faf9fa;
 }
-
-
-
 
 .isbn-container {
     max-width: 440px;

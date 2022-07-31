@@ -2,15 +2,27 @@
 {% block content %}
 <div class="container mt-4 py-2">
     <article class="container d-flex py-4 bg-gray rounded">
-        <img src="{{ object.auther.profile.image.url }}" class="rounded-circle me-4" height="100" alt="">
+        <img src="{{ object.author.profile.image.url }}" class="rounded-circle me-4" height="86" alt="">
         <div class="">
             <h1 class="text-black">{{ object.title }}</h1>
             <p class="text-dark">{{ object.content }}</p>
             <small class="text-muted">By
-                {{ object.auther }}
+                {{ object.author }}
                 on
                 {{ object.date_posted|date:"F dS, Y" }}</small>
+
         </div>
     </article>
+
+    <!-- for deleting post -->
+    {% if object.author == user %}
+    <div class="p-2">
+        <a class="btn btn-outline-secondary btn-sm ms-3 my-3 d-block d-md-inline"
+            href="{% url 'post-update' object.id %}">Update</a>
+        <a class="btn btn-outline-muted btn-sm ms-3 my-3 d-block d-md-inline"
+            href="{% url 'post-delete' object.id %}">Delete</a>
+    </div>
+    {% endif %}
+
 </div>
 {% endblock content %}

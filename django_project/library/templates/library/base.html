@@ -19,12 +19,15 @@
 <body>
     <!-- main navbar -->
     <!-- Navbar, basically two nav menus-->
-    <nav class="bg-primary navbar navbar-dark navbar-expand-lg">
-        <div class="container d-flex align-items-end">
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+        <!-- <div class="container d-flex align-items-end"> -->
+        <div class="container d-flex">
 
+
+            <!-- the navbar-brand -->
             <!-- TODO: fix btm only for login and on wrong side and placing wrong -->
             <a class="fw-bold navbar-brand" href="{% url 'library-home' %}">
-                <svg width="24" height="24" fill="currentColor" class="bi bi-bookmarks" viewbox="0 0 16 16">
+                <svg width=" 24" height="24" fill="currentColor" class="bi bi-bookmarks" viewbox="0 0 16 16">
                     <path
                         d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1H4z" />
                     <path
@@ -33,100 +36,105 @@
                 Scroll
             </a>
 
+            <div class="d-flex">
+                <!-- the new post button -->
+                <a class="btn btn-white text-white me-2 d-flex align-items-center" type="button"
+                    href="{% url 'post-create' %}">
+                    <svg xmlns=" http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                        class="bi bi-plus-circle me-1" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                    </svg>
+                    New post
+                </a>
 
-            <a class="btn btn-white text-white me-2" type="button" href="{% url 'post-create' %}">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                    class="bi bi-plus-circle me-1" viewBox="0 0 16 16">
-                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                    <path
-                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-                </svg>
-                New post
-            </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class=" navbar-toggler-icon"></span>
+                </button>
 
+                <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+                    <div class="dropdown">
 
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="d-flex justify-content-end d-none  collapse navbar-collapse" id="navbarNavDropdown">
-                <div class="dropdown">
-
-                    <!-- TODO: fix offset -->
-                    <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        {%  if user.is_authenticated %}
-                        <img src="{{ user.profile.image.url }}" class="rounded-circle text-white" height="40"
-                            alt="avatar, portrait of user" loading="lazy" />
-                        {% else %}
-                        <!-- svg image for default button when not logged in  -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#a6a9c0"
-                            class="bi bi-person-circle" viewBox="0 0 16 16">
-                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                            <path fill-rule="evenodd"
-                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                        </svg>
-                        {% endif %}
-                    </a>
-                    <!-- dropdown-menu list of items -->
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
-                        {%  if user.is_authenticated %}
-                        <li><a class="dropdown-item" href="{% url 'library-home' %}">home</a></li>
-                        <li><a class="dropdown-item" href="{% url 'profile' %}">profile</a></li>
-                        <li><a class="dropdown-item" href="{% url 'library-about' %}">about</a></li>
-                        <hr class="dropdown-divider">
-                        <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
-                        {% else %}
-                        <li><a class="dropdown-item" href="{% url 'library-home' %}">home</a></li>
-                        <li><a class="dropdown-item" href="{% url 'library-about' %}">about</a></li>
-                        <hr class="dropdown-divider">
-                        <li><a class="dropdown-item" href="{% url 'register' %}">register</a></li>
-                        <li><a class="dropdown-item" href="{% url 'login' %}">login</a></li>
-                        {% endif %}
-                    </ul>
+                        <!-- TODO: fix offset -->
+                        <a class="data-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            {%  if user.is_authenticated %}
+                            <img src="{{ user.profile.image.url }}" class="rounded-circle text-white" height="40"
+                                alt="avatar, portrait of user" loading="lazy" />
+                            {% else %}
+                            <!-- svg image for default button when not logged in  -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#f7f7f785"
+                                class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                <path fill-rule="evenodd"
+                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                            </svg>
+                            {% endif %}
+                        </a>
+                        <!-- dropdown-menu list of items -->
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                            {%  if user.is_authenticated %}
+                            <li><a class="dropdown-item" href="{% url 'library-home' %}">home</a></li>
+                            <li><a class="dropdown-item" href="{% url 'profile' %}">profile</a></li>
+                            <li><a class="dropdown-item" href="{% url 'library-about' %}">about</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                            {% else %}
+                            <li><a class="dropdown-item" href="{% url 'library-home' %}">home</a></li>
+                            <li><a class="dropdown-item" href="{% url 'library-about' %}">about</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="{% url 'register' %}">register</a></li>
+                            <li><a class="dropdown-item" href="{% url 'login' %}">login</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
                 </div>
             </div>
+
+
+
         </div>
     </nav>
 
-    <!-- <div class="container">
-        <nav class="nav justify-content-end">
-            <a class="btn btn-outline-secondary m-4" href="{% url 'post-create' %}">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                    class="bi bi-plus-circle me-1" viewBox="0 0 16 16">
-                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                    <path
-                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-                </svg>
-                New post
-            </a>
-        </nav>
-    </div> -->
-    <!-- isbn search navbar -->
-    <!-- <nav class="bg-light navbar shadow sticky-top">
-        <div class="container d-flex justify-content-center justify-content-lg-end">
-            <div class="input-group isbn-container my-2">
-                <input type="text" class="form-control" placeholder="# ISBN" aria-label="Recipient's username"
-                    aria-describedby="button-addon2" />
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-                    Add Book
-                </button>
-            </div>
-        </div>
-    </nav> -->
 
+
+
+
+
+
+
+
+
+
+
+
+    <!-- the offcanvas   -->
     <div class="offcanvas offcanvas-end bg-primary tabindex=" -1" id="offcanvasNavbar"
         aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
-            <a class="d-flex align-items-center text-decoration-none text-white" href="#">
+            <a class="d-flex align-items-center text-decoration-none text-white" href="{% url 'profile' %}">
+                {%  if user.is_authenticated %}
+
                 <img src="{{ user.profile.image.url }}" class="rounded-circle text-white" height="46"
                     alt="avatar, portrait of user" loading="lazy" />
                 <h4 class="offcanvas-title text-light fw-bold ps-3" id="offcanvasNavbarLabel">Catesby</h4>
+
+                {% else %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#f7f7f785"
+                    class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                    <path fill-rule="evenodd"
+                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                </svg>
+                <h4 class="offcanvas-title text-light fw-bold ps-3" id="offcanvasNavbarLabel">Not logged in</h4>
+                {% endif %}
             </a>
+
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                 aria-label="Close"></button>
+
         </div>
 
         <div class="offcanvas-body text-white">
@@ -163,7 +171,11 @@
                 {% endif %}
             </ul>
         </div>
+
     </div>
+
+
+
 
     <!-- message for created account -->
     <div class="container-fluid p-0">
@@ -176,7 +188,6 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </div>
-
         {% endfor %}
         {% endif %}
         {% block content %}{% endblock content %}

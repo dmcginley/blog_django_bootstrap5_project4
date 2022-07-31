@@ -9,8 +9,8 @@
                 <h2>Delete post "{{ object.title }}""?</h2>
             </fieldset>
             <div class="d-grid gap-2">
-                <button class="btn btn-danger d-block mb-4" type="submit">Confirm</button>
-                <a class="btn btn-secondary d-block mb-4" href="{% url 'post-detail' object.id %}">Cancel</a>
+                <button class="btn btn-outline-danger d-block mt-4" type="submit">Confirm</button>
+                <a class="btn btn-outline-muted d-block my-3" href="{% url 'post-detail' object.id %}">Cancel</a>
             </div>
         </form>
     </div>
