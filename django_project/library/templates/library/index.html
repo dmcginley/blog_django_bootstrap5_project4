@@ -2,11 +2,11 @@
 {% block content %}
 {% for post in posts %}
 <div class="container mt-4 py-2">
-    <article class="container d-flex py-4 bg-beta">
+    <article class="container d-flex py-4 bg-gray rounded">
         <img src="{{ post.auther.profile.image.url }}" class="rounded-circle me-4" height="100" alt="">
-        <div>
-            <h1>{{ post.title }}</h1>
-            <p>{{ post.content }}</p>
+        <div class="text-dark">
+            <h1><a class="text-black" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h1>
+            <p class="text-dark">{{ post.content }}</p>
             <small class="text-muted">By
                 {{ post.auther }}
                 on

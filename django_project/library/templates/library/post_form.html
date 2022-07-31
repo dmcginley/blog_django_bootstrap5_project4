@@ -1,0 +1,23 @@
+{% extends 'library/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="flex-container">
+    <div class="form-container container">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="pb-3">Create Blog Post</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary d-block mb-4" type="submit">Post</button>
+            </div>
+        </form>
+        <!-- <div class="border-top pt-2">
+            <small class="text-muted">Already have an account?
+                <a class="ml-2" href="{% url 'login' %}">Sign in</a>
+            </small>
+        </div> -->
+    </div>
+</div>
+{% endblock content %}
