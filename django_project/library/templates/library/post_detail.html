@@ -7,7 +7,7 @@
             <h1 class="text-black">{{ object.title }}</h1>
             <p class="text-dark">{{ object.content }}</p>
             <small class="text-muted">By
-                {{ object.author }}
+                <a href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
                 on
                 {{ object.date_posted|date:"F dS, Y" }}</small>
 
