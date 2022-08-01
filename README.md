@@ -78,6 +78,10 @@ top level folder for the project 4 containing bootstrap django and python files
 
 **Sites content, media, and help with implementing code from tutorials & online help.**
 
+#### Images
+
+[pexels.com](https://www.pexels.com/search/cat/) - for the profile images
+
 #### Bootstrap
 
 * [getbootstrap Docs](https://getbootstrap.com/docs/5.2/forms/overview/) - Form input
