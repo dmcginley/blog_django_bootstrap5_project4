@@ -2,22 +2,18 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<div class="flex-container">
-    <div class="form-container container">
+<div class="">
+    <div class="container">
 
-        <div class="container">
+        <div class="p-3">
             <img class="rounded-circle m-4 mx-auto d-block" height="200" src="{{ user.profile.image.url }}"
                 alt="users image" srcset="">
             <h1 class="text-capitalize text-center mb-2">
                 {{ user.username  }}
             </h1>
-            <p class="text-center">{{ user.email  }}</p>
+            <p class="text-center">{{ user.email }}</p>
 
         </div>
-
-
-
-
 
 
         <h2 class="fw-normal mb-4 text-center">
@@ -40,11 +36,6 @@
                 <button class="btn btn-primary d-block mb-4" type="submit">Update</button>
             </div>
         </form>
-        <!-- <div class="border-top pt-2">
-            <small class="text-muted">Already have an account?
-                <a class="ml-2" href="{% url 'login' %}">Sign in</a>
-            </small>
-        </div> -->
     </div>
 </div>
 {% endblock content %}

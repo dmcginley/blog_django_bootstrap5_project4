@@ -24,7 +24,7 @@ def register(request):
 
 
 @login_required
-def profile(request):
+def edit_profile(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(
@@ -35,7 +35,7 @@ def profile(request):
             p_form.save()
             messages.success(
                 request, f'Account update successful')
-            return redirect('profile')
+            return redirect('edit_profile')
     else:
         u_form = UserUpdateForm(instance=request.user)
         p_form = ProfileUpdateForm(instance=request.user.profile)
@@ -44,7 +44,7 @@ def profile(request):
         'p_form': p_form
     }
 
-    return render(request, 'users/profile.html', context)
+    return render(request, 'users/edit_profile.html', context)
 
     # TODO: fix name in tab, {'title': 'Profile'} not working
     # return render(request, 'users/profile.html', {'title': 'Profile'}, context)

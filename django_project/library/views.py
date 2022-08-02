@@ -1,5 +1,5 @@
 import imp
-from urllib import request
+# from urllib import request
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.models import User
@@ -26,7 +26,7 @@ class PostListView(ListView):
     template_name = 'library/index.html'
     context_object_name = 'posts'
     ordering = ['-date_posted']  # date posted in reverse order
-    paginate_by = 4
+    paginate_by = 8
 
 
 # for user profile page
@@ -36,7 +36,7 @@ class UserPostListView(ListView):
     model = Post
     template_name = 'library/user_posts.html'
     context_object_name = 'posts'
-    paginate_by = 4
+    paginate_by = 8
 
 
 # query user from href link
@@ -73,6 +73,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
     fields = ['title', 'content']
+    template_name = 'library/user_posts_update.html'
 
     def form_valid(self, form):
         form.instance.author = self.request.user

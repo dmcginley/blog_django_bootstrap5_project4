@@ -2,19 +2,21 @@
 {% block content %}
 
 <div class="container">
-    <div class="form-container container">
+    <div class="p-3" style="background-color: rgb(230, 64, 64);">
+        {% for post in posts %}
+        <!-- this will not show any profile image if the user has no posts -->
 
-        <img class="rounded-circle m-4 mx-auto d-block" height="200" src="{{ user.profile.image.url }}"
-            alt="users image" srcset="">
-        <!-- {% for post in posts %}
-        <img src="{{ post.author.profile.image.url }}" class="rounded-circle me-4" height="86" alt="">
-        {% endfor %} -->
+        {% if forloop.first %}
+        <img src="{{ post.author.profile.image.url }}" class="rounded-circle m-4 mx-auto d-block" height="200" alt="">
+        {% endif %}
 
+        {% endfor %}
 
         <h1 class="text-capitalize text-center mb-2">
             {{ view.kwargs.username }}
         </h1>
         <p class="text-center">Posts by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</p>
+
     </div>
 
 
@@ -85,7 +87,6 @@
 
     </div>
 
-
-
-    {% endif %}
-    {% endblock content %}
+</div>
+{% endif %}
+{% endblock content %}
