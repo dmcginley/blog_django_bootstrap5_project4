@@ -39,7 +39,7 @@ $blue-d: rgb(64, 64, 230);
 $orange-d: rgb(240, 172, 84);
 
 $white-d: #ffffff;
-$gray-b-d: #465461;
+$grayer-b: #3f5061;
 $dark-d: #313338;
 $black-d: #2c2c2c;
 
@@ -61,7 +61,7 @@ $gray-900: #212529;
 
 // my theme-color-variables
 $primary: $purple-d;
-$secondary: $blue-d;
+$secondary: $grayer-b;
 // $success: $green;
 // $info: $cyan;
 $warning: $orange-d;
@@ -101,12 +101,13 @@ $black: $black-d;
 .flex-container {
     display: flex;
     align-items: center;
-    // height: 100vh;
     height: calc(100vh - 56px);
-    padding-top: 40px;
-    padding-bottom: 40px;
     background-color: #faf9fa;
 }
+
+// form-container {
+//     max-width: 560px;
+// }
 
 .isbn-container {
     max-width: 440px;
@@ -117,9 +118,4 @@ $black: $black-d;
     ---------------- */
 .isbn-button {
     width: 8em;
-}
-
-
-.form-container {
-    max-width: 460px;
 }
