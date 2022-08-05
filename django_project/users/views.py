@@ -2,10 +2,13 @@ from curses.ascii import US
 import imp
 from multiprocessing import context
 import django
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 # from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.views.generic import DetailView
+
+from .models import Profile
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 
 
@@ -23,7 +26,6 @@ def register(request):
     return render(request, 'users/register.html', {'form': form})
 
 
-@login_required
 def edit_profile(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)

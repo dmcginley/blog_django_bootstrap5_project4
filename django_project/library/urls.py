@@ -2,7 +2,8 @@ from django.urls import path
 from .views import (
     PostListView, PostDetailView,
     PostCreateView, PostUpdateView,
-    PostDeleteView, UserPostListView
+    PostDeleteView, UserPostListView,
+    UserProfilePostView
 )
 from . import views
 
@@ -19,4 +20,7 @@ urlpatterns = [
     path('post/<int:pk>/update', PostUpdateView.as_view(), name='post-update'),
     path('post/<int:pk>/delete', PostDeleteView.as_view(), name='post-delete'),
     path('about/', views.about, name='library-about'),
+    path('profile/<str:username>/',
+         UserProfilePostView.as_view(), name='profile'),
+
 ]

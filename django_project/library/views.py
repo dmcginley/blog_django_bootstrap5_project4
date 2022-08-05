@@ -3,6 +3,7 @@ import imp
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 # from django_project import users
 from .models import Post
@@ -18,7 +19,7 @@ def home(request):
     return render(request, 'library/index.html', context)
 
 
-# list views
+# all the posts on the main page
 
 
 class PostListView(ListView):
@@ -29,7 +30,7 @@ class PostListView(ListView):
     paginate_by = 8
 
 
-# for user profile page
+# the user profile page
 
 
 class UserPostListView(ListView):
@@ -38,12 +39,10 @@ class UserPostListView(ListView):
     context_object_name = 'posts'
     paginate_by = 8
 
-
-# query user from href link
-
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
         return Post.objects.filter(author=user).order_by('-date_posted')
+
 
 # detail view of a post
 
@@ -105,5 +104,15 @@ def about(request):
     return render(request, 'library/about.html', {'title': 'About'})
 
 
-# def profile(request):
-#     return render(request, 'library/profile.html', {'title': 'Profile'})
+class UserProfilePostView(ListView):
+
+    # TODO:  login_required not working
+    login_required = True
+    model = Post
+    template_name = 'library/profile.html'
+    context_object_name = 'posts'
+    paginate_by = 8
+
+    def get_queryset(self):
+        user = get_object_or_404(User, username=self.kwargs.get('username'))
+        return Post.objects.filter(author=user).order_by('-date_posted')

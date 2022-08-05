@@ -14,7 +14,7 @@
             <p class="text-center">{{ user.email }}</p>
 
         </div>
-
+        <h1>Profile page</h1>
 
         <!-- <h2 class="fw-normal mb-4 text-center">
             <svg width="32" height="32" fill="currentColor" class="bi bi-bookmarks" viewbox="0 0 16 16">
@@ -25,17 +25,7 @@
             </svg>
             Scroll
         </h2> -->
-        <form action="" method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            <fieldset class="form-group">
-                <legend class="pb-3">Profile Info</legend>
-                {{ u_form|crispy }}
-                {{ p_form|crispy }}
-            </fieldset>
-            <div class="d-grid gap-2 mt-2">
-                <button class="btn btn-primary d-block d-md-inline mb-4" type="submit">Update</button>
-            </div>
-        </form>
+        {{ current_user }}
     </div>
 </div>
 {% endblock content %}

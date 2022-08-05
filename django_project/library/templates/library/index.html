@@ -1,5 +1,8 @@
 {% extends 'library/base.html' %}
+
+
 {% block content %}
+{% include 'library/post_search_bar.html' %}
 <div class="infinite-container">
     {% for post in posts %}
     <div class="container mt-4 py-2 infinite-link">
