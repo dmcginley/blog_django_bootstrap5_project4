@@ -3,7 +3,7 @@ from .views import (
     PostListView, PostDetailView,
     PostCreateView, PostUpdateView,
     PostDeleteView, UserPostListView,
-    UserProfilePostView
+    UserProfilePostView,
 )
 from . import views
 
@@ -20,6 +20,9 @@ urlpatterns = [
     path('post/<int:pk>/update', PostUpdateView.as_view(), name='post-update'),
     path('post/<int:pk>/delete', PostDeleteView.as_view(), name='post-delete'),
     path('about/', views.about, name='library-about'),
+
+    # TODO: not working -?? The current path, profiles, didn’t match any of these.
+
     path('profile/<str:username>/',
          UserProfilePostView.as_view(), name='profile'),
 

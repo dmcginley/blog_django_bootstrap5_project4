@@ -6,9 +6,10 @@ from django.shortcuts import get_object_or_404, render, redirect
 # from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.views.generic import DetailView
+from django.views.generic import ListView, DetailView
 
 from .models import Profile
+
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 
 
@@ -47,6 +48,3 @@ def edit_profile(request):
     }
 
     return render(request, 'users/edit_profile.html', context)
-
-    # TODO: fix name in tab, {'title': 'Profile'} not working
-    # return render(request, 'users/profile.html', {'title': 'Profile'}, context)

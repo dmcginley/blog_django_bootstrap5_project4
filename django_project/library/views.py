@@ -44,7 +44,22 @@ class UserPostListView(ListView):
         return Post.objects.filter(author=user).order_by('-date_posted')
 
 
-# detail view of a post
+# my user profile page
+
+        # detail view of a post
+
+
+class UserProfilePostView(ListView):
+    # TODO:  login_required not working
+    # login_required = True
+    model = Post
+    template_name = 'library/profile.html'
+    context_object_name = 'posts'
+    paginate_by = 8
+
+    def get_queryset(self):
+        user = get_object_or_404(User, username=self.kwargs.get('username'))
+        return Post.objects.filter(author=user).order_by('-date_posted')
 
 
 class PostDetailView(DetailView):
@@ -60,7 +75,7 @@ class PostDetailView(DetailView):
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['title', 'content']
-    # template_name = 'library/post_form.html'
+    template_name = 'library/post_form.html'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -102,17 +117,3 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 def about(request):
     return render(request, 'library/about.html', {'title': 'About'})
-
-
-class UserProfilePostView(ListView):
-
-    # TODO:  login_required not working
-    login_required = True
-    model = Post
-    template_name = 'library/profile.html'
-    context_object_name = 'posts'
-    paginate_by = 8
-
-    def get_queryset(self):
-        user = get_object_or_404(User, username=self.kwargs.get('username'))
-        return Post.objects.filter(author=user).order_by('-date_posted')
