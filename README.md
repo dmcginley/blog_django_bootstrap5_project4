@@ -16,6 +16,8 @@ top level folder for the project 4 containing bootstrap django and python files
 - [PyCharm](https://www.jetbrains.com/pycharm/) - IDE used for Python
 - [Heroku](https://www.heroku.com/)
 - [GitHub](https://github.com/)
+* [SQLite](https://www.sqlite.org/index.html) - database used in development
+* [PostgreSQL](https://www.postgresql.org/) - database for production
 
 ### The Code
 
@@ -25,11 +27,16 @@ top level folder for the project 4 containing bootstrap django and python files
 - [Python3](https://www.python.org/)
 
 
-### Libraries used
+### Libraries &  utilities used 
 
-- [Popperjs](https://popper.js.org/) - tooltips in Bootstrap
--
--
+* [Popperjs](https://popper.js.org/) - tooltips in Bootstrap
+* [crispy-bootstrap5 0.6](https://pypi.org/project/crispy-bootstrap5/) - form control & rendering 
+* [bootstrap-icons]()
+* [webpack 4.10](https://webpack.js.org/)
+* [Pillow 9.2.0](https://pypi.org/project/Pillow/) - Python Imaging Library
+* []()
+* []()
+
 
 ## Features
 
@@ -70,7 +77,11 @@ top level folder for the project 4 containing bootstrap django and python files
 #### Django
 
 * [Django documentation](https://docs.djangoproject.com/en/4.0/)
-* []()
+
+* [bootstrap-icons]()
+* [bootstrap-icons]()
+* [bootstrap-icons]()
+* [bootstrap-icons]()
 
 #### Python
 
@@ -98,8 +109,20 @@ top level folder for the project 4 containing bootstrap django and python files
 #### Django
 
 * [Django docs - How to manage static files](https://docs.djangoproject.com/en/4.0/howto/static-files/)
+* [Using the Django authentication system](https://docs.djangoproject.com/en/4.0/topics/auth/default/)
+* [stack**overflow**](https://stackoverflow.com/questions/27171379/django-print-loop-value-only-once) - django print loop value only once (user for the avatar on profile page)
 * []()
 * []()
+* []()
+
+
+
+
+
 #### Python
+
+#### PostgreSQL *- database*
+[How to Install and Configure Postgres 14 on Fedora 34](https://citizix.com/how-to-install-and-configure-postgres-14-on-fedora-34/)
+* [Install pgAdmin 4](https://computingforgeeks.com/how-to-install-pgadmin-on-centos-fedora/) - database client
 
 ## Credits
