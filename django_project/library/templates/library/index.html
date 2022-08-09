@@ -7,13 +7,13 @@
     {% for post in posts %}
     <div class="container mt-4 py-2 infinite-link">
         <article class="container d-flex py-4 bg-light rounded border">
-            <img src="{{ post.author.profile.image.url }}" class="rounded-circle me-4" height="86" alt="">
+            <a href="{% url 'user-posts' post.author.username %}"><img src="{{ post.author.profile.image.url }}"
+                    class="rounded-circle me-4" height="86" alt=""></a>
             <div class="text-dark">
                 <h1><a class="text-black" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h1>
                 <p class="text-dark">{{ post.content }}</p>
                 <small class="text-muted">By
 
-                    <!-- TODO: have link to profile page -->
                     <a href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
                     on
                     {{ post.date_posted|date:"F dS, Y" }}

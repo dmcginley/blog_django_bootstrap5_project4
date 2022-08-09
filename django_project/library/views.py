@@ -1,12 +1,18 @@
 import imp
+from multiprocessing import context
+from urllib import request
 # from urllib import request
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 # from django_project import users
 from .models import Post
+from users.models import Profile
+from .filters import PostFilter
 
 
 # Create your views here.
@@ -25,10 +31,15 @@ def home(request):
 class PostListView(ListView):
     model = Post
     template_name = 'library/index.html'
+
     context_object_name = 'posts'
     ordering = ['-date_posted']  # date posted in reverse order
     paginate_by = 8
 
+    # myFilter = PostFilter
+
+    # context = {'customer': customer, 'myFilter': myFilter}
+    # return render(request, 'index.html', context)
 
 # the user profile page
 
@@ -45,17 +56,25 @@ class UserPostListView(ListView):
 
 
 # my user profile page
+    # TODO: fix my user profile page, just viewable to  me
+    # TODO: add a redirect for this page, as it's one I shouldn't be looking for
 
-        # detail view of a post
-
-
-class UserProfilePostView(ListView):
+# class UserProfilePostView(LoginRequiredMixin, UserPassesTestMixin, ListView):
+class UserProfilePostView(LoginRequiredMixin, ListView):
     # TODO:  login_required not working
     # login_required = True
     model = Post
     template_name = 'library/profile.html'
     context_object_name = 'posts'
     paginate_by = 8
+
+    def test_func(self):
+
+        profile = Profile.user
+
+        if self.request.user == profile:
+            return True
+        return False
 
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
