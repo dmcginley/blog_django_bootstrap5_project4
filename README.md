@@ -6,6 +6,15 @@ top level folder for the project 4 containing bootstrap django and python files
 
 ## Wireframe
 
+![Desktop and Mobile mockup](readme_images/desktop-mobile.png)
+
+&nbsp;
+
+![Login and Register pages](readme_images/login_reg.png)
+
+![Profile and logout page](readme_images/profile_logout.png)
+
+
 ## Who is this website for
 
 ## User Stories
