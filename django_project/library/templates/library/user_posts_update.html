@@ -1,15 +1,15 @@
 {% extends 'library/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-<div class="flex-container">
-    <div class="form-container container">
+<div class="flex-container px-3" style="min-height: 560px;">
+    <div class="form-container container col-md-8 col-lg-6" style="max-width: 660px;">
         <form action="" method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
                 <legend class="pb-3">Update Blog Post</legend>
                 {{ form|crispy }}
             </fieldset>
-            <div class="d-grid gap-2">
+            <div class="d-grid mt-3">
                 <button class="btn btn-primary d-block mb-4" type="submit">Update</button>
             </div>
         </form>

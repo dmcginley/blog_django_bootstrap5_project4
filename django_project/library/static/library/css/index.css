@@ -8364,3 +8364,6 @@ textarea.form-control-lg {
 .isbn-button {
   width: 8em; }
 
+.form-container {
+  max-width: 560px; }
+
