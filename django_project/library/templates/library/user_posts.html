@@ -3,14 +3,18 @@
 
 <div class="container">
     <div class="p-3">
-        {% for post in posts %}
-        <!-- this will not show any profile image if the user has no posts -->
 
-        {% if forloop.first %}
-        <img src="{{ post.author.profile.image.url }}" class="rounded-circle m-4 mx-auto d-block" height="200" alt="">
-        {% endif %}
 
-        {% endfor %}
+
+        <div class="d-flex align-items-center position-relative justify-content-center">
+            {% for post in posts %}
+            <!-- this will not show any profile image if the user has no posts -->
+            {% if forloop.first %}
+            <img src="{{ post.author.profile.image.url }}" class="rounded-circle m-4" height="200" alt="">
+            {% endif %}
+            {% endfor %}
+        </div>
+
 
         <div class="text-center">
             <h1 class="text-capitalize mb-2">
@@ -23,14 +27,16 @@
             {% else %}
 
             <p class=""><span class="fw-bold text-secondary">{{ page_obj.paginator.count }}</span> posts by
-                {{ view.kwargs.username }}</p>
+                {{ view.kwargs.username }}
+            </p>
             {% endif %}
 
             <div>
                 {% if view.kwargs.username == user.username  %}
                 <!-- TODO: center this-->
                 <div class="mt-md-3">
-                    <a href="{% url 'edit_profile' %}">Edit profile</a>
+                    <a class="btn btn-outline-secondary my-3 d-block d-sm-inline" href="" {% url 'edit_profile' %}">Edit
+                        profile</a>
                 </div>
 
                 <!-- TODO: should else be there?? -->

@@ -12,23 +12,28 @@
         <title>Library Home</title>
         {% endif %}
         <link rel="stylesheet" type="text/css" href="{% static 'library/css/index.css' %}" />
+
+        <!-- TODO: fix favicon not showing -->
+        <!-- the favicon generated from - https://favicon.io/favicon-converter/ -->
+        <!-- <link rel="apple-touch-icon" sizes="180x180" href={% static 'library/images/favicon/apple-touch-icon.png' %}>
+        <link rel="icon" type="image/png" sizes="32x32" href={% static 'library/images/favicon/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href={% static 'library/images/favicon/favicon-16x16.png' %}"> -->
+
+
     </head>
 
     <body>
 
         <!-- main navbar -->
-        <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+        <nav class="navbar navbar-expand-lg bg-primary navbar-dark p-1" height="56" style="background-color: red;">
             <div class="container d-flex">
 
                 <!-- the navbar-brand -->
-                <a class="fw-bold navbar-brand" href="{% url 'library-home' %}">
-                    <svg width=" 24" height="24" fill="currentColor" class="bi bi-bookmarks" viewbox="0 0 16 16">
-                        <path
-                            d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1H4z" />
-                        <path
-                            d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1z" />
-                    </svg>
-                    Scroll
+                <a class="d-flex align-items-center navbar-brand" href="{% url 'library-home' %}">
+                    <img class="me-2" height="34" src="{% static 'library/images/logo.svg' %}" alt="">
+                    <div class="">
+                        Tech<span class="fw-bold">Blog</span>
+                    </div>
                 </a>
                 <div class="d-flex">
 
