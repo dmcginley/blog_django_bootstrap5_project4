@@ -37,7 +37,7 @@ class Comment(models.Model):
     # date_posted = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        ordering = ('date_posted',)
+        ordering = ('-date_posted',)
 
     # def __str__(self):
     #     return '%s - %s' % (self.post.title, self.author)

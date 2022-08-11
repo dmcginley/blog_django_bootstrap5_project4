@@ -6,6 +6,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 from django.utils.decorators import method_decorator
 
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
@@ -120,8 +121,11 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 # to create a comment
 class CommentCreateView(LoginRequiredMixin, CreateView):
     model = Comment
-    fields = ['post', 'title', 'content', 'date_posted']
+    fields = ['post', 'title', 'content', 'author', 'date_posted']
     template_name = 'library/comment_form.html'
+
+    def get_success_url(self):
+        return reverse('post-detail', kwargs={'pk': self.object.post.pk})
 
     # def form_valid(self, form):
     #     form.instance.post_id = self.kwargs['pk']
