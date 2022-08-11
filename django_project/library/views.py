@@ -10,7 +10,7 @@ from django.utils.decorators import method_decorator
 
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 # from django_project import users
-from .models import Post
+from .models import Post, Comment
 from users.models import Profile
 from .filters import PostFilter
 
@@ -62,7 +62,6 @@ class UserPostListView(ListView):
 # class UserProfilePostView(LoginRequiredMixin, UserPassesTestMixin, ListView):
 class UserProfilePostView(LoginRequiredMixin, ListView):
     # TODO:  login_required not working
-    # login_required = True
     model = Post
     template_name = 'library/profile.html'
     context_object_name = 'posts'
@@ -83,9 +82,6 @@ class UserProfilePostView(LoginRequiredMixin, ListView):
 
 class PostDetailView(DetailView):
     model = Post
-    # template_name = 'library/index.html'
-    # context_object_name = 'posts'
-    # ordering = ['-date_posted']
 
 
 # to create a post
@@ -118,6 +114,18 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         if self.request.user == post.author:
             return True
         return False
+
+
+# TODO: fix comments
+# to create a comment
+class CommentCreateView(LoginRequiredMixin, CreateView):
+    model = Comment
+    fields = ['post', 'title', 'content', 'date_posted']
+    template_name = 'library/comment_form.html'
+
+    # def form_valid(self, form):
+    #     form.instance.post_id = self.kwargs['pk']
+    #     return super().form_valid(form)
 
 
 # delete a post, and goes back to homepage

@@ -1,7 +1,7 @@
 {% extends 'library/base.html' %}
 {% block content %}
 <div class="container mt-4 py-2">
-    <article class="container  py-4 rounded bg-light border">
+    <article class="container  py-3 py-md-4 ps-3 ps-md-4  rounded bg-light border">
         <div class="d-flex">
             <img src="{{ object.author.profile.image.url }}" class="rounded-circle me-4" height="86" alt="">
             <div>
@@ -13,8 +13,19 @@
                     {{ object.date_posted|date:"F dS, Y" }}</small>
 
                 <div class="mt-4">
-                    <a href="">add a comment</a>
+                    <a href="{% url 'add-comment' post.pk %}">add a comment</a>
                 </div>
+
+                {% comment %}
+                <p class="">You have <span class="fw-bold text-secondary">{{ comments.paginator.count }}</span> posts
+                </p>
+                {% endcomment %}
+
+
+
+
+
+
 
                 {% if object.author == user %}
                 <div class="mt-md-3">
@@ -26,6 +37,16 @@
                 {% endif %}
             </div>
         </div>
+
+        <!-- <div>
+            {% with comments.count as total_comments %}
+            <h5>
+                {{ total_comments }} comment {{total_comments|pluralize }}
+            </h5>
+            {% endwith %}
+        </div> -->
+
+
         <section class="border-top mt-4" style="margin-left: 130px;">
             {% if not post.comments.all %}
             <p class="text-muted mt-4">No comments yet...</p>
@@ -35,15 +56,18 @@
             {% for comment in post.comments.all %}
             <!-- <img src="{{ user.username.image.url }}" class="rounded-circle me-4" height="86" alt=""> -->
 
-            <h3 class="text-black pt-4">{{ comment.name }}</h3>
-            <p class="text-dark">{{ comment.body }}</p>
+            <h3 class="text-black pt-4">{{ comment.title }}</h3>
+            <p class="text-dark">{{ comment.content }}</p>
             <small class="text-muted">By
                 <a href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
                 on
                 {{ comment.date_posted|date:"F dS, Y" }}</small>
             {% endfor %}
+
             {% endif %}
         </section>
+
+
     </article>
 
     <!-- for deleting post -->
