@@ -18,7 +18,10 @@
                 most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid
                 system, extensive prebuilt components, and powerful JavaScript plugins.</p>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-                <button type="button" class="btn btn-primary px-4 me-md-2 fw-bold">Create an account</button>
+
+                <!-- BUG: get button to direct to register page -->
+                <button type="button" class="btn btn-primary px-4 me-md-2 fw-bold" href="#">Create an
+                    account</button>
                 <button type="button" class="btn btn-outline-secondary px-4">Default</button>
             </div>
         </div>
@@ -29,7 +32,7 @@
 </div>
 
 <div class="container px-3">
-    <h1 class="my-5">Stuff used</h1>
+    <h2 class="my-5">Stuff used</h2>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
         <div class="col">
             <img class="mx-auto d-block brand-icon" src="{% static 'library/images/brand_svg/bootstrap.svg' %}"
