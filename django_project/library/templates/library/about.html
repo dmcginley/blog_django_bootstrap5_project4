@@ -1,6 +1,56 @@
 {% extends 'library/base.html' %}
+{% load static %}
+
 {% block content %}
-<div class="container">
+<!-- <div class="container"> -->
+
+<div class="container px-3">
+
     <h1>about page</h1>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+        <div class="col">
+            <img class="mx-auto d-block brand-icon" src="{% static 'library/images/brand_svg/bootstrap.svg' %}"
+                height="80" alt="">
+            <div class="p-3">
+                <h5>Bootstrap 5</h5>
+                <p>The UI is created with <strong>Bootstrap 5</strong>, and compiled using <strong>Webpack</strong>,
+                    pushing the CSS & JS files to the
+                    Django project folder.</p>
+
+            </div>
+        </div>
+        <div class="col">
+            <img class="mx-auto d-block brand-icon" src="{% static 'library/images/brand_svg/django.svg' %}" height="80"
+                alt="Card image cap">
+            <div class="p-3">
+                <h5>Django</h5>
+                <p class="">Some quick example text to build on the card title and make up the
+                    bulk of the
+                    card's content.</p>
+            </div>
+        </div>
+
+        <div class="col">
+            <img class="mx-auto d-block brand-icon" src="{% static 'library/images/brand_svg/python.svg' %}" height="80"
+                alt="Card image cap">
+            <div class="p-3">
+                <h5>Python 3</h5>
+                <p class="">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+            </div>
+        </div>
+        <div class="col">
+            <img class="mx-auto d-block brand-icon" src="{% static 'library/images/brand_svg/postgresql.svg' %}"
+                height="80" alt="Card image cap">
+            <div class="p-3">
+                <h5>PostgreSQL</h5>
+                <p class="">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="brand-icon">brand icon</div> -->
+
 </div>
+<!-- </div> -->
 {% endblock content %}
