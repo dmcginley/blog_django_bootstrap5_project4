@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<!-- BUG: image upload doesn't work, image wont upload -->
+<!-- BUG: image upload doesn't work, image won't upload -->
 <div class="px-3" style="min-height: 540px;">
     <div class="container form-container col-md-8 col-lg-6" style="max-width: 660px;">
         <div class="p-3">
@@ -20,10 +20,9 @@
             <fieldset class="form-group">
                 <legend class="pb-3">Profile Info</legend>
 
-                <!-- {{ user_form|crispy }} -->
-                {{ user_form.email|as_crispy_field }}
-
+                {{ user_form|crispy }}
                 {{ profile_form|crispy }}
+
             </fieldset>
             <div class="d-grid gap-2 mt-2">
                 <button class="btn btn-primary d-block d-md-inline mb-4" type="submit">Update</button>

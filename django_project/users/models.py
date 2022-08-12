@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 # from PIL import Image
 
 # TODO: pillow not importing properly
+# from PIL import Image, ImageDraw, ImageFilter
 from PIL import Image, ImageDraw, ImageFilter
 
 
