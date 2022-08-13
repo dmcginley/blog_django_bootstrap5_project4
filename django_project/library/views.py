@@ -87,7 +87,6 @@ class PostDetailView(DetailView):
 
 # to create a post
 
-
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['title', 'content']
@@ -99,7 +98,6 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 
 # update a post
-
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
@@ -117,8 +115,8 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return False
 
 
-# TODO: fix comments
 # to create a comment
+
 class CommentCreateView(LoginRequiredMixin, CreateView):
     model = Comment
     fields = ['post', 'title', 'content', 'author', 'date_posted']
@@ -133,7 +131,6 @@ class CommentCreateView(LoginRequiredMixin, CreateView):
 
 
 # delete a post, and goes back to homepage
-
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post

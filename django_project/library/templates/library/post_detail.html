@@ -1,7 +1,7 @@
 {% extends 'library/base.html' %}
 {% block content %}
 <div class="container mt-4 py-2">
-    <article class="container  py-3 py-md-4 ps-3 ps-md-4  rounded bg-light border">
+    <article class="container  py-3 py-md-4 ps-3 ps-md-4 pe-2 rounded bg-light border">
         <div class="d-flex">
             <img src="{{ object.author.profile.image.url }}" class="rounded-circle me-4" height="86" alt="">
             <div>
@@ -12,17 +12,30 @@
                     on
                     {{ object.date_posted|date:"F dS, Y" }}</small>
 
-                <div class="mt-4">
-                    <a href="{% url 'add-comment' post.pk %}">add a comment</a>
+
+                <!-- the make comment button and comment count -->
+                <div class="d-block">
+                    <div class="mt-3 d-inline-block">
+                        <a class="comment-btn d-flex align-items-center py-2 text-decoration-none"
+                            href="{% url 'add-comment' post.pk %}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                                class="bi bi-chat me-2" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z" />
+                            </svg>
+                            <span class="fw-bold pe-1">{{ post.comments.count }}</span>
+                            comments
+                        </a>
+                    </div>
                 </div>
 
-                {% comment %}
+                <!-- {% comment %}
                 <p class="">You have <span class="fw-bold text-secondary">{{ comments.paginator.count }}</span> posts
                 </p>
-                {% endcomment %}
+                {% endcomment %} -->
 
                 {% if object.author == user %}
-                <div class="mt-md-3">
+                <div class="my-md-3">
                     <a class="btn btn-outline-secondary btn-sm  my-3 d-block d-md-inline"
                         href="{% url 'post-update' object.id %}">Edit</a>
                     <a class="btn btn-outline-danger btn-sm ms-md-3 my-3 d-block d-md-inline"
@@ -40,17 +53,20 @@
             {% endwith %}
         </div> -->
 
-        <section class="container mt-5">
-            <div class="row border-top comments-section">
+
+
+        <!-- the comment section -->
+        <section class="container mt-4">
+            <div class="row border-top ">
                 {% if not post.comments.all %}
-                <p class="text-muted mt-4">No comments yet...</p>
+                <p class="no-comment-yet col-12 text-muted mt-4">No comments yet...</p>
 
                 {% else %}
 
                 {% for comment in post.comments.all %}
                 <!-- <img src="{{ user.username.image.url }}" class="rounded-circle me-4" height="86" alt=""> -->
-                <div class="col-12 offset-md-1 d-flex p-2 my-3">
-                    <img src="{{ comment.author.profile.image.url }}" class="rounded-circle me-3" height="48" alt="">
+                <div class="col-12 offset-md-1 col-md-10 d-flex mt-4 p-2 my-3">
+                    <img src="{{ comment.author.profile.image.url }}" class="rounded-circle me-3" height="54" alt="">
                     <div>
                         <h3 class="text-black">{{ comment.title }}</h3>
                         <p class="text-dark">{{ comment.content }}</p>

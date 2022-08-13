@@ -9,7 +9,6 @@ from users.models import Profile
 
 # Create your models here.
 
-
 class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
@@ -23,7 +22,6 @@ class Post(models.Model):
         return reverse('post-detail', kwargs={'pk': self.pk})
 
 
-# TODO: fix comments
 # the comment section
 
 class Comment(models.Model):

@@ -93,6 +93,11 @@ $black: $black-d;
 //     padding: 0;
 // }
 
+:root {
+    --grayer-b: #3f5061;
+    --dark-d: #313338;
+    --purple-d: rgb(151, 21, 123);
+}
 
 /* ----------------
         1. flex container
@@ -104,10 +109,6 @@ $black: $black-d;
     height: calc(100vh - 56px);
     background-color: #faf9fa;
 }
-
-// form-container {
-//     max-width: 560px;
-// }
 
 .isbn-container {
     max-width: 440px;
@@ -121,11 +122,6 @@ $black: $black-d;
 }
 
 
-.profile_edit_btn {
-
-}
-
-
 .brand-icon{
     filter: opacity(60%);
 }
@@ -133,7 +129,23 @@ $black: $black-d;
 
 
 .comments-section{
-
     margin-left: 100px;
+}
 
+
+
+.comment-btn {
+    color: var(--dark-d);
+}
+
+// .comment-btn:hover {
+//     color: var(--purple-d);
+// }
+.comment-btn:focus {
+    color: var(--purple-d);
+}
+
+
+.no-comment-yet {
+    padding-left: 120px;
 }

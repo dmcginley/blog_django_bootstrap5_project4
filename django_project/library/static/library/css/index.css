@@ -8346,6 +8346,11 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important; } }
 
+:root {
+  --grayer-b: #3f5061;
+  --dark-d: #313338;
+  --purple-d: rgb(151, 21, 123); }
+
 /* ----------------
         1. flex container
     ---------------- */
@@ -8369,4 +8374,13 @@ textarea.form-control-lg {
 
 .comments-section {
   margin-left: 100px; }
+
+.comment-btn {
+  color: var(--dark-d); }
+
+.comment-btn:focus {
+  color: var(--purple-d); }
+
+.no-comment-yet {
+  padding-left: 120px; }
 
