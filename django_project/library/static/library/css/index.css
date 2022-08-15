@@ -8384,3 +8384,10 @@ textarea.form-control-lg {
 .no-comment-yet {
   padding-left: 120px; }
 
+.profile-image {
+  height: 86px; }
+
+@media only screen and (max-width: 488px) {
+  .profile-image {
+    height: 46px; } }
+

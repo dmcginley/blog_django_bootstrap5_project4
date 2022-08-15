@@ -13,7 +13,9 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 # from django_project import users
 from .models import Post, Comment
 from users.models import Profile
-from .filters import PostFilter
+# from .filters import PostFilter
+from users.forms import CommentForm
+# from django.core.paginator import Paginator
 
 
 # Create your views here.
@@ -28,19 +30,18 @@ def home(request):
 
 # all the posts on the main page
 
-
 class PostListView(ListView):
     model = Post
     template_name = 'library/index.html'
 
     context_object_name = 'posts'
     ordering = ['-date_posted']  # date posted in reverse order
-    paginate_by = 8
+    paginate_by = 4
 
-    # myFilter = PostFilter
+    # myFilter = PostFilter()
 
-    # context = {'customer': customer, 'myFilter': myFilter}
-    # return render(request, 'index.html', context)
+    # context = {'myFilter': myFilter}
+    # # return render(request, 'index.html', context)
 
 # the user profile page
 
@@ -49,7 +50,7 @@ class UserPostListView(ListView):
     model = Post
     template_name = 'library/user_posts.html'
     context_object_name = 'posts'
-    paginate_by = 8
+    paginate_by = 4
 
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
@@ -66,12 +67,11 @@ class UserProfilePostView(LoginRequiredMixin, ListView):
     model = Post
     template_name = 'library/profile.html'
     context_object_name = 'posts'
-    paginate_by = 8
+    paginate_by = 3
 
     def test_func(self):
 
         profile = Profile.user
-
         if self.request.user == profile:
             return True
         return False
@@ -119,15 +119,22 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 class CommentCreateView(LoginRequiredMixin, CreateView):
     model = Comment
-    fields = ['post', 'title', 'content', 'author', 'date_posted']
+    form_class = CommentForm
+    # BUG: added this to see if comment pagination would work
+    # context_object_name = 'comments'
+
+    # paginate_by = 3
+    # fields = ['post', 'title', 'content', 'author', 'date_posted']
+
     template_name = 'library/comment_form.html'
+
+    def form_valid(self, form):
+        form.instance.post_id = self.kwargs['pk']
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
     def get_success_url(self):
         return reverse('post-detail', kwargs={'pk': self.object.post.pk})
-
-    # def form_valid(self, form):
-    #     form.instance.post_id = self.kwargs['pk']
-    #     return super().form_valid(form)
 
 
 # delete a post, and goes back to homepage
@@ -144,4 +151,5 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 
 def about(request):
+
     return render(request, 'library/about.html', {'title': 'About'})

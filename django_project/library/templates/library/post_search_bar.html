@@ -1,8 +1,13 @@
 <!-- the search bar -->
 <div class="container d-flex justify-content-center justify-content-md-end my-4">
-    <form class="input-group col-md-6" method="GET" style="max-width: 420px;">
+    <form class="input-group col-md-6" method="POST" action="" style="max-width: 420px;">
+        {% csrf_token %}
         <!-- TODO: fix form crispy or bootstrap method -->
         {{ filter.form}}
+
+
+        {{ myFilter.form }}
+
         <input type="text" class="form-control" placeholder="Search blog post..." aria-label="Search blog post"
             aria-describedby="button-addon2">
         <button class="btn btn-outline-secondary d-flex align-items-center justify-content-center"

@@ -27,5 +27,4 @@ urlpatterns = [
     path('about/', views.about, name='library-about'),
     path('post/<int:pk>/add-comment',
          CommentCreateView.as_view(), name='add-comment'),
-
 ]

@@ -1,7 +1,7 @@
 // Custom.scss
 
 // -------------------------------------------
-    // Bootstrap5 default colors
+// Bootstrap5 default colors
 // -------------------------------------------
 
 // $blue:    #0d6efd;
@@ -26,10 +26,7 @@
 
 // -------------------------------------------
 
-
-
 // Include any default variable overrides here (though functions won't be available)
-
 
 // custom default colors
 
@@ -43,7 +40,6 @@ $grayer-b: #3f5061;
 $dark-d: #313338;
 $black-d: #2c2c2c;
 
-
 // $white: #ffffff;
 $gray-100: #f8f9fa;
 $gray-200: #e9ecef;
@@ -56,9 +52,6 @@ $gray-800: #2e3235;
 $gray-900: #212529;
 // $gray-900: #f7f7f785;
 
-
-
-
 // my theme-color-variables
 $primary: $purple-d;
 $secondary: $grayer-b;
@@ -70,9 +63,7 @@ $light: $gray-100;
 // $l-gray: $gray;
 $dark: $dark-d;
 $white: $white-d;
-$black: $black-d; 
-
-
+$black: $black-d;
 
 // $box-shadow: 0 .5rem 1rem rgba($black, .15);
 // $box-shadow-sm: 0 .125rem .25rem rgba($black, .075);
@@ -84,7 +75,6 @@ $black: $black-d;
 @import "bootstrap/scss/bootstrap";
 
 // Then add additional custom code here
-
 
 // *{
 //     display: block;
@@ -121,18 +111,13 @@ $black: $black-d;
     width: 8em;
 }
 
-
-.brand-icon{
+.brand-icon {
     filter: opacity(60%);
 }
 
-
-
-.comments-section{
+.comments-section {
     margin-left: 100px;
 }
-
-
 
 .comment-btn {
     color: var(--dark-d);
@@ -145,7 +130,16 @@ $black: $black-d;
     color: var(--purple-d);
 }
 
-
 .no-comment-yet {
     padding-left: 120px;
+}
+
+.profile-image {
+    height: 86px;
+}
+
+@media only screen and (max-width: 488px) {
+    .profile-image {
+        height: 46px;
+    }
 }
