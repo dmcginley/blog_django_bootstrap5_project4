@@ -1,23 +1,28 @@
 {% extends 'library/base.html' %}
 {% load crispy_forms_tags %}
-{% block content %}
-<div class="flex-container px-3" style="min-height: 560px;">
-    <div class="container form-container col-md-8 col-lg-6" style="max-width: 660px;">
 
-        <!-- TODO: add img and title to comment form -->
-        <!-- <div>
-            <img src="{{ author.profile.image.url }}" class="rounded-circle me-3" height="54" alt="">
-            <div>
-                <h3 class="text-black">{{ post.object.title }}</h3>
-                <p class="text-dark">{{ comment.content }}</p>
-            </div>
-        </div> -->
+{% block form_media_block %}
+{{ form.media }}
+{% endblock form_media_block %}
+
+{% block content %}
+<div class="pt-5 px-3" style="min-height: 560px;">
+    <!-- <div class="container form-container col-md-8 col-lg-6" style="max-width: 660px;"> -->
+    <div class="container form-container">
 
         <form action="" method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
                 <legend class="pb-3">Add a comment</legend>
-                {{ form|crispy }}
+                <!-- {{ form|crispy }} -->
+                <!-- {{ form.title|as_crispy_field }} -->
+
+                <!-- {{ form.as_p }} -->
+
+                {{ form }}
+                <!-- <div id="wmd-button-bar"></div>
+                <textarea id="wmd-input" class="wmd-input mb-3 p-1"></textarea>
+                <div id="wmd-preview" class="wmd-panel wmd-preview"></div> -->
 
             </fieldset>
             <div class="d-grid mt-3">

@@ -20,7 +20,8 @@
                 <p class="text-dark">{{ post.content }}</p>
                 <small class="text-muted">
                     By
-                    <a class="fw-bold" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+                    <a class="fw-bold text-dark"
+                        href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
                     at
                     <span class="fw-bold">{{ post.date_posted|time:"P" }}</span>
                     -
@@ -86,20 +87,20 @@
     {% if is_paginated %}
 
     {% if page_obj.has_previous %}
-    <a class="btn btn-outline-secondary m-1" href="?page=1">First</a>
+    <a class="pagination-btn btn btn-outline-secondary m-1" href="?page=1">First</a>
     {% endif %}
 
     {% for num in page_obj.paginator.page_range %}
     {% if page_obj.number == num %}
-    <a class="btn btn-secondary m-1" href="?page={{ num }}">{{ num }}</a>
+    <a class="pagination-btn-active btn btn-secondary m-1" href="?page={{ num }}">{{ num }}</a>
 
     {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-    <a class="btn btn-outline-secondary m-1" href="?page={{ num }}">{{ num }}</a>
+    <a class="pagination-btn btn btn-outline-secondary m-1" href="?page={{ num }}">{{ num }}</a>
     {% endif %}
     {% endfor %}
 
     {% if page_obj.has_next %}
-    <a class="btn btn-outline-secondary m-1" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+    <a class="pagination-btn btn btn-outline-secondary m-1" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
     {% endif %}
     {% endif %}
 </div>

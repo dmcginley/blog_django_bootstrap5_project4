@@ -1,0 +1,36 @@
+/* the name in small text, comments + svg, reply + svg */
+a:hover {
+    color: rgb(211, 33, 86) !important;
+}
+
+
+
+
+/* resetting the other a tags */
+.new-post-btn:hover {
+    border-color: white !important;
+}
+
+
+.edit-profile-btn:hover {
+    color: white !important;
+
+}
+
+.dropdown-item:active {
+    background-color: #eaedf1;
+}
+
+.dropdown-item > .delete-link:active {
+
+   background-color: rgba(255, 81, 0, 0.514) !important;
+}
+
+
+.pagination-btn {
+    color: #3f5061 !important;
+}
+.pagination-btn:hover,
+.pagination-btn-active:hover {
+    color: white !important;
+}

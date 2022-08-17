@@ -1,5 +1,8 @@
 // Custom.scss
 
+// $body-bg: #000;
+// $body-color: #111;
+
 // -------------------------------------------
 // Bootstrap5 default colors
 // -------------------------------------------
@@ -30,7 +33,7 @@
 
 // custom default colors
 
-$purple-d: rgb(151, 21, 123);
+$purple-d: rgb(32, 236, 185);
 $red-d: rgb(211, 19, 45);
 $blue-d: rgb(64, 64, 230);
 $orange-d: rgb(240, 172, 84);
@@ -72,6 +75,8 @@ $black: $black-d;
 
 // $box-shadow-lg: 0 .5rem 1rem rgba($black, .28);
 
+// $border-radius-base: 0;
+
 @import "bootstrap/scss/bootstrap";
 
 // Then add additional custom code here
@@ -87,6 +92,7 @@ $black: $black-d;
     --grayer-b: #3f5061;
     --dark-d: #313338;
     --purple-d: rgb(151, 21, 123);
+    --orange: rgb(204, 71, 9);
 }
 
 /* ----------------
@@ -119,17 +125,6 @@ $black: $black-d;
     margin-left: 100px;
 }
 
-.comment-btn {
-    color: var(--dark-d);
-}
-
-// .comment-btn:hover {
-//     color: var(--purple-d);
-// }
-.comment-btn:focus {
-    color: var(--purple-d);
-}
-
 .no-comment-yet {
     padding-left: 120px;
 }
@@ -138,6 +133,26 @@ $black: $black-d;
     height: 86px;
 }
 
+// for pagedown, from - https://stackoverflow.com/questions/13013315/how-to-use-pagedown-markdown-editor
+.wmd-button > span {
+    // background-image: url("{% static 'pagedown/Markdown.Sanitizer.js' %}wmd-buttons.png");
+
+    // background-image: url("/static/library/images/wmd-buttons.png");
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+// TODO: my style for pagedown doesn't work at the moment
+textarea .wmd-input {
+    background-color: #dee2e6;
+}
+
+div .wmd-preview {
+    background-color: #7d8fa1;
+}
 @media only screen and (max-width: 488px) {
     .profile-image {
         height: 46px;

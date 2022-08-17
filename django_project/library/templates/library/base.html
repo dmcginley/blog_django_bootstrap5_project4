@@ -14,36 +14,39 @@
             Blog Home</title>
         {% endif %}
         <link rel="stylesheet" type="text/css" href="{% static 'library/css/index.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'library/css/links.css' %}" />
 
+
+        {% block form_media_block %}{% endblock form_media_block %}
     </head>
 
     <body>
 
         <!-- main navbar -->
-        <nav class="navbar navbar-expand-lg bg-primary navbar-dark p-1" height="56" style="background-color: red;">
+        <nav class="navbar navbar-expand-lg bg-primary navbar-dark p-1" height="56">
             <div class="container d-flex">
 
                 <!-- the navbar-brand -->
                 <a class="d-flex align-items-center navbar-brand" href="{% url 'library-home' %}">
                     <img class="me-2" height="34" src="{% static 'library/images/logo.svg' %}" alt="">
-                    <div class="">
+                    <div class="text-white">
                         Tech<span class="fw-bold">Blog</span>
                     </div>
                 </a>
                 <div class="d-flex">
 
                     <!-- the new post button -->
-                    <a class="btn btn-white text-white me-2 d-flex align-items-center" type="button"
+                    <a class="new-post-btn btn btn-white text-white me-2 d-flex align-items-center" type="button"
                         href="{% url 'post-create' %}">
-                        <svg xmlns=" http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        <svg xmlns=" http://www.w3.org/2000/svg" width="20" height="20" fill="white"
                             class="bi bi-plus-circle me-0 me-md-2" viewBox="0 0 16 16">
                             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                             <path
                                 d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                         </svg>
-                        <span class="d-none d-md-block">New post</span>
+                        <span class="d-none d-md-block text-white">New post</span>
                     </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                         <span class=" navbar-toggler-icon"></span>
                     </button>
@@ -315,6 +318,21 @@
 
         <!-- script -->
         <script src="{% static 'library/js/index.js' %}"></script>
+
+        <!-- for pagedown -->
+        <!-- <script src="{% static 'pagedown/Markdown.Converter.js' %}"></script>
+        <script src="{% static 'pagedown/Markdown.Editor.js' %}"></script>
+        <script src="{% static 'pagedown/Markdown.Sanitizer.js' %}"></script>
+
+
+        <script>
+            var converter = Markdown.getSanitizingConverter();
+            var editor = new Markdown.Editor(converter);
+            editor.run();
+        </script> -->
+
+
+
 
     </body>
 
