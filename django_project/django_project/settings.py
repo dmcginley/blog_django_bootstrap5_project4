@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 'django_filters',
+    'pagedown',
+    # 'django_quill',
 ]
 
 MIDDLEWARE = [
@@ -132,6 +134,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# added for pagedown to work
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',  # os.path.join(BASE_DIR, 'static)
+]
+
+STATIC_ROOT = BASE_DIR / 'staticfiles-cdn'  # for production with cdn
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 

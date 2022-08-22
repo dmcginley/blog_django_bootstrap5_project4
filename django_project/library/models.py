@@ -1,3 +1,4 @@
+from email.policy import default
 from turtle import title
 import django
 from django.db import models
@@ -5,10 +6,12 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
 from users.models import Profile
+# import datetime
 
 
 # Create your models here.
 
+# TODO: time is a hour out for posts and comments
 class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
@@ -29,6 +32,7 @@ class Comment(models.Model):
         Post, related_name="comments", on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     content = models.TextField()
+
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
     date_posted = models.DateTimeField(default=timezone.now)
