@@ -14,16 +14,16 @@
             Blog Home</title>
         {% endif %}
         <link rel="stylesheet" type="text/css" href="{% static 'library/css/index.css' %}" />
-        <link rel="stylesheet" type="text/css" href="{% static 'library/css/links.css' %}" />
+        <!-- <link rel="stylesheet" type="text/css" href="{% static 'library/css/links.css' %}" /> -->
+        <script src="{% static 'library/js/index.js' %}"></script>
 
-
-        {% block form_media_block %}{% endblock form_media_block %}
+        <!-- {% block form_media_block %}{% endblock form_media_block %} -->
     </head>
 
     <body>
 
         <!-- main navbar -->
-        <nav class="navbar navbar-expand-lg bg-primary navbar-dark p-1" height="56">
+        <nav class="navbar navbar-expand-lg bg-primary navbar-dark py-2" height="56">
             <div class="container d-flex">
 
                 <!-- the navbar-brand -->
@@ -305,7 +305,7 @@
             {% if messages %}
             {% for message in messages %}
             <div class="p-2 w-100 position-absolute d-flex justify-content-center">
-                <div class="alert alert-secondary position relative col-12 col-md-10 col-lg-8 shadow-sm position-relative alert-dismissible fade show alert-{{ message.tags }}"
+                <div class="classname alert alert-secondary position relative mt-2 col-12 col-md-10 col-lg-8 col-xl-6 shadow position-relative alert-dismissible fade show alert-{{ message.tags }}"
                     role="alert">
                     {{ message }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -317,19 +317,6 @@
         </div>
 
         <!-- script -->
-        <script src="{% static 'library/js/index.js' %}"></script>
-
-        <!-- for pagedown -->
-        <!-- <script src="{% static 'pagedown/Markdown.Converter.js' %}"></script>
-        <script src="{% static 'pagedown/Markdown.Editor.js' %}"></script>
-        <script src="{% static 'pagedown/Markdown.Sanitizer.js' %}"></script>
-
-
-        <script>
-            var converter = Markdown.getSanitizingConverter();
-            var editor = new Markdown.Editor(converter);
-            editor.run();
-        </script> -->
 
 
 

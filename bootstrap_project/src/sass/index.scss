@@ -1,160 +1,46 @@
-// Custom.scss
-
-// $body-bg: #000;
-// $body-color: #111;
-
-// -------------------------------------------
-// Bootstrap5 default colors
-// -------------------------------------------
-
-// $blue:    #0d6efd;
-// $indigo:  #6610f2;
-// $purple:  #6f42c1;
-// $pink:    #d63384;
-// $red:     #dc3545;
-// $orange:  #fd7e14;
-// $yellow:  #ffc107;
-// $green:   #198754;
-// $teal:    #20c997;
-// $cyan:    #0dcaf0;
-
-// $primary:       $blue;
-// $secondary:     $gray-600;
-// $success:       $green;
-// $info:          $cyan;
-// $warning:       $yellow;
-// $danger:        $red;
-// $light:         $gray-100;
-// $dark:          $gray-900;
-
-// -------------------------------------------
-
-// Include any default variable overrides here (though functions won't be available)
-
-// custom default colors
-
-$purple-d: rgb(32, 236, 185);
-$red-d: rgb(211, 19, 45);
-$blue-d: rgb(64, 64, 230);
-$orange-d: rgb(240, 172, 84);
-
-$white-d: #ffffff;
-$grayer-b: #3f5061;
-$dark-d: #313338;
-$black-d: #2c2c2c;
-
-// $white: #ffffff;
-$gray-100: #f8f9fa;
-$gray-200: #e9ecef;
-$gray-300: #dee2e6;
-$gray-400: #ced4da;
-$gray-500: #adb5bd;
-$gray-600: #6c757d;
-$gray-700: #495057;
-$gray-800: #2e3235;
-$gray-900: #212529;
-// $gray-900: #f7f7f785;
-
-// my theme-color-variables
-$primary: $purple-d;
-$secondary: $grayer-b;
-// $success: $green;
-// $info: $cyan;
-$warning: $orange-d;
-$danger: $red-d;
-$light: $gray-100;
-// $l-gray: $gray;
-$dark: $dark-d;
-$white: $white-d;
-$black: $black-d;
-
-// $box-shadow: 0 .5rem 1rem rgba($black, .15);
-// $box-shadow-sm: 0 .125rem .25rem rgba($black, .075);
-// $box-shadow-lg: 0 1rem 3rem rgba($black, .175);
-// $box-shadow-inset: inset 0 1px 2px rgba($black, .075);
-
-// $box-shadow-lg: 0 .5rem 1rem rgba($black, .28);
-
-// $border-radius-base: 0;
+// changing the default colors
+$primary: rgb(54, 59, 75);
+// $secondary:
+// $success:
+// $info:
+// $warning:
+// $danger:
+// $light:
+// $dark:
 
 @import "bootstrap/scss/bootstrap";
 
-// Then add additional custom code here
-
-// *{
-//     display: block;
-//     box-sizing: border-box;
-//     margin: 0;
-//     padding: 0;
-// }
-
 :root {
-    --grayer-b: #3f5061;
-    --dark-d: #313338;
-    --purple-d: rgb(151, 21, 123);
-    --orange: rgb(204, 71, 9);
+    --light-gray: rgb(249, 250, 251);
+    // --dark-gray: rgb(233, 233, 233);
+    --link: rgb(146, 31, 146);
+    --link-hover: rgb(218, 45, 189);
 }
 
-/* ----------------
-        1. flex container
-    ---------------- */
-// flex container that centers the form
+a {
+    color: var(--link);
+}
+a:hover {
+    color: var(--link-hover) !important;
+}
+
+.post-container {
+    // min-width: ;
+    width: 100%;
+    // background-color: aqua;
+}
+
+.gray-bg {
+    background-color: var(--light-gray) !important;
+}
+
+.comment-section {
+    padding-left: 88px;
+}
+
 .flex-container {
     display: flex;
+    justify-content: center;
     align-items: center;
-    height: calc(100vh - 56px);
-    background-color: #faf9fa;
-}
-
-.isbn-container {
-    max-width: 440px;
-}
-
-/* ----------------
-        3. buttons
-    ---------------- */
-.isbn-button {
-    width: 8em;
-}
-
-.brand-icon {
-    filter: opacity(60%);
-}
-
-.comments-section {
-    margin-left: 100px;
-}
-
-.no-comment-yet {
-    padding-left: 120px;
-}
-
-.profile-image {
-    height: 86px;
-}
-
-// for pagedown, from - https://stackoverflow.com/questions/13013315/how-to-use-pagedown-markdown-editor
-.wmd-button > span {
-    // background-image: url("{% static 'pagedown/Markdown.Sanitizer.js' %}wmd-buttons.png");
-
-    // background-image: url("/static/library/images/wmd-buttons.png");
-    background-repeat: no-repeat;
-    background-position: 0px 0px;
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-}
-
-// TODO: my style for pagedown doesn't work at the moment
-textarea .wmd-input {
-    background-color: #dee2e6;
-}
-
-div .wmd-preview {
-    background-color: #7d8fa1;
-}
-@media only screen and (max-width: 488px) {
-    .profile-image {
-        height: 46px;
-    }
+    height: calc(100vh - 60px);
 }

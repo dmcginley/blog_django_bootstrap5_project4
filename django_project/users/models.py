@@ -50,7 +50,6 @@ class Profile(models.Model):
             # keep ratio but shrink down
             img.thumbnail((width, height))
 
-        # check which one is smaller
         if height < width:
             # make square by cutting off equal amounts left and right
             left = (width - height) / 2

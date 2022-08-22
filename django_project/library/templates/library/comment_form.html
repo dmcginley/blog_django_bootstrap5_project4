@@ -1,9 +1,9 @@
 {% extends 'library/base.html' %}
 {% load crispy_forms_tags %}
 
-{% block form_media_block %}
+<!-- {% block form_media_block %}
 {{ form.media }}
-{% endblock form_media_block %}
+{% endblock form_media_block %} -->
 
 {% block content %}
 <div class="pt-5 px-3" style="min-height: 560px;">
@@ -14,12 +14,12 @@
             {% csrf_token %}
             <fieldset class="form-group">
                 <legend class="pb-3">Add a comment</legend>
-                <!-- {{ form|crispy }} -->
+                {{ form|crispy }}
                 <!-- {{ form.title|as_crispy_field }} -->
 
                 <!-- {{ form.as_p }} -->
 
-                {{ form }}
+                <!-- {{ form }} -->
                 <!-- <div id="wmd-button-bar"></div>
                 <textarea id="wmd-input" class="wmd-input mb-3 p-1"></textarea>
                 <div id="wmd-preview" class="wmd-panel wmd-preview"></div> -->

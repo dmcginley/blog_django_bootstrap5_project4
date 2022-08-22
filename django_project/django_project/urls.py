@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from users import views as user_views
+import library
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,6 +33,13 @@ urlpatterns = [
     path('', include('library.urls')),
 
 ]
+
+# TODO: add references to error views - DEBUG must be False for custom views
+#handler403 = 'library.views.access_denied'
+handler404 = "library.views.page_not_found_view"
+
+#handler500 = ''
+#handler400 = ''
 
 
 if settings.DEBUG:

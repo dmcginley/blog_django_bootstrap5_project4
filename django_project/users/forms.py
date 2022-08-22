@@ -7,7 +7,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .models import Profile
 from library.models import Comment
-from pagedown.widgets import PagedownWidget
 # from django_quill.fields import QuillField
 
 

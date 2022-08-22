@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.utils.decorators import method_decorator
+from django.shortcuts import render
 
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 # from django_project import users
@@ -153,3 +154,9 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 def about(request):
 
     return render(request, 'library/about.html', {'title': 'About'})
+
+
+def page_not_found_view(request, exception):
+    return render(request, 'library/error404.html', status=404)
+
+# TODO : add functions for 403, 400, 500 error views

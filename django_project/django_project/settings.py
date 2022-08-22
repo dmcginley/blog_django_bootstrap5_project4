@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ggvhv5t6+kutly-blg$t^*bnus$aycw!#c!vhs$^9gemf7mrsy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 'django_filters',
-    'pagedown',
     # 'django_quill',
+    'markdownify',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'library.middleware.TimezoneMiddleware',
 ]
 
 ROOT_URLCONF = 'django_project.urls'
@@ -123,7 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Dublin'
 
 USE_I18N = True
 
@@ -137,11 +138,11 @@ STATIC_URL = '/static/'
 
 # added for pagedown to work
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',  # os.path.join(BASE_DIR, 'static)
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'static',  # os.path.join(BASE_DIR, 'static)
+# ]
 
-STATIC_ROOT = BASE_DIR / 'staticfiles-cdn'  # for production with cdn
+# STATIC_ROOT = BASE_DIR / 'staticfiles-cdn'  # for production with cdn
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -158,3 +159,42 @@ LOGIN_URL = 'login'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+MARKDOWNIFY = {
+    "default": {
+        "MARKDOWN_EXTENSIONS": [
+            'markdown.extensions.fenced_code',
+            'markdown.extensions.extra',
+        ],
+        "STRIP": False,
+        "WHITELIST_TAGS": [
+            'a',
+            'abbr',
+            'acronym',
+            'b',
+            'blockquote',
+            'em',
+            'i',
+            'li',
+            'ol',
+            'p',
+            'strong',
+            'ul',
+            'code',
+            'span',
+            'div', 'class',
+            'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'
+        ],
+        "WHITELIST_ATTRS": [
+            'href',
+            'src',
+            'alt',
+            'class',
+        ],
+        "WHITELIST_PROTOCOLS": [
+            'http',
+            'https',
+        ]
+    }
+}
