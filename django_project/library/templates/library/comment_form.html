@@ -6,29 +6,18 @@
 {% endblock form_media_block %} -->
 
 {% block content %}
-<div class="pt-5 px-3" style="min-height: 560px;">
-    <!-- <div class="container form-container col-md-8 col-lg-6" style="max-width: 660px;"> -->
+<main class="pt-5 px-3" style="min-height: 560px;">
     <div class="container form-container">
-
         <form action="" method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="pb-3">Add a comment</legend>
+                <legend class="pb-3 text-capitalize">add a comment</legend>
                 {{ form|crispy }}
-                <!-- {{ form.title|as_crispy_field }} -->
-
-                <!-- {{ form.as_p }} -->
-
-                <!-- {{ form }} -->
-                <!-- <div id="wmd-button-bar"></div>
-                <textarea id="wmd-input" class="wmd-input mb-3 p-1"></textarea>
-                <div id="wmd-preview" class="wmd-panel wmd-preview"></div> -->
-
             </fieldset>
             <div class="d-grid mt-3">
                 <button class="btn btn-primary d-block mb-4" type="submit">Add comment</button>
             </div>
         </form>
     </div>
-</div>
+</main>
 {% endblock content %}

@@ -1,4 +1,20 @@
-// changing the default colors
+// --------------------------------------
+//  Google fonts
+// --------------------------------------
+// JetBrainsMono
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap");
+// Red Hat Mono
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,400;0,700;1,400&display=swap");
+// Poppins
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+// Ubuntu
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400&display=swap");
+
+// --------------------------------------
+
+// --------------------------------------
+//  changing the default colors
+// --------------------------------------
 $primary: rgb(54, 59, 75);
 // $secondary:
 // $success:
@@ -8,8 +24,16 @@ $primary: rgb(54, 59, 75);
 // $light:
 // $dark:
 
+// $font-family-sans-serif: "JetBrains Mono", monospace;
+// $font-family-sans-serif: "Red Hat Mono", monospace;
+// $font-family-sans-serif: "Poppins", sans-serif;
+$font-family-sans-serif: "Ubuntu", sans-serif;
+
 @import "bootstrap/scss/bootstrap";
 
+// --------------------------------------
+//  my own styles for elements
+// --------------------------------------
 :root {
     --light-gray: rgb(249, 250, 251);
     // --dark-gray: rgb(233, 233, 233);

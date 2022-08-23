@@ -1,12 +1,12 @@
 {% extends 'library/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-<div class="flex-container px-3" style="min-height: 560px;">
+<main class="flex-container px-3" style="min-height: 560px;">
     <div class="container form-container col-md-8 col-lg-6" style="max-width: 660px;">
         <form action="" method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="pb-3">Create Blog Post</legend>
+                <legend class="pb-3 text-capitalize">create blog post</legend>
                 {{ form|crispy }}
             </fieldset>
             <div class="d-grid mt-3">
@@ -14,5 +14,5 @@
             </div>
         </form>
     </div>
-</div>
+</main>
 {% endblock content %}

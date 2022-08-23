@@ -16,13 +16,13 @@
         </a>
 
         <!-- the main body of text -->
-        <article class="p-3 pt-0 pt-sm-3">
+        <article class="p-3 pt-0 pt-sm-3 d-block overflow-hidden">
             <h2>
                 <a class="text-dark" href="{% url 'post-detail' post.id %}">
                     {{ post.title }}
                 </a>
             </h2>
-            <p class="comment-body text-dark py-2">
+            <p class="text-dark p-2">
                 {{ post.content|markdownify  }}
             </p>
             <small class="text-muted">
