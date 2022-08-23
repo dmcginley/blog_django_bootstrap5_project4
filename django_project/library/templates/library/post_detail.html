@@ -48,7 +48,7 @@
             </p>
             <small class="text-muted">
                 By
-                <a class="fw-bold text-dark" href="{% url 'user-posts' object.author.username %}">
+                <a class="fw-bold" href="{% url 'user-posts' object.author.username %}">
                     {{ object.author }}</a>
                 at
                 <span class="fw-bold">{{ post.date_posted|time:"P" }}</span>

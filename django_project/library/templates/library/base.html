@@ -161,16 +161,15 @@
 
 
         <!-- the offcanvas nav  -->
-        <div class="offcanvas offcanvas-end bg-secondary tabindex=" -1" id="offcanvasNavbar"
+        <div class="offcanvas offcanvas-end gray-bg tabindex=" -1" id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
 
                 {%  if user.is_authenticated %}
-                <a class="d-flex align-items-center text-decoration-none text-white"
-                    href="{% url 'user-posts' user.username %}">
-                    <img src="{{ user.profile.image.url }}" class="rounded-circle text-white" height="46"
+                <a class="d-flex align-items-center text-decoration-none" href="{% url 'user-posts' user.username %}">
+                    <img src="{{ user.profile.image.url }}" class="rounded-circle" height="46"
                         alt="avatar, portrait of user" loading="lazy" />
-                    <h4 class="offcanvas-title text-light fw-bold ps-3" id="offcanvasNavbarLabel">{{ user.username }}
+                    <h4 class="offcanvas-title text-dark fw-bold ps-3" id="offcanvasNavbarLabel">{{ user.username }}
                     </h4>
                 </a>
                 {% else %}
@@ -181,15 +180,14 @@
                         <path fill-rule="evenodd"
                             d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                     </svg>
-                    <h4 class="offcanvas-title text-light fw-bold ps-3" id="offcanvasNavbarLabel">Not logged in</h4>
+                    <h4 class="offcanvas-title fw-bold ps-3" id="offcanvasNavbarLabel">Not logged in</h4>
                 </div>
                 {% endif %}
 
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
+                <button type="button" class="btn-close me-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <div class="offcanvas-body text-white">
-                <ul class="flex-grow-1 justify-content-end navbar-nav pe-3 text-capitalize">
+            <div class="offcanvas-body">
+                <ul class="text-dark flex-grow-1 justify-content-end navbar-nav pe-3 text-capitalize">
                     <!-- authentication for login or logout will display one or the other -->
                     {%  if user.is_authenticated %}
                     <li class="nav-item">
@@ -228,7 +226,7 @@
                             about
                         </a>
                     </li>
-                    <hr class="text-white">
+                    <hr class="hr-ruler">
                     <li class="nav-item">
                         <a class="active nav-link d-flex align-items-center" aria-current="page"
                             href="{% url 'logout' %}">
@@ -268,7 +266,7 @@
                             about
                         </a>
                     </li>
-                    <hr class="text-white">
+                    <hr class="hr-ruler">
                     <li class="nav-item">
                         <a class="active nav-link d-flex align-items-center" aria-current="page"
                             href="{% url 'register' %}">

@@ -1,5 +1,6 @@
 {% extends 'library/base.html' %}
 {% load tz %}
+{% load markdownify %}
 
 {% block content %}
 {% include 'library/post_search_bar.html' %}
@@ -22,7 +23,7 @@
                 </a>
             </h2>
             <p class="comment-body text-dark py-2">
-                {{ post.content }}
+                {{ post.content|markdownify  }}
             </p>
             <small class="text-muted">
                 By

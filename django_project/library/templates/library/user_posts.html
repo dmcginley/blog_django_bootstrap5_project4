@@ -83,10 +83,10 @@
             </div>
             {% endif %}
 
-            <a href="{% url 'user-posts' post.author.username %}">
-                <img src="{{ post.author.profile.image.url }}" class="rounded-circle m-3" height="74"
-                    alt="post profile image of the author">
-            </a>
+            <!-- <a href="{% url 'user-posts' post.author.username %}"> -->
+            <img src="{{ post.author.profile.image.url }}" class="rounded-circle m-3" height="74"
+                alt="post profile image of the author">
+            <!-- </a> -->
 
             <!-- the main body of text -->
             <article class="p-3 pt-0 pt-sm-3">

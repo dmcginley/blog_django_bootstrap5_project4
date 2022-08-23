@@ -10767,6 +10767,13 @@ textarea.form-control-lg {
   --link-hover: rgb(218, 45, 189);
 }
 
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px);
+}
+
 a {
   color: var(--link);
 }
@@ -10787,9 +10794,6 @@ a:hover {
   padding-left: 88px;
 }
 
-.flex-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 60px);
+.new-post-btn:hover {
+  border-color: var(--light-gray);
 }
