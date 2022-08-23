@@ -24,6 +24,7 @@ SECRET_KEY = 'django-insecure-ggvhv5t6+kutly-blg$t^*bnus$aycw!#c!vhs$^9gemf7mrsy
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -191,6 +192,10 @@ MARKDOWNIFY = {
             'src',
             'alt',
             'class',
+        ],
+        "WHITELIST_STYLES": [
+            'color',
+            'font-weight',
         ],
         "WHITELIST_PROTOCOLS": [
             'http',

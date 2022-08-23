@@ -23,7 +23,7 @@
     <body>
 
         <!-- main navbar -->
-        <nav class="navbar navbar-expand-lg bg-primary navbar-dark py-2 text-capitalize" height="56">
+        <nav class="navbar navbar-expand-lg bg-secondary navbar-dark py-2 text-capitalize" height="56">
             <div class="container d-flex">
 
                 <!-- the navbar-brand -->
@@ -71,7 +71,7 @@
                                 {% endif %}
                             </a>
                             <!-- the dropdown-menu list of items -->
-                            <ul class="dropdown-menu dropdown-menu-end mt-3 shadow-sm"
+                            <ul class="dropdown-menu dropdown-menu-end mt-3 shadow-sm gray-bg"
                                 aria-labelledby="dropdownMenuLink">
                                 {%  if user.is_authenticated %}
                                 <li><a class="dropdown-item d-flex align-items-center" href="{% url 'library-home' %}">

@@ -15,8 +15,8 @@
 // --------------------------------------
 //  changing the default colors
 // --------------------------------------
-$primary: rgb(54, 59, 75);
-// $secondary:
+$primary: rgb(180, 37, 121);
+$secondary: rgb(65, 70, 80);
 // $success:
 // $info:
 // $warning:
@@ -35,10 +35,12 @@ $font-family-sans-serif: "Ubuntu", sans-serif;
 //  my own styles for elements
 // --------------------------------------
 :root {
+    --primary: rgb(180, 37, 121);
+    --secondary: rgb(65, 70, 80);
     --light-gray: rgb(249, 250, 251);
     // --dark-gray: rgb(233, 233, 233);
-    --link: rgb(146, 31, 146);
-    --link-hover: rgb(218, 45, 189);
+    --link: rgb(180, 37, 121);
+    --link-hover: rgb(139, 41, 107);
 }
 
 .flex-container {
@@ -56,9 +58,7 @@ a:hover {
 }
 
 .post-container {
-    // min-width: ;
     width: 100%;
-    // background-color: aqua;
 }
 
 .gray-bg {
@@ -75,4 +75,15 @@ a:hover {
 
 .new-post-btn:hover {
     border-color: var(--light-gray);
+}
+
+.pagination-btn:hover {
+    color: var(--light-gray) !important;
+}
+
+pre {
+    padding: 0.5rem;
+    color: var(--light-gray);
+    background-color: var(--secondary);
+    border-radius: 3px;
 }

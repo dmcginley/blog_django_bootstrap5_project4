@@ -95,7 +95,34 @@
 
 
 
-        <div class="p-2 ps-sm-5 pt-4 d-sm-flex">
+        <div class="p-2 ps-sm-5 pt-4 d-sm-flex position-relative">
+
+            <!-- the drop-down -->
+            {% if comment.author == user %}
+            <div class="dropdown position-absolute top-0 end-0 pt-4">
+                <a class="comment data-toggle comment-btn d-flex align-items-center pe-3" role="button"
+                    id="dropdownMenuLink" data-bs-toggle="dropdown" aria-label="click to edit post"
+                    aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#495057"
+                        class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path
+                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                    </svg>
+                </a>
+                <ul class="edit-dropdown-menu dropdown-menu dropdown-menu-end mt-3 shadow-sm"
+                    aria-labelledby="dropdownMenuLink">
+                    <li>
+                        <a class="delete-btn-bg dropdown-item d-flex align-items-center"
+                            href="{% url 'comment-update' comment.id %}">Edit</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item delete-link d-flex align-items-center text-danger"
+                            href="{% url 'comment-delete' object.id %}">Delete</a>
+                    </li>
+            </div>
+            {% endif %}
+
+
             <a href="{% url 'user-posts' comment.author.username %}">
                 <img src="{{ comment.author.profile.image.url }}" class="rounded-circle me-4 mb-3" height="58"
                     alt="profile image of the commenter">

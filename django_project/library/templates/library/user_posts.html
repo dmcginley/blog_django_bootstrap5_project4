@@ -89,11 +89,11 @@
             <!-- </a> -->
 
             <!-- the main body of text -->
-            <article class="p-3 pt-0 pt-sm-3">
+            <article class="p-3 pt-0 pt-sm-3 d-block overflow-hidden">
                 <h2>
                     {{ post.title }}
                 </h2>
-                <p class="comment-body text-dark py-2">
+                <p class="comment-body text-dark p-2">
                     {{ post.content|markdownify }}
                 </p>
                 <small class="text-muted">
@@ -107,7 +107,7 @@
                 </small>
                 <div class="d-flex pt-2">
                     <!-- the links to post-detail so you can view the comments before replaying -->
-                    <a class="d-flex align-items-center text-decoration-none text-muted me-3"
+                    <a class="d-flex align-items-center text-decoration-none me-3"
                         href="{% url 'post-detail' post.id %}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-chat-right-fill me-2" viewBox="0 0 16 16">
@@ -145,25 +145,19 @@
 
         <!-- TODO: might replace this with continuos scroll  -->
         {% if is_paginated %}
-
         {% if page_obj.has_previous %}
-        <a class="btn m-1" href="?page=1">First</a>
-        <!-- <a class="btn" href="?page={{ page_obj.previous_page_number }}">Previous</a> -->
+        <a class="pagination-btn btn btn-outline-secondary m-1" href="?page=1">First</a>
         {% endif %}
-
         {% for num in page_obj.paginator.page_range %}
         {% if page_obj.number == num %}
-        <a class="btn btn-outline-dark m-1" href="?page={{ num }}">{{ num }}</a>
+        <a class="pagination-btn-active btn btn-secondary m-1" href="?page={{ num }}">{{ num }}</a>
         {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-        <a class="btn m-1" href="?page={{ num }}">{{ num }}</a>
+        <a class="pagination-btn btn btn-outline-secondary m-1" href="?page={{ num }}">{{ num }}</a>
         {% endif %}
         {% endfor %}
-
         {% if page_obj.has_next %}
-        <!-- <a class="btn" href="?page={{ page_obj.next_page_number }}">Next</a> -->
-        <a class="btn m-1" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+        <a class="pagination-btn btn btn-outline-secondary m-1" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
         {% endif %}
-
     </div>
 
 </div>
