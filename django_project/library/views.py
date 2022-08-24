@@ -31,14 +31,14 @@ class PostListView(ListView):
 
     context_object_name = 'posts'
     ordering = ['-date_posted']  # date posted in reverse order
-    paginate_by = 4
+    paginate_by = 2
 
 
 class UserPostListView(ListView):
     model = Post
     template_name = 'library/user_posts.html'
     context_object_name = 'posts'
-    paginate_by = 4
+    paginate_by = 2
 
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
@@ -55,7 +55,7 @@ class UserProfilePostView(LoginRequiredMixin, ListView):
     model = Post
     template_name = 'library/profile.html'
     context_object_name = 'posts'
-    paginate_by = 3
+    paginate_by = 2
 
     def test_func(self):
 
@@ -70,7 +70,7 @@ class UserProfilePostView(LoginRequiredMixin, ListView):
 
 
 # ------------------------------
-#    the 4 post views
+#    the 4 post views: Detail, Create, Update, Delete.
 # ------------------------------
 class PostDetailView(DetailView):
     model = Post
@@ -117,8 +117,14 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 
 # ------------------------------
-    # the 3 comment views
+    # the 3 comment views: Create, Update, Delete.
 # ------------------------------
+# TODO: should I have DetailView for comments
+class CommentDetailView(DetailView):
+    model = Comment
+# ------------------------------
+
+
 class CommentCreateView(LoginRequiredMixin, CreateView):
     model = Comment
     form_class = CommentForm
@@ -143,7 +149,7 @@ class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Comment
     fields = ['title', 'content']
     template_name = 'library/user_comments_update.html'
-    success_url = '/'
+    # success_url = '/'
 
     def form_valid(self, form):
         form.instance.author = self.request.user

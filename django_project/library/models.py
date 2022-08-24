@@ -54,3 +54,10 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"comment by {self.author}"
+
+
+# TODO: do I need this
+
+    def get_absolute_url(self):
+        return reverse('comment-detail', kwargs={'pk': self.pk})
+        # return reverse('post-detail', args=(str(self.id)))

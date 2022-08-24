@@ -1,10 +1,8 @@
 {% extends 'library/base.html' %}
 {% load tz %}
 {% load markdownify %}
-
 {% block content %}
 {% include 'library/post_search_bar.html' %}
-
 
 <!-- post section -->
 <div class="container mt-4">
@@ -18,7 +16,7 @@
         <!-- the main body of text -->
         <article class="p-3 pt-0 pt-sm-3 d-block overflow-hidden">
             <h2>
-                <a class="text-dark" href="{% url 'post-detail' post.id %}">
+                <a class="post-title-color" href="{% url 'post-detail' post.id %}">
                     {{ post.title }}
                 </a>
             </h2>
@@ -27,15 +25,18 @@
             </p>
             <small class="text-muted">
                 By
-                <a class="fw-bold" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+                <a class="fw-bold post-link-color"
+                    href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
                 at
                 <span class="fw-bold">{{ post.date_posted|time:"P" }}</span>
                 -
                 {{ post.date_posted|date:"dS F, Y" }}
             </small>
             <div class="d-flex pt-2">
+
                 <!-- the links to post-detail so you can view the comments before replaying -->
-                <a class="d-flex align-items-center text-decoration-none me-3" href="{% url 'post-detail' post.id %}">
+                <a class="d-flex align-items-center text-decoration-none me-3 post-link-color"
+                    href="{% url 'post-detail' post.id %}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-chat-right-fill me-2" viewBox="0 0 16 16">
                         <path
@@ -46,21 +47,17 @@
                 </a>
             </div>
         </article>
-
     </div>
     {% endfor %}
 </div>
-
 <div class="d-flex justify-content-center my-4">
-
-    <!-- TODO: might replace this with continuos scroll  -->
     {% if is_paginated %}
     {% if page_obj.has_previous %}
     <a class="pagination-btn btn btn-outline-secondary m-1" href="?page=1">First</a>
     {% endif %}
     {% for num in page_obj.paginator.page_range %}
     {% if page_obj.number == num %}
-    <a class="pagination-btn-active btn btn-secondary m-1" href="?page={{ num }}">{{ num }}</a>
+    <a class="pagination-btn btn btn-secondary m-1" href="?page={{ num }}">{{ num }}</a>
     {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
     <a class="pagination-btn btn btn-outline-secondary m-1" href="?page={{ num }}">{{ num }}</a>
     {% endif %}
@@ -68,7 +65,6 @@
     {% if page_obj.has_next %}
     <a class="pagination-btn btn btn-outline-secondary m-1" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
     {% endif %}
-    {% endif %}
+    <!-- {% endif %} -->
 </div>
-
 {% endblock content %}

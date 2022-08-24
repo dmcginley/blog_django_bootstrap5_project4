@@ -10793,11 +10793,11 @@ textarea.form-control-lg {
 }
 
 a {
-  color: var(--link);
+  color: rgb(120, 184, 209);
 }
 
 a:hover {
-  color: var(--link-hover) !important;
+  color: rgb(79, 154, 184);
 }
 
 .post-container {
@@ -10805,19 +10805,11 @@ a:hover {
 }
 
 .gray-bg {
-  background-color: var(--light-gray) !important;
+  background-color: var(--light-gray);
 }
 
 .comment-section {
   padding-left: 88px;
-}
-
-.new-post-btn:hover {
-  border-color: var(--light-gray);
-}
-
-.pagination-btn:hover {
-  color: var(--light-gray) !important;
 }
 
 pre {
@@ -10825,4 +10817,20 @@ pre {
   color: var(--light-gray);
   background-color: var(--secondary);
   border-radius: 3px;
+}
+
+.post-title-color {
+  color: var(--secondary);
+}
+
+.post-title-color:hover {
+  color: var(--link);
+}
+
+.post-link-color {
+  color: var(--link);
+}
+
+.post-link-color:hover {
+  color: var(--link-hover);
 }

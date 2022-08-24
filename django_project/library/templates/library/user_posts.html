@@ -1,6 +1,5 @@
 {% extends 'library/base.html' %}
 {% load markdownify %}
-
 {% block content %}
 
 <div class="container">
@@ -14,50 +13,38 @@
             {% endfor %}
         </div>
 
-
         <div class="text-center">
             <h1 class="text-capitalize mb-2">
-
                 {{ view.kwargs.username }}
             </h1>
             {% if view.kwargs.username == user.username  %}
             <p class="text-center">{{ user.email }}</p>
-
             <p class="">You have <span class="fw-bold text-secondary">{{ page_obj.paginator.count }}</span> posts</p>
             {% else %}
-
             <p class=""><span class="fw-bold text-secondary">{{ page_obj.paginator.count }}</span> posts by
                 {{ view.kwargs.username }}
             </p>
             {% endif %}
-
             <div>
                 {% if view.kwargs.username == user.username  %}
-                <!-- TODO: center this-->
-
                 <div class="my-4">
-                    <a class="edit-profile-btn btn btn-outline-secondary d-block d-sm-inline"
-                        href="{% url 'edit_profile' %}">Edit
-                        profile</a>
+                    <a class="edit-profile-btn btn btn-outline-secondary d-block d-sm-inline text-capitalize"
+                        href="{% url 'edit_profile' %}">
+                        Edit profile
+                    </a>
                 </div>
-
                 <!-- TODO: should else be there?? -->
                 {% else %}
-
                 {% endif %}
             </div>
         </div>
-
     </div>
-
-
-
-
 
     {% for post in posts %}
     <!-- new card -->
     <div class="container mt-4">
         <div class="d-sm-flex position-relative  rounded border bg-light my-4">
+
             <!-- the drop-down -->
             {% if post.author == user %}
             <div class="dropdown position-absolute top-0 end-0 pt-3">
@@ -82,32 +69,32 @@
                     </li>
             </div>
             {% endif %}
-
-            <!-- <a href="{% url 'user-posts' post.author.username %}"> -->
             <img src="{{ post.author.profile.image.url }}" class="rounded-circle m-3" height="74"
                 alt="post profile image of the author">
-            <!-- </a> -->
 
             <!-- the main body of text -->
             <article class="p-3 pt-0 pt-sm-3 d-block overflow-hidden">
                 <h2>
-                    {{ post.title }}
+                    <a class="post-title-color" href="{% url 'post-detail' post.id %}">
+                        {{ post.title }}
+                    </a>
                 </h2>
                 <p class="comment-body text-dark p-2">
                     {{ post.content|markdownify }}
                 </p>
                 <small class="text-muted">
                     By
-                    <a class="fw-bold text-dark" href="{% url 'user-posts' post.author.username %}">
-                        {{ object.author }}</a>
+                    <span class="fw-bold text-dark" href="{% url 'user-posts' post.author.username %}">
+                        {{ post.author }}</span>
                     at
                     <span class="fw-bold">{{ post.date_posted|time:"P" }}</span>
                     -
                     {{ post.date_posted|date:"dS F, Y" }}
                 </small>
                 <div class="d-flex pt-2">
+
                     <!-- the links to post-detail so you can view the comments before replaying -->
-                    <a class="d-flex align-items-center text-decoration-none me-3"
+                    <a class="d-flex align-items-center text-decoration-none me-3 post-link-color"
                         href="{% url 'post-detail' post.id %}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-chat-right-fill me-2" viewBox="0 0 16 16">
@@ -117,49 +104,33 @@
                         <span class="pe-1">{{ post.comments.count }}</span>
                         comments
                     </a>
-                    <!-- <a class="d-flex align-items-center text-decoration-none" href="{% url 'add-comment' post.pk %}">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                            class="bi bi-reply-fill" viewBox="0 0 16 16">
-                            <path
-                                d="M5.921 11.9 1.353 8.62a.719.719 0 0 1 0-1.238L5.921 4.1A.716.716 0 0 1 7 4.719V6c1.5 0 6 0 7 8-2.5-4.5-7-4-7-4v1.281c0 .56-.606.898-1.079.62z" />
-                        </svg>
-                        <span class="ps-1">
-                            reply
-                        </span>
-                    </a> -->
                 </div>
             </article>
-
         </div>
     </div>
-
-
-
     {% endfor %}
 
 
 
 
-
+    <!-- BUG: to fix is_paginated doesn't work -->
     <div class="d-flex justify-content-center my-4">
-
-        <!-- TODO: might replace this with continuos scroll  -->
         {% if is_paginated %}
-        {% if page_obj.has_previous %}
+        {% if post.comments.has_previous %}
         <a class="pagination-btn btn btn-outline-secondary m-1" href="?page=1">First</a>
         {% endif %}
-        {% for num in page_obj.paginator.page_range %}
-        {% if page_obj.number == num %}
-        <a class="pagination-btn-active btn btn-secondary m-1" href="?page={{ num }}">{{ num }}</a>
-        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+        {% for num in post.comments.paginator.page_range %}
+        {% if post.comments.number == num %}
+        <a class="pagination-btn btn btn-secondary m-1" href="?page={{ num }}">{{ num }}</a>
+        {% elif num > post.comments.number|add:'-3' and num < post.comments.number|add:'3' %}
         <a class="pagination-btn btn btn-outline-secondary m-1" href="?page={{ num }}">{{ num }}</a>
         {% endif %}
         {% endfor %}
-        {% if page_obj.has_next %}
-        <a class="pagination-btn btn btn-outline-secondary m-1" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+        {% if post.comments.has_next %}
+        <a class="pagination-btn btn btn-outline-secondary m-1"
+            href="?page={{ post.comments.paginator.num_pages }}">Last</a>
         {% endif %}
     </div>
-
 </div>
 {% endif %}
 {% endblock content %}

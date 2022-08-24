@@ -38,7 +38,7 @@ $font-family-sans-serif: "Ubuntu", sans-serif;
     --primary: rgb(180, 37, 121);
     --secondary: rgb(65, 70, 80);
     --light-gray: rgb(249, 250, 251);
-    // --dark-gray: rgb(233, 233, 233);
+    // --dark-gray: rgb(63, 69, 73);
     --link: rgb(180, 37, 121);
     --link-hover: rgb(139, 41, 107);
 }
@@ -51,10 +51,10 @@ $font-family-sans-serif: "Ubuntu", sans-serif;
 }
 
 a {
-    color: var(--link);
+    color: rgb(120, 184, 209);
 }
 a:hover {
-    color: var(--link-hover) !important;
+    color: rgb(79, 154, 184);
 }
 
 .post-container {
@@ -62,28 +62,46 @@ a:hover {
 }
 
 .gray-bg {
-    background-color: var(--light-gray) !important;
+    background-color: var(--light-gray);
 }
 
 .comment-section {
     padding-left: 88px;
 }
 
-.new-post-btn {
-    // border-color: var(--light-gray);
-}
+// .new-post-btn {
+//     // border-color: var(--light-gray);
+// }
 
-.new-post-btn:hover {
-    border-color: var(--light-gray);
-}
+// .new-post-btn:hover {
+//     border-color: var(--light-gray);
+// }
 
-.pagination-btn:hover {
-    color: var(--light-gray) !important;
-}
+// .edit-profile-btn:hover,
+// .pagination-btn:hover {
+//     color: var(--light-gray) !important;
+// }
 
+// for the code in the markdown post
 pre {
     padding: 0.5rem;
     color: var(--light-gray);
     background-color: var(--secondary);
     border-radius: 3px;
+}
+
+// the post colors
+.post-title-color {
+    color: var(--secondary);
+}
+.post-title-color:hover {
+    color: var(--link);
+}
+
+.post-link-color {
+    color: var(--link);
+}
+
+.post-link-color:hover {
+    color: var(--link-hover);
 }
