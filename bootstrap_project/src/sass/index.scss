@@ -15,8 +15,8 @@
 // --------------------------------------
 //  changing the default colors
 // --------------------------------------
-$primary: rgb(180, 37, 121);
-$secondary: rgb(65, 70, 80);
+$primary: #583ccc;
+$secondary: #384142;
 // $success:
 // $info:
 // $warning:
@@ -29,18 +29,19 @@ $secondary: rgb(65, 70, 80);
 // $font-family-sans-serif: "Poppins", sans-serif;
 $font-family-sans-serif: "Ubuntu", sans-serif;
 
+// black: #1d1d1d;
+
 @import "bootstrap/scss/bootstrap";
 
 // --------------------------------------
 //  my own styles for elements
 // --------------------------------------
 :root {
-    --primary: rgb(180, 37, 121);
-    --secondary: rgb(65, 70, 80);
-    --light-gray: rgb(249, 250, 251);
-    // --dark-gray: rgb(63, 69, 73);
-    --link: rgb(180, 37, 121);
-    --link-hover: rgb(139, 41, 107);
+    --primary: #583ccc;
+    --secondary: #384142;
+    --light-gray: #f9fafb;
+    --link: #3e7ab6;
+    --link-hover: #2c6196;
 }
 
 .flex-container {
@@ -51,10 +52,17 @@ $font-family-sans-serif: "Ubuntu", sans-serif;
 }
 
 a {
-    color: rgb(120, 184, 209);
+    color: #3e7ab6;
 }
 a:hover {
-    color: rgb(79, 154, 184);
+    color: #2d6297;
+}
+
+code a {
+    color: #77afe4;
+}
+code a:hover {
+    color: #5a8dbd;
 }
 
 .post-container {
@@ -84,11 +92,15 @@ a:hover {
 
 // for the code in the markdown post
 pre {
-    padding: 0.5rem;
+    padding: 1rem !important;
     color: var(--light-gray);
     background-color: var(--secondary);
     border-radius: 3px;
 }
+
+// code {
+//     padding: 1rem;
+// }
 
 // the post colors
 .post-title-color {

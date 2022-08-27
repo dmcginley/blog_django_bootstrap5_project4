@@ -31,14 +31,14 @@ class PostListView(ListView):
 
     context_object_name = 'posts'
     ordering = ['-date_posted']  # date posted in reverse order
-    paginate_by = 2
+    paginate_by = 8
 
 
 class UserPostListView(ListView):
     model = Post
     template_name = 'library/user_posts.html'
     context_object_name = 'posts'
-    paginate_by = 2
+    paginate_by = 8
 
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
@@ -55,7 +55,7 @@ class UserProfilePostView(LoginRequiredMixin, ListView):
     model = Post
     template_name = 'library/profile.html'
     context_object_name = 'posts'
-    paginate_by = 2
+    paginate_by = 8
 
     def test_func(self):
 
@@ -128,12 +128,6 @@ class CommentDetailView(DetailView):
 class CommentCreateView(LoginRequiredMixin, CreateView):
     model = Comment
     form_class = CommentForm
-    # BUG: added this to see if comment pagination would work
-    # context_object_name = 'comments'
-
-    # paginate_by = 3
-    # fields = ['post', 'title', 'content', 'author', 'date_posted']
-
     template_name = 'library/comment_form.html'
 
     def form_valid(self, form):
@@ -152,6 +146,7 @@ class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     # success_url = '/'
 
     def form_valid(self, form):
+
         form.instance.author = self.request.user
         return super().form_valid(form)
 
