@@ -77,18 +77,25 @@ Using the 60, 30, 10 Color Rule so not to overwhelm the user with too much color
 * All elements the page are tab friendly 
 
 ## Testing
+User testing, lighthouse from Chrome..... 
 
 ### Validator Testing
 
 ### Manual Testing
+Creating multiple posts and comments bot editing them and deleting them to check the robust nature of the site.
 
 ## Error Handling
 
 ## Troubleshooting
 
+profile pick was showing an error......
+
+database broke during the creation of new tables while doing migrations, nothing fixed the error to resolve the issue. As I was only in the testing stage I deleted the database and reinitialized a new database. 
+
 ## Deployment
 
 ## Version Control
+Github
 
 ### How To Clone The Project
 
