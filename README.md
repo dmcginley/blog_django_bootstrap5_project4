@@ -16,13 +16,13 @@ top level folder for the project 4 containing bootstrap django and python files
 
 
 ## Who is this website for
+This blog site aimed at developers or people interested in coding and development work.
 
 ## User Stories
 
 ## Technologies Used
 
 - [Visual Studio Code](https://code.visualstudio.com/) IDE I used for Bootstrap, JavaScript, & Django
-- [PyCharm](https://www.jetbrains.com/pycharm/) - IDE used for Python
 - [Heroku](https://www.heroku.com/)
 - [GitHub](https://github.com/)
 * [SQLite](https://www.sqlite.org/index.html) - database used in development
@@ -49,11 +49,32 @@ top level folder for the project 4 containing bootstrap django and python files
 
 ## Features
 
+* Create account
+* Change profile picture
+* Change email address
+* View posts and comment on them
+* Edit or delete my post or my comment on a post
+* View a users profile and all their posts
+
+
 ## Files & classes ???
 
 ## Color Choices
 
+Using the 60, 30, 10 Color Rule so not to overwhelm the user with too much color that would distract for the text in each post.
+
+![image of the color rule 60 purple, 30 blue gray, 10 gray](readme_images/color_chart.png)
+
+
+
+
+
 ## Accessibility
+
+* clean minimal design with use of white-space
+* contrasting colors e.g. a lighter blue on the dark background of the code box in a post
+* alternative text to images and buttons
+* All elements the page are tab friendly 
 
 ## Testing
 
@@ -80,7 +101,7 @@ top level folder for the project 4 containing bootstrap django and python files
 * [Bootstrap Docs](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
 
 * [The Quick Python Book (online)](https://livebook.manning.com/book/the-quick-python-book-third-edition/chapter-23/1) - Chapter 23. Saving data, SQL databases
-* []()
+* [Bootstrap's Examples](https://getbootstrap.com/docs/5.0/examples/#snippets) - to help understand structure of elements on the page
 * []()
 
 #### Django
@@ -98,9 +119,11 @@ top level folder for the project 4 containing bootstrap django and python files
 
 **Sites content, media, and help with implementing code from tutorials & online help.**
 
-#### Images
+#### Images & Icons
 
 [pexels.com](https://www.pexels.com/search/cat/) - for the profile images
+
+[Simple Icons](https://simpleicons.org/) - icons for the about page
 
 #### Bootstrap
 
@@ -120,7 +143,7 @@ top level folder for the project 4 containing bootstrap django and python files
 * [Django docs - How to manage static files](https://docs.djangoproject.com/en/4.0/howto/static-files/)
 * [Using the Django authentication system](https://docs.djangoproject.com/en/4.0/topics/auth/default/)
 * [stack**overflow**](https://stackoverflow.com/questions/27171379/django-print-loop-value-only-once) - django print loop value only once (user for the avatar on profile page)
-* []()
+* [Django's Timezone](https://docs.djangoproject.com/en/4.1/ref/templates/builtins/#date) - for getting the exact time and date in the posts
 * []()
 * []()
 
