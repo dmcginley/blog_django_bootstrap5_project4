@@ -4,7 +4,7 @@ module.exports = {
     entry: "./src/js/index.js",
     mode: "development",
     output: {
-        filename: "index.js",
+        filename: "dist/main.js",
         path: "/home/donnchadh/HTML_Projects/code_projects/Project4_django-bootstrap5/django_project/library/static/library/js",
     },
     module: {

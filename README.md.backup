@@ -6,18 +6,17 @@ top level folder for the project 4 containing bootstrap django and python files
 
 ## Wireframe
 
-![_Desktop and Mobile mockup_](readme_images/desktop-mobile.png)
+![Desktop and Mobile mockup](readme_images/desktop-mobile.png)
 
 &nbsp;
 
-![_Login and Register pages_](readme_images/login_reg.png)
+![Login and Register pages](readme_images/login_reg.png)
 
-![_Profile and logout page_](readme_images/profile_logout.png)
+![Profile and logout page](readme_images/profile_logout.png)
 
 
 ## Who is this website for
-This blog website is aimed at developers or people interested in coding & development, as it has a built in markdown editor.
-The interface is designed to allow you to create short quick snippets of text or code with the emphases on text over images. 
+This blog site aimed at developers or people interested in coding and development work.
 
 ## User Stories
 
@@ -28,87 +27,45 @@ The interface is designed to allow you to create short quick snippets of text or
 
 	1. Given that I'm the admin, when I login I'm able to go to the user section and see a list of users and who is online.
 	
-&nbsp;
-
 
 #### Unregistered user
-
-* "As a unregistered user, I want be able to see posts and comments on the sit so that I don't have to be logged in just to see the content on the blog."
+"As a unregistered user, I want be able to see posts and comments on the sit so that I don't have to be logged in just to see the content on the blog."
 
 	Acceptance criteria:
+		1. Given that I'm an unregistered user when I navigate to the site I can see the home page with posts and click on them to view the comments.
 
-	1. Given that I'm an unregistered user when I navigate to the site I can see the home page with posts and click on them to view the comments.
-
-	2. Given that
+		2. Given that
 when I 
 Then
 
-&nbsp;
-
-* "As a unregistered user, I want be able to see people's profiles so that I as see their other comments if I find the users content to of interest."
-
-	Acceptance criteria:
-
-	1. Given that I'm an unregistered user when I navigate to a users profile from there I then can see their other comments.
-
-&nbsp;
-
 
 #### Registered user
-
-* "As a registered user, I want to be able to log in with my username and password so that the site can authenticate and remember me."
-
-	Acceptance criteria:
-
-	1. Given that I'm a registered user, when I go to the login page and enter my username and password and click on Login, then the site logs me in and redirects me to the home page.
-
-	2. Given that I'm not a registered user, when I go to the login page and enter an incorrect username and password and click on Login, then the site promotes me to enter the correct details.
-
-&nbsp;
-
-
-
-* "As a registered user, I want to be able to view my profile page that contains all my posts, so that I can keep track of what I posted on the site."
+"As a registered user, I want to be able to log in with my username and password so that the site can authenticate and remember me."
 
 	Acceptance criteria:
 
-	1. Given that I'm a registered user, when I go to my profile page I can then view all my previous posts as well as my profile details at the top of the page.
+1. Given that I'm a registered user, when I go to the login page and enter my username and password and click on Login, then the site logs me in and redirects me to the home page.
 
-&nbsp;
-
-* "As a registered user, I want to be able to "
-
-	Acceptance criteria:
-
-	1. Given that I'm a registered user, when I .
-
-&nbsp;
-
-* "As a registered user, I want to be able to edit my profile so that I can keep my details up to date"
-
-	Acceptance criteria:
-
-	1. Given that I'm a registered user, when I click "edit profile" then it takes me to an edit profile page whee I can edit my details.
-
-&nbsp;
-
-* "As a registered user, I want to be able to "
-
-	Acceptance criteria:
-
-	1. Given that I'm a registered user, when I .
-
-&nbsp;
+2. Given that I'm not a registered user, when I go to the login page and enter an incorrect username and password and click on Login, then the site promotes me to enter the correct details.
 
 
----------------------------
+
+"As a registered user, I want to be able to view my profile page that contains all my posts, so that I can keep track of what I posted on the site."
+
+Acceptance criteria:
+		1. Given that I'm a registered user, when I go to my profile page.
+
+		2. Given that I'm not a registered user, when I go to the login page and enter an incorrect username and password and click on Login, then the site promotes me to enter the correct details.
+
+
+---
 "As a
 I want
 so that ."
 
 Acceptance criteria:
 
-1. Given that
+	1. Given that
 when I 
 Then
 	2. Given that
@@ -117,7 +74,7 @@ Then
 	3. Given that
 when I 
 Then
----------------------------
+---
 
 
 
@@ -153,9 +110,8 @@ Then
 * Create account
 * Change profile picture
 * Change email address
-* View posts and comments
-* Create a post or comment on a post
-* Edit or delete my post or my comment
+* View posts and comment on them
+* Edit or delete my post or my comment on a post
 * View a users profile and all their posts
 
 
@@ -267,4 +223,3 @@ Github
 * [Install pgAdmin 4](https://computingforgeeks.com/how-to-install-pgadmin-on-centos-fedora/) - database client
 
 ## Credits
-t on them

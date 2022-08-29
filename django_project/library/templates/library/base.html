@@ -14,6 +14,7 @@
             Blog Home</title>
         {% endif %}
         <link rel="stylesheet" type="text/css" href="{% static 'library/css/index.css' %}" />
+
         <!-- <link rel="stylesheet" type="text/css" href="{% static 'library/css/links.css' %}" /> -->
         <script src="{% static 'library/js/index.js' %}"></script>
 
@@ -304,8 +305,8 @@
             {% for message in messages %}
             <div class="p-2 w-100 position-absolute d-flex justify-content-center">
                 <div class="classname alert alert-secondary position relative mt-2 col-12 col-md-10 col-lg-8 col-xl-6 shadow position-relative alert-dismissible fade show alert-{{ message.tags }}"
-                    role="alert">
-                    {{ message }}
+                    id="message" role="alert">
+                    {{ message| safe }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             </div>
@@ -316,7 +317,14 @@
 
         <!-- script -->
 
+        <script>
+            setTimeout(function () {
+                let messages = document.getElementById("message");
 
+                let alert = new bootstrap.Alert(messages);
+                alert.close();
+            }, 3000)
+        </script>
 
 
     </body>

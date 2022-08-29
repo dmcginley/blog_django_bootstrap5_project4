@@ -34,6 +34,17 @@ class PostListView(ListView):
     paginate_by = 8
 
 
+# class UserPostListView(ListView):
+#     model = Post
+#     template_name = 'library/user_posts.html'
+#     context_object_name = 'posts'
+#     paginate_by = 8
+
+#     def get_queryset(self):
+#         user = get_object_or_404(User, username=self.kwargs.get('username'))
+#         return Post.objects.filter(author=user).order_by('-date_posted')
+
+
 class UserPostListView(ListView):
     model = Post
     template_name = 'library/user_posts.html'
@@ -43,6 +54,20 @@ class UserPostListView(ListView):
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
         return Post.objects.filter(author=user).order_by('-date_posted')
+
+    # insert an extra variable into the context for this list view
+    def get_context_data(self, **kwargs):
+        context = super(UserPostListView, self).get_context_data(**kwargs)
+        username = self.kwargs.get('username')
+        print(f"loading user? {username}")
+
+        user = User.objects.filter(username=username).first()
+
+        print(user)
+        context.update({
+            'user': user
+        })
+        return context
 
 
 # my user profile page
