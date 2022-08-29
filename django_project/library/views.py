@@ -181,22 +181,26 @@ class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
             return True
         return False
 
+    def get_success_url(self):
+        print("updating ", self.object.post.pk, self.object.pk)
+        return reverse('post-detail', kwargs={'pk': self.object.post.pk})
 
 # delete a post, and goes back to homepage
 
 
-# BUG: to fix: delete comment not set up properly
-
 class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Comment
-    success_url = '/'
-    # template_name = 'library/comment_confirm_delete.html'
 
     def test_func(self):
         comment = self.get_object()
         if self.request.user == comment.author:
             return True
         return False
+
+    def get_success_url(self):
+        print(
+            f"deleting comment {self.object.pk} from post {self.object.post.pk}")
+        return reverse('post-detail', kwargs={'pk': self.object.post.pk})
 
 
 # ------------------------------

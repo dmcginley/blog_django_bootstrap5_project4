@@ -109,11 +109,11 @@
                     aria-labelledby="dropdownMenuLink">
                     <li>
                         <a class="delete-btn-bg dropdown-item d-flex align-items-center"
-                            href="{% url 'comment-update' comment.id %}">Edit</a>
+                            href="{% url 'comment-update' post.id comment.id %}">Edit</a>
                     </li>
                     <li>
                         <a class="dropdown-item delete-link d-flex align-items-center text-danger"
-                            href="{% url 'comment-delete' comment.id %}">Delete</a>
+                            href="{% url 'comment-delete' post.id comment.id %}">Delete</a>
                     </li>
             </div>
             {% endif %}
