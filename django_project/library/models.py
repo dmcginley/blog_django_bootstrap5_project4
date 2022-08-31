@@ -3,21 +3,15 @@ from turtle import title
 import django
 from django.db import models
 from django.utils import timezone
-
 from django.contrib.auth.models import User
 from django.urls import reverse
 from users.models import Profile
-# import datetime
 from datetime import datetime
 
 
 class DateTimeWithoutTZField(models.DateTimeField):
     def db_type(self, connection):
         return 'timestamp'
-
-# Create your models here.
-
-# TODO: time is a hour out for posts and comments
 
 
 class Post(models.Model):
@@ -49,15 +43,8 @@ class Comment(models.Model):
     class Meta:
         ordering = ('-date_posted',)
 
-    # def __str__(self):
-    #     return '%s - %s' % (self.post.title, self.author)
-
     def __str__(self):
         return f"comment by {self.author}"
 
-
-# TODO: do I need this
-
     def get_absolute_url(self):
         return reverse('comment-detail', kwargs={'pk': self.pk})
-        # return reverse('post-detail', args=(str(self.id)))

@@ -56,11 +56,6 @@ class UserPostListView(ListView):
         return context
 
 
-# my user profile page
-    # TODO: fix my user profile page, just viewable to  me
-    # TODO: add a redirect for this page, as it's one I shouldn't be looking for
-
-# class UserProfilePostView(LoginRequiredMixin, UserPassesTestMixin, ListView):
 class UserProfilePostView(LoginRequiredMixin, ListView):
     # TODO:  login_required not working
     model = Post
@@ -81,7 +76,7 @@ class UserProfilePostView(LoginRequiredMixin, ListView):
 
 
 # ------------------------------
-#    the 4 post views: Detail, Create, Update, Delete.
+#    the 4 post views: DetailVie, Create, Update, Delete.
 # ------------------------------
 class PostDetailView(DetailView):
     model = Post
@@ -99,7 +94,6 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 
 # update a post
-
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
     fields = ['title', 'content']
@@ -128,12 +122,10 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 
 # ------------------------------
-    # the 3 comment views: Create, Update, Delete.
+    # the 4 comment views: DetailView Create, Update, Delete.
 # ------------------------------
-# TODO: should I have DetailView for comments
 class CommentDetailView(DetailView):
     model = Comment
-# ------------------------------
 
 
 class CommentCreateView(LoginRequiredMixin, CreateView):
@@ -154,7 +146,6 @@ class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Comment
     fields = ['title', 'content']
     template_name = 'library/user_comments_update.html'
-    # success_url = '/'
 
     def form_valid(self, form):
 

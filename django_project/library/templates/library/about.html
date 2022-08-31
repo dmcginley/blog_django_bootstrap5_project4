@@ -18,19 +18,16 @@
                 <div>
                     {%  if user.is_authenticated %}
                     <!-- BUG: get button to direct to register page -->
-                    <button type="button" class="btn btn-primary px-4 me-md-2 fw-bold"
-                        href="{% url 'library-home' %}">Go to main page</button>
+                    <a class="btn btn-primary px-4 me-md-2 fw-bold" href="{% url 'library-home' %}">Go to main page</a>
 
-                    <button type="button" class="btn btn-outline-secondary px-4 me-md-2 fw-bold"
-                        href="{% url 'user-posts' user.username %}">View profile</button>
+                    <a class="btn btn-outline-secondary px-4 me-md-2 fw-bold"
+                        href="{% url 'user-posts' user.username %}">View profile</a>
 
                     {% else %}
-                    <button type="button" class="btn btn-primary px-4 me-md-2 fw-bold"
-                        href="{% url 'register' %}">Create an
-                        account</button>
+                    <a class="btn btn-primary px-4 me-md-2 fw-bold" href="{% url 'register' %}">Create an
+                        account</a>
 
-                    <button type="button" class="btn btn-outline-secondary px-4 me-md-2 fw-bold"
-                        href="{% url 'login' %}">Login</button>
+                    <a class="btn btn-outline-secondary px-4 me-md-2 fw-bold" href="{% url 'login' %}">Login</a>
 
                     {% endif %}
 
