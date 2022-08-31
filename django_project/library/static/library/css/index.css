@@ -10842,3 +10842,7 @@ pre {
 .post-link-color:hover {
   color: var(--link-hover);
 }
+
+.brand-icon {
+  opacity: 0.5;
+}

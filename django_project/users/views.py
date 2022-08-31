@@ -7,9 +7,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.views.generic import ListView, DetailView
-
 from .models import Profile
-
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 
 

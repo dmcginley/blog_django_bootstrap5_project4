@@ -1,7 +1,7 @@
 {% extends 'library/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-<main class="flex-container px-3" style="min-height: 560px;">
+<section class=" flex-container py-5 px-3" style="min-height: 560px;">
     <div class="container form-container col-md-8 col-lg-6" style="max-width: 660px;">
         <form action="" method="POST">
             {% csrf_token %}
@@ -14,5 +14,5 @@
             </div>
         </form>
     </div>
-</main>
+</section>
 {% endblock content %}

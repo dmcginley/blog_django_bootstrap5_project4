@@ -14,6 +14,8 @@ from . import views
 
 urlpatterns = [
     path('', PostListView.as_view(), name='library-home'),
+
+
     path('user/<str:username>', UserPostListView.as_view(), name='user-posts'),
 
 
@@ -37,6 +39,8 @@ urlpatterns = [
 
 
     path('about/', views.about, name='library-about'),
+
+
     path('post/<int:pk>/add-comment',
          CommentCreateView.as_view(), name='add-comment'),
 ]

@@ -3,11 +3,10 @@
 {% load crispy_forms_tags %}
 {% block content %}
 <div class="flex-container px-3 gray-bg" style="min-height: 520px;">
-    <div class="container form-container col-md-6 col-lg-4" style="max-width: 560px;">
+    <main class="container form-container col-md-6 col-lg-4" style="max-width: 560px;">
         <h3 class="mb-4 d-flex align-items-center" href="">
             <img class="me-2" height="48" src="{% static 'library/images/logo_dark.svg' %}" alt="image of logo">
             Tech<span class="fw-bold">Blog</span>
-
         </h3>
         <form class="" action="" method="POST">
             {% csrf_token %}
@@ -19,20 +18,11 @@
                 <button class="btn btn-primary mb-3" type="submit">Sign in</button>
             </div>
         </form>
-
-
-        <!-- <div class="form-row">
-                <div class="form-group">
-                    {{ form.username|as_crispy_field }}
-                </div>
-            </div> -->
-
-
         <div class="border-top mt-2 pt-2">
             <small class="text-muted">Need an account?
                 <a class="ml-2" href="{% url 'register' %}">Register</a>
             </small>
         </div>
-    </div>
+    </main>
 </div>
 {% endblock content %}

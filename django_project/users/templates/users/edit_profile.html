@@ -3,8 +3,8 @@
 {% block content %}
 
 <div class="px-3" style="min-height: 540px;">
-    <div class="container form-container col-md-8 col-lg-6" style="max-width: 660px;">
-        <div class="p-3">
+    <main class="container form-container col-md-8 col-lg-6" style="max-width: 660px;">
+        <section class="p-3">
             <img class="rounded-circle m-4 mx-auto d-block" height="200" src="{{ user.profile.image.url }}"
                 alt="users image" srcset="">
             <h1 class="text-capitalize text-center mb-2">
@@ -12,7 +12,7 @@
             </h1>
             <p class="text-center">{{ user.email }}</p>
 
-        </div>
+        </section>
 
         <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
@@ -27,6 +27,6 @@
                 <button class="btn btn-primary d-block d-md-inline mb-4" type="submit">Update</button>
             </div>
         </form>
-    </div>
+    </main>
 </div>
 {% endblock content %}

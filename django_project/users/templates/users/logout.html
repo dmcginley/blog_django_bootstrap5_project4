@@ -1,10 +1,8 @@
 {% extends 'library/base.html' %}
 {% load static %}
-
-<!-- {% load crispy_forms_tags %} -->
 {% block content %}
 <div class="flex-container gray-bg" style="min-height: 260px;">
-    <div class="d-flex flex-column align-items-center container text-center">
+    <main class="d-flex flex-column align-items-center container text-center">
         <h2 class="mb-4">
             <div class="d-flex align-items-center navbar-brand">
                 <img class="me-2" height="62" src="{% static 'library/images/logo_dark.svg' %}" alt="image of logo">
@@ -17,6 +15,6 @@
                 <a class="ml-2" href="{% url 'login' %}">Login</a>
             </small>
         </div>
-    </div>
+    </main>
 </div>
 {% endblock content %}

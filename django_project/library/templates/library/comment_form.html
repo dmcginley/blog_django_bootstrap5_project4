@@ -6,8 +6,8 @@
 {% endblock form_media_block %} -->
 
 {% block content %}
-<main class="pt-5 px-3" style="min-height: 560px;">
-    <div class="container form-container">
+<section class=" flex-container py-5 px-3" style="min-height: 560px;">
+    <div class="container form-container" style="max-width: 660px;">
         <form action="" method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
@@ -19,5 +19,5 @@
             </div>
         </form>
     </div>
-</main>
+</section>
 {% endblock content %}
