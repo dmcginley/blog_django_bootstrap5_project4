@@ -144,8 +144,10 @@ Then
 * [bootstrap-icons]()
 * [webpack 4.10](https://webpack.js.org/)
 * [Pillow 9.2.0](https://pypi.org/project/Pillow/) - Python Imaging Library
+* [SimpleMDE - Markdown Editor](https://github.com/sparksuite/simplemde-markdown-editor#toolbar-icons)
 * []()
 * []()
+
 
 
 ## Features
@@ -218,9 +220,7 @@ Github
 * [Django documentation](https://docs.djangoproject.com/en/4.0/)
 
 * [bootstrap-icons]()
-* [bootstrap-icons]()
-* [bootstrap-icons]()
-* [bootstrap-icons]()
+* []()
 
 #### Python
 
@@ -258,13 +258,12 @@ Github
 
 
 
-
-
 #### Python
+
 
 #### PostgreSQL *- database*
 [How to Install and Configure Postgres 14 on Fedora 34](https://citizix.com/how-to-install-and-configure-postgres-14-on-fedora-34/)
 * [Install pgAdmin 4](https://computingforgeeks.com/how-to-install-pgadmin-on-centos-fedora/) - database client
 
-## Credits
-t on them
+#### Other - 
+* [SimpleMED Markdown Guide](https://simplemde.com/markdown-guide)

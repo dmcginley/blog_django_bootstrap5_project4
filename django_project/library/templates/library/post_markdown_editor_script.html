@@ -1,0 +1,15 @@
+<script>
+    // https://github.com/sparksuite/simplemde-markdown-editor
+    var contentTextArea = document.getElementById("id_content");
+    var markdownEditor = new SimpleMDE({
+        element: contentTextArea,
+        showIcons: ["code", "table"],
+        hideIcons: ["fullscreen", "side-by-side"],
+        spellChecker: false,
+        status: ["autosave", "lines", "words"], // Optional usage
+    });
+    // ensure the JavaScript editor updates to the crispy forms textarea
+    markdownEditor.codemirror.on("change", function () {
+        contentTextArea.value = markdownEditor.value();
+    }); 
+</script>

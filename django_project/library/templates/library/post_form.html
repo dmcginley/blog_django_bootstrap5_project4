@@ -1,9 +1,9 @@
 {% extends 'library/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-<section class=" flex-container py-5 px-3" style="min-height: 560px;">
+<section class="py-5 px-3" style="min-height: 560px;">
     <div class="container form-container col-md-8 col-lg-6" style="max-width: 660px;">
-        <form action="" method="POST">
+        <form action="{% url 'post-create' %}" method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
                 <legend class="pb-3 text-capitalize">create blog post</legend>
@@ -15,4 +15,5 @@
         </form>
     </div>
 </section>
+{% include 'library/post_markdown_editor_script.html' %}
 {% endblock content %}

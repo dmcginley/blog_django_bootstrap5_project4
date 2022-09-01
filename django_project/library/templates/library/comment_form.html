@@ -1,12 +1,7 @@
 {% extends 'library/base.html' %}
 {% load crispy_forms_tags %}
-
-<!-- {% block form_media_block %}
-{{ form.media }}
-{% endblock form_media_block %} -->
-
 {% block content %}
-<section class=" flex-container py-5 px-3" style="min-height: 560px;">
+<section class="py-5 px-3" style="min-height: 560px;">
     <div class="container form-container" style="max-width: 660px;">
         <form action="" method="POST">
             {% csrf_token %}
@@ -20,4 +15,5 @@
         </form>
     </div>
 </section>
+{% include 'library/post_markdown_editor_script.html' %}
 {% endblock content %}

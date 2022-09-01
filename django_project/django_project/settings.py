@@ -185,7 +185,9 @@ MARKDOWNIFY = {
             'code',
             'span',
             'div', 'class',
-            'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'
+            'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+            'img',
+            'table', 'thead', 'tr', 'th', 'td', 'tbody'
         ],
         "WHITELIST_ATTRS": [
             'href',

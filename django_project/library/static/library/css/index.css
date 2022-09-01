@@ -10800,14 +10800,6 @@ a:hover {
   color: #2d6297;
 }
 
-code a {
-  color: #77afe4;
-}
-
-code a:hover {
-  color: #5a8dbd;
-}
-
 .post-container {
   width: 100%;
 }
@@ -10818,13 +10810,6 @@ code a:hover {
 
 .comment-section {
   padding-left: 88px;
-}
-
-pre {
-  padding: 1rem !important;
-  color: var(--light-gray);
-  background-color: var(--secondary);
-  border-radius: 3px;
 }
 
 .post-title-color {
@@ -10845,4 +10830,10 @@ pre {
 
 .brand-icon {
   opacity: 0.5;
+}
+
+pre {
+  background-color: #e7e7e7;
+  border-radius: 3px;
+  padding: 1rem;
 }

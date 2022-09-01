@@ -12,7 +12,20 @@
         <title>Tech Blog Home</title>
         {% endif %}
         <link rel="stylesheet" type="text/css" href="{% static 'library/css/index.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'library/css/custom-simplemde.css' %}" />
         <script src="{% static 'library/js/dist/main.js' %}"></script>
+
+
+        <!-- SimpleMDE markdown editor for post body -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+        <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+
+        {% comment %}
+        <!-- <script src="{% static '../../static/library/js/dist/simplemde.min.css' %}"></script> -->
+        <!-- <script src="{% static '../../static/library/js/dist/simplemde.min.js' %}"></script> -->
+        {% endcomment %}
+
+
 
         {# favicon generated using favicon.io #}
         <link rel="apple-touch-icon" sizes="180x180" href="{% static 'library/images/favicon/apple-touch-icon.png' %}">
@@ -315,7 +328,6 @@
 
         {# script #}
 
-        {# <script src="{% static 'library/js/dist/dismiss-alert.js' %}"></script> #}
 
 
     </body>

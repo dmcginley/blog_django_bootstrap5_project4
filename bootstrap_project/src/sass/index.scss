@@ -24,9 +24,6 @@ $secondary: #384142;
 // $light:
 // $dark:
 
-// $font-family-sans-serif: "JetBrains Mono", monospace;
-// $font-family-sans-serif: "Red Hat Mono", monospace;
-// $font-family-sans-serif: "Poppins", sans-serif;
 $font-family-sans-serif: "Ubuntu", sans-serif;
 
 // black: #1d1d1d;
@@ -58,13 +55,6 @@ a:hover {
     color: #2d6297;
 }
 
-code a {
-    color: #77afe4;
-}
-code a:hover {
-    color: #5a8dbd;
-}
-
 .post-container {
     width: 100%;
 }
@@ -76,31 +66,6 @@ code a:hover {
 .comment-section {
     padding-left: 88px;
 }
-
-// .new-post-btn {
-//     // border-color: var(--light-gray);
-// }
-
-// .new-post-btn:hover {
-//     border-color: var(--light-gray);
-// }
-
-// .edit-profile-btn:hover,
-// .pagination-btn:hover {
-//     color: var(--light-gray) !important;
-// }
-
-// for the code in the markdown post
-pre {
-    padding: 1rem !important;
-    color: var(--light-gray);
-    background-color: var(--secondary);
-    border-radius: 3px;
-}
-
-// code {
-//     padding: 1rem;
-// }
 
 // the post colors
 .post-title-color {
@@ -120,4 +85,11 @@ pre {
 
 .brand-icon {
     opacity: 0.5;
+}
+
+pre {
+    // color: var(--black) !important;
+    // padding: 2px !important;
+    background-color: #e7e7e7;
+    border-radius: 3px;
 }

@@ -28,8 +28,14 @@
                         Edit profile
                     </a>
                 </div>
-                <!-- TODO: should else be there?? -->
-                {% else %}
+                {% if user.is_staff %}
+                <div class="my-4">
+                    <a class="edit-profile-btn btn btn-outline-warning d-block d-sm-inline text-capitalize"
+                        href="/admin/">
+                        Admin Console
+                    </a>
+                </div>
+                {% endif %}
                 {% endif %}
             </div>
         </div>
