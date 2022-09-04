@@ -1,9 +1,7 @@
 {% extends 'library/base.html' %}
 {% load static %}
-
 {% block content %}
-
-<div class="container my-5">
+<section class="container my-5">
     <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow">
         <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
             <h1 class="display-4 pb-4">Tech<span class="fw-bold">Blog</span> <strong class="text-dark">Border hero
@@ -17,22 +15,18 @@
 
                 <div>
                     {%  if user.is_authenticated %}
-                    <!-- BUG: get button to direct to register page -->
-                    <a class="btn btn-primary px-4 me-md-2 fw-bold" href="{% url 'library-home' %}">Go to main page</a>
-
-                    <a class="btn btn-outline-secondary px-4 me-md-2 fw-bold"
-                        href="{% url 'user-posts' user.username %}">View profile</a>
-
+                    <a class="btn btn-lg btn-primary fw-semibold px-4 mb-4 me-sm-3 d-block d-sm-inline text"
+                        href="{% url 'library-home' %}">Go to main page</a>
+                    <a class="btn btn-lg btn-outline-secondary px-4 me-md-2 d-block d-sm-inline text"
+                        href="{% url 'user-posts' user.username %}">View your profile</a>
                     {% else %}
-                    <a class="btn btn-primary px-4 me-md-2 fw-bold" href="{% url 'register' %}">Create an
+                    <a class="btn btn-lg btn-primary px-4 mb-4 me-sm-3 d-block d-sm-inline text"
+                        href="{% url 'register' %}">Create an
                         account</a>
-
-                    <a class="btn btn-outline-secondary px-4 me-md-2 fw-bold" href="{% url 'login' %}">Login</a>
-
+                    <a class="btn btn-lg btn-outline-secondary px-4 mb-4 me-sm-3 d-block d-sm-inline text"
+                        href="{% url 'login' %}">Login</a>
                     {% endif %}
-
                 </div>
-
 
             </div>
         </div>
@@ -40,9 +34,8 @@
             <img class="rounded-lg-3" src="{% static 'library/images/hero_image4.png' %}" alt="" width="720">
         </div>
     </div>
-</div>
-
-<div class="container px-3">
+</section>
+<section class="container px-3">
     <h2 class="my-5">Tools used</h2>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
         <div class="col">
@@ -64,7 +57,6 @@
                     follows the model, template, views architectural pattern.</p>
             </div>
         </div>
-
         <div class="col">
             <img class="mx-auto d-block brand-icon" src="{% static 'library/images/brand_svg/python.svg' %}" height="80"
                 alt="Python icon">
@@ -84,7 +76,10 @@
             </div>
         </div>
     </div>
+</section>
+<section class="container px-3">
 
-</div>
+
+</section>
 <!-- </div> -->
 {% endblock content %}

@@ -13,9 +13,13 @@
 /*!******************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/index.scss (3) ***!
   \******************************************************************************************************************/
-@import url(https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400;1,700&display=swap);
 /*!******************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/index.scss (4) ***!
+  \******************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap);
+/*!******************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/index.scss (5) ***!
   \******************************************************************************************************************/
 @charset "UTF-8";
 /*!
@@ -68,7 +72,7 @@
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
   --bs-body-bg-rgb: 255, 255, 255;
-  --bs-font-sans-serif: "Ubuntu", sans-serif;
+  --bs-font-sans-serif: "Noto Sans", sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
@@ -3109,7 +3113,7 @@ textarea.form-control-lg {
   --bs-btn-padding-y: 0.5rem;
   --bs-btn-padding-x: 1rem;
   --bs-btn-font-size: 1.25rem;
-  --bs-btn-border-radius: 0.5rem;
+  --bs-btn-border-radius: 0.4rem;
 }
 
 .btn-sm, .btn-group-sm > .btn {
@@ -10793,11 +10797,11 @@ textarea.form-control-lg {
 }
 
 a {
-  color: #3e7ab6;
+  color: var(--link);
 }
 
 a:hover {
-  color: #2d6297;
+  color: var(--link-hover);
 }
 
 .post-container {
@@ -10832,8 +10836,13 @@ a:hover {
   opacity: 0.5;
 }
 
+/* the background color is changed here because when changed
+in the custom-simpleMDE.css, simpleMDE pre background gets overwritten */
 pre {
-  background-color: #e7e7e7;
+  background-color: #e2e2df;
   border-radius: 3px;
-  padding: 1rem;
+}
+
+pre {
+  padding: 3rem;
 }

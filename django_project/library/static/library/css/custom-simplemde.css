@@ -8,11 +8,14 @@ pre {
 }
 
 p img {
-    width: 100%;
+    max-width: 100%;
     border-radius: 3px;
+    /* border: 2px red solid; */
+    /* padding: 1rem; */
 }
 
-th, td {
+th,
+td {
     border: 1px #bebebe solid !important;
     padding: 2px 4px !important;
 }
@@ -22,9 +25,9 @@ code {
     color: var(--black) !important;
 }
 
-code a {
+/* code a {
     color: #77afe4;
 }
 code a:hover {
     color: #5a8dbd;
-}
+} */

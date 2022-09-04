@@ -2,15 +2,16 @@
 {% load crispy_forms_tags %}
 {% block content %}
 <section class="py-5 px-3" style="min-height: 560px;">
-    <div class="container form-container" style="max-width: 660px;">
+    <div class="container form-container col-md-10 col-lg-8">
         <form action="" method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="pb-3 text-capitalize">add a comment</legend>
+                <legend class="pb-3 text-capitalize">Post a comment</legend>
                 {{ form|crispy }}
             </fieldset>
-            <div class="d-grid mt-3">
-                <button class="btn btn-primary d-block mb-4" type="submit">Add comment</button>
+            <div class="d-grid">
+                <button class="btn btn-primary d-block text mb-4 col-12 col-md-6 col-lg-4" type="submit">Post
+                    comment</button>
             </div>
         </form>
     </div>

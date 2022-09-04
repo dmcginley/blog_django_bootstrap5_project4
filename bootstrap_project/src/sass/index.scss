@@ -8,8 +8,10 @@
 // Poppins
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap");
 // Ubuntu
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400;1,700&display=swap");
 
+// Noto Sans
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap");
 // --------------------------------------
 
 // --------------------------------------
@@ -24,9 +26,13 @@ $secondary: #384142;
 // $light:
 // $dark:
 
-$font-family-sans-serif: "Ubuntu", sans-serif;
+$font-family-sans-serif: "Noto Sans", sans-serif;
 
 // black: #1d1d1d;
+
+// $btn-border-radius: 0.3rem;
+// $btn-border-radius-sm: $border-radius-sm;
+$btn-border-radius-lg: 0.4rem;
 
 @import "bootstrap/scss/bootstrap";
 
@@ -49,10 +55,10 @@ $font-family-sans-serif: "Ubuntu", sans-serif;
 }
 
 a {
-    color: #3e7ab6;
+    color: var(--link);
 }
 a:hover {
-    color: #2d6297;
+    color: var(--link-hover);
 }
 
 .post-container {
@@ -87,9 +93,9 @@ a:hover {
     opacity: 0.5;
 }
 
+/* the background color is changed here because when changed
+in the custom-simpleMDE.css, simpleMDE pre background gets overwritten */
 pre {
-    // color: var(--black) !important;
-    // padding: 2px !important;
-    background-color: #e7e7e7;
+    background-color: #e2e2df;
     border-radius: 3px;
 }
