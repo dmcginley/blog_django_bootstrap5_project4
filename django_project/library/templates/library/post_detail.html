@@ -8,7 +8,7 @@
 
 <!-- new card -->
 <div class="container mt-5">
-    <div class="d-sm-flex position-relative  rounded border shadow-sm bg-light my-4">
+    <div class="d-flex flex-column flex-sm-row position-relative  rounded border shadow-sm bg-light my-4">
         <!-- the drop-down -->
         {% if object.author == user %}
         <div class="dropdown position-absolute top-0 end-0 pt-3">
@@ -33,8 +33,8 @@
         </div>
         {% endif %}
 
-        <a href="{% url 'user-posts' object.author.username %}">
-            <img src="{{ object.author.profile.image.url }}" class="rounded-circle m-3" height="74"
+        <a class="d-inline align-self-start rounded-circle m-2" href="{% url 'user-posts' object.author.username %}">
+            <img src=" {{ object.author.profile.image.url }}" class="rounded-circle m-2" height="74"
                 alt="post profile image of the author">
         </a>
 

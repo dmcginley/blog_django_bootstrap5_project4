@@ -10839,10 +10839,12 @@ a:hover {
 /* the background color is changed here because when changed
 in the custom-simpleMDE.css, simpleMDE pre background gets overwritten */
 pre {
-  background-color: #e2e2df;
   border-radius: 3px;
+  background-color: #e2e2df;
 }
 
-pre {
-  padding: 3rem;
+.bio {
+  max-width: 560px;
+  border-radius: 3px;
+  background-color: var(--light-gray);
 }

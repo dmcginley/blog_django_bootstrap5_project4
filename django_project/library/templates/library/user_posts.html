@@ -14,6 +14,10 @@
             </h1>
             {% if view.kwargs.username == user.username  %}
             <p class="text-center">{{ user.email }}</p>
+            <div class="bio d-inline-block p-2 mb-2 border">
+                {{ user.profile.bio|default:"bio..." }}
+            </div>
+
             <p class="">You have <span class="fw-bold text-secondary">{{ page_obj.paginator.count }}</span> posts</p>
             {% else %}
             <p class=""><span class="fw-bold text-secondary">{{ page_obj.paginator.count }}</span> posts by
@@ -21,30 +25,22 @@
             </p>
             {% endif %}
             <div>
-                {% if view.kwargs.username == user.username  %}
+                {% if view.kwargs.username == user.username %}
                 <div class="my-4">
                     <a class="edit-profile-btn btn btn-outline-secondary d-block d-sm-inline text-capitalize"
                         href="{% url 'edit_profile' %}">
                         Edit profile
                     </a>
                 </div>
-                {% if user.is_staff %}
-                <div class="my-4">
-                    <a class="edit-profile-btn btn btn-outline-danger d-block d-sm-inline text-capitalize"
-                        href="/admin/">
-                        Admin Console
-                    </a>
-                </div>
-                {% endif %}
+
                 {% endif %}
             </div>
         </div>
     </div>
-
     {% for post in posts %}
     {# new card #}
     <div class="container mt-4">
-        <div class="d-sm-flex position-relative  rounded border bg-light my-4">
+        <div class="d-sm-flex position-relative rounded border bg-light my-4">
 
             {# the drop-down #}
             {% if post.author == user %}

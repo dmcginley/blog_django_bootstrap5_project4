@@ -57,7 +57,6 @@ class UserPostListView(ListView):
 
 
 class UserProfilePostView(LoginRequiredMixin, ListView):
-    # TODO:  login_required not working
     model = Post
     template_name = 'library/profile.html'
     context_object_name = 'posts'

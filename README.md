@@ -253,7 +253,7 @@ Github
 * [Using the Django authentication system](https://docs.djangoproject.com/en/4.0/topics/auth/default/)
 * [stack**overflow**](https://stackoverflow.com/questions/27171379/django-print-loop-value-only-once) - django print loop value only once (user for the avatar on profile page)
 * [Django's Timezone](https://docs.djangoproject.com/en/4.1/ref/templates/builtins/#date) - for getting the exact time and date in the posts
-* []()
+* [Real Python - Users in Django Admin](https://realpython.com/manage-users-in-django-admin/?utm_source=pocket_mylist) - unregistering the provided model 'User', and registering my own model 'CustomUserAdmin'.
 * []()
 
 
