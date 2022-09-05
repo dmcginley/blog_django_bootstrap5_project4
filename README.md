@@ -15,6 +15,16 @@ top level folder for the project 4 containing bootstrap django and python files
 ![_Profile and logout page_](readme_images/profile_logout.png)
 
 
+## Folder layout
+![_Folder-tree_](readme_images/folder-tree.png)
+
+> short description of the folder setup...
+
+## Agile development - kanban board
+![_The board_](readme_images/kanban.png)
+
+> Issues, methods user....
+
 ## Who is this website for
 This blog website is aimed at developers or people interested in coding & development, as it has a built in markdown editor.
 The interface is designed to allow you to create short quick snippets of text or code with the emphases on text over images. 
@@ -139,14 +149,11 @@ Then
 
 ### Libraries &  utilities used 
 
-* [Popperjs](https://popper.js.org/) - tooltips in Bootstrap
 * [crispy-bootstrap5 0.6](https://pypi.org/project/crispy-bootstrap5/) - form control & rendering 
 * [bootstrap-icons]()
 * [webpack 4.10](https://webpack.js.org/)
 * [Pillow 9.2.0](https://pypi.org/project/Pillow/) - Python Imaging Library
 * [SimpleMDE - Markdown Editor](https://github.com/sparksuite/simplemde-markdown-editor#toolbar-icons)
-* []()
-* []()
 
 
 
@@ -213,14 +220,19 @@ Github
 
 * [The Quick Python Book (online)](https://livebook.manning.com/book/the-quick-python-book-third-edition/chapter-23/1) - Chapter 23. Saving data, SQL databases
 * [Bootstrap's Examples](https://getbootstrap.com/docs/5.0/examples/#snippets) - to help understand structure of elements on the page
+* [Getting Started with Bootstrap 5](https://www.youtube.com/watch?v=1nxSE0R27Gg&t=101) - YouTube Tutorial
+* [Create A Simple Blog With Python and Django](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi) - YouTube Tutorial
 * []()
+* []()
+* []()
+
+
 
 #### Django
 
 * [Django documentation](https://docs.djangoproject.com/en/4.0/)
 
-* [bootstrap-icons]()
-* []()
+* [bootstrap-icons](https://icons.getbootstrap.com/)
 
 #### Python
 
