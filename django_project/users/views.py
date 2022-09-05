@@ -36,7 +36,8 @@ def edit_profile(request):
             profile_form.save()
             messages.success(
                 request, f'Account update successful')
-            return redirect('edit_profile')
+            # return redirect('edit_profile')
+            return redirect('user-posts', request.user.username)
     else:
         user_form = UserUpdateForm(instance=request.user)
         profile_form = ProfileUpdateForm(instance=request.user.profile)
