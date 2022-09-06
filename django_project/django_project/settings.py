@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
+from django import django_on_heroku
 import os
 from pathlib import Path
 
@@ -147,7 +148,7 @@ STATIC_URL = '/static/'
 #     BASE_DIR / 'static',  # os.path.join(BASE_DIR, 'static)
 # ]
 
-# STATIC_ROOT = BASE_DIR / 'staticfiles-cdn'  # for production with cdn
+# STATIC_ROOT = BASE_DIR / 'staticfiles'  # for production with cdn
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -219,3 +220,7 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+# Configure Django App for Heroku.
+django_on_heroku.settings(locals())

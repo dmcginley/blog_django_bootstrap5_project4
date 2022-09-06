@@ -55,10 +55,12 @@ defusedxml==0.6.0
 diff-match-patch @ file:///tmp/build/80754af9/diff-match-patch_1594828741838/work
 distlib==0.3.3
 distributed @ file:///tmp/build/80754af9/distributed_1605066520644/work
+dj-database-url==1.0.0
 Django==4.0.5
 django-crispy-forms==1.14.0
 django-filter==22.1
 django-markdownify==0.9.2
+django-on-heroku==1.1.2
 django-quill-editor==0.1.40
 django-storages==1.13.1
 docutils==0.16
@@ -261,6 +263,7 @@ watchdog @ file:///tmp/build/80754af9/watchdog_1593447344699/work
 wcwidth @ file:///tmp/build/80754af9/wcwidth_1593447189090/work
 webencodings==0.5.1
 Werkzeug==1.0.1
+whitenoise==6.2.0
 widgetsnbextension==3.5.1
 wrapt==1.11.2
 wurlitzer @ file:///tmp/build/80754af9/wurlitzer_1594753850195/work
