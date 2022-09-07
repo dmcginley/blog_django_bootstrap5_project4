@@ -1,0 +1,106 @@
+// --------------------------------------
+//  Google fonts
+// --------------------------------------
+// JetBrainsMono
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap");
+// Red Hat Mono
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,400;0,700;1,400&display=swap");
+// Poppins
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+// Ubuntu
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400;1,700&display=swap");
+
+// Noto Sans
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap");
+// --------------------------------------
+
+// --------------------------------------
+//  changing the default colors
+// --------------------------------------
+$primary: #583ccc;
+$secondary: #384142;
+// $success:
+// $info:
+// $warning:
+// $danger:
+// $light:
+// $dark:
+
+$font-family-sans-serif: "Noto Sans", sans-serif;
+
+// black: #1d1d1d;
+
+// $btn-border-radius: 0.3rem;
+// $btn-border-radius-sm: $border-radius-sm;
+$btn-border-radius-lg: 0.4rem;
+
+@import "bootstrap/scss/bootstrap";
+
+// --------------------------------------
+//  my own styles for elements
+// --------------------------------------
+:root {
+    --primary: #583ccc;
+    --secondary: #384142;
+    --light-gray: #f9fafb;
+    --link: #3e7ab6;
+    --link-hover: #2c6196;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+}
+
+a {
+    color: var(--link);
+}
+a:hover {
+    color: var(--link-hover);
+}
+
+.post-container {
+    width: 100%;
+}
+
+.gray-bg {
+    background-color: var(--light-gray);
+}
+
+.comment-section {
+    padding-left: 88px;
+}
+
+// the post colors
+.post-title-color {
+    color: var(--secondary);
+}
+.post-title-color:hover {
+    color: var(--link);
+}
+
+.post-link-color {
+    color: var(--link);
+}
+
+.post-link-color:hover {
+    color: var(--link-hover);
+}
+
+.brand-icon {
+    opacity: 0.5;
+}
+
+/* the background color is changed here because when changed
+in the custom-simpleMDE.css, simpleMDE pre background gets overwritten */
+pre {
+    border-radius: 3px;
+    background-color: #e2e2df;
+}
+.bio {
+    max-width: 560px;
+    border-radius: 3px;
+    background-color: var(--light-gray);
+}
