@@ -13,6 +13,7 @@
         {% endif %}
         <link rel="stylesheet" type="text/css" href="{% static 'library/css/index.css' %}" />
         <link rel="stylesheet" type="text/css" href="{% static 'library/css/custom-simplemde.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'library/css/zindex.css' %}" />
         <script src="{% static 'library/js/dist/main.js' %}"></script>
 
 
@@ -345,7 +346,7 @@
         </nav>
 
         {# message for created account #}
-        <div class="container-fluid p-0">
+        <div class="container-fluid p-0 messages-container">
             {% if messages %}
             {% for message in messages %}
             <div class="p-2 w-100 position-absolute d-flex justify-content-center">
