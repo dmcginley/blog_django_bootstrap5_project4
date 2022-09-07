@@ -5,7 +5,7 @@ module.exports = {
     mode: "development",
     output: {
         filename: "dist/main.js",
-        path: "/home/donnchadh/HTML_Projects/code_projects/Project4_django-bootstrap5/techblog_project/library/static/library/js",
+        path: "/home/donnchadh/HTML_Projects/code_projects/Project4TechBlogDjango/techblog/techblog_app/static/techblog_app/js",
     },
     module: {
         rules: [

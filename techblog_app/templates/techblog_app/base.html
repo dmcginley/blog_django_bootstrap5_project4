@@ -16,17 +16,9 @@
         <link rel="stylesheet" type="text/css" href="{% static 'techblog_app/css/zindex-container-size.css' %}" />
         <script src="{% static 'techblog_app/js/dist/main.js' %}"></script>
 
-
         <!-- SimpleMDE markdown editor for post body -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
         <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-
-        {% comment %}
-        <!-- <script src="{% static '../../static/techblog_app/js/dist/simplemde.min.css' %}"></script> -->
-        <!-- <script src="{% static '../../static/techblog_app/js/dist/simplemde.min.js' %}"></script> -->
-        {% endcomment %}
-
-
 
         {# favicon generated using favicon.io #}
         <link rel="apple-touch-icon" sizes="180x180"
@@ -45,7 +37,7 @@
                 {# the navbar-brand #}
                 <a class="d-flex align-items-center navbar-brand" href="{% url 'techblog-home' %}">
                     <img class="me-2" height="34" src="{% static 'techblog_app/images/logo.svg' %}" alt="">
-                    <div class="text-white">
+                    <div class="text-white navbar-brand-text">
                         Tech<span class="fw-bold">Blog</span>
                     </div>
                 </a>

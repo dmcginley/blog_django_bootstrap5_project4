@@ -16,8 +16,11 @@ top level folder for the project 4 containing bootstrap django and python files
 
 
 ## Folder layout
-![_Folder-tree_](readme_images/folder-tree.png)
+ ![_Folder-tree_](readme_images/folder-tree.png)
 
+##### Updated folder layout for deploying to Heroku
+
+![_Folder-tree_](readme_images/new_django-folder-tree.png)
 > short description of the folder setup...
 
 ## Agile development - kanban board
@@ -259,18 +262,20 @@ Github
 
 
 
-#### Django
+#### Django & Python
 
 * [Django docs - How to manage static files](https://docs.djangoproject.com/en/4.0/howto/static-files/)
 * [Using the Django authentication system](https://docs.djangoproject.com/en/4.0/topics/auth/default/)
 * [stack**overflow**](https://stackoverflow.com/questions/27171379/django-print-loop-value-only-once) - django print loop value only once (user for the avatar on profile page)
 * [Django's Timezone](https://docs.djangoproject.com/en/4.1/ref/templates/builtins/#date) - for getting the exact time and date in the posts
 * [Real Python - Users in Django Admin](https://realpython.com/manage-users-in-django-admin/?utm_source=pocket_mylist) - unregistering the provided model 'User', and registering my own model 'CustomUserAdmin'.
+* [Importing a module based on installed python version](https://stackoverflow.com/questions/1875259/importing-a-module-based-on-installed-python-version)
+* [Heroku Dev Center](https://devcenter.heroku.com/articles/django-assets) - Django and Static Assets
+* [DreamHost Knowledge Base](https://help.dreamhost.com/hc/en-us/articles/115000695551-Installing-and-using-virtualenv-with-Python-3) -  Installing and using virtualenv with Python 3
+* []()
+* []()
 * []()
 
-
-
-#### Python
 
 
 #### PostgreSQL *- database*
