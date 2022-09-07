@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-from django import django_on_heroku
+import django_on_heroku
 import os
 from pathlib import Path
 
@@ -223,4 +223,4 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 # Configure Django App for Heroku.
-django_on_heroku.settings(locals())
+# django_on_heroku.settings(locals())
