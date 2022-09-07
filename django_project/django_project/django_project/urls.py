@@ -37,8 +37,8 @@ urlpatterns = [
 # TODO: add references to error views - DEBUG must be False for custom views
 #handler403 = 'library.views.access_denied'
 handler404 = "library.views.page_not_found_view"
+handler500 = "library.views.handler500"
 
-#handler500 = ''
 #handler400 = ''
 
 

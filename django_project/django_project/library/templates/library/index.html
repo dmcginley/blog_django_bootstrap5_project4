@@ -2,10 +2,10 @@
 {% load tz %}
 {% load markdownify %}
 {% block content %}
-{% include 'library/post_search_bar.html' %}
 
-<!-- post section -->
-<div class="container mt-4">
+
+{# post section #}
+<div class="container mt-5">
     {% for post in posts %}
     <div class="d-flex flex-column flex-sm-row rounded border bg-light my-4">
         <a class="d-inline align-self-start rounded-circle m-2" href="{% url 'user-posts' post.author.username %}">
@@ -13,7 +13,7 @@
                 alt="post profile image of the author">
         </a>
 
-        <!-- the main body of text -->
+        {# the main body of text #}
         <article class="p-3 pt-0 pt-sm-3 d-block overflow-hidden">
             <h2>
                 <a class="post-title-color" href="{% url 'post-detail' post.id %}">
@@ -34,7 +34,7 @@
             </small>
             <div class="d-flex pt-2">
 
-                <!-- the links to post-detail so you can view the comments before replaying -->
+                {# the links to post-detail so you can view the comments before replaying #}
                 <a class="d-flex align-items-center text-decoration-none me-3 post-link-color"
                     href="{% url 'post-detail' post.id %}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -65,6 +65,6 @@
     {% if page_obj.has_next %}
     <a class="pagination-btn btn btn-outline-secondary m-1" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
     {% endif %}
-    <!-- {% endif %} -->
+    {% endif %}
 </div>
 {% endblock content %}

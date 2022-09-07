@@ -1,0 +1,17 @@
+/* work-around to fix the z-index */
+.messages-container {
+    z-index: 100;
+}
+
+.profile-pic-container {
+    z-index: -1;
+
+}
+
+.edit-profile-max-width {
+    max-width: 660px
+}
+
+.form-max-width {
+    max-width: 560px
+}

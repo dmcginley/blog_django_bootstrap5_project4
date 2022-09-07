@@ -187,7 +187,11 @@ def about(request):
     return render(request, 'library/about.html', {'title': 'About'})
 
 
-def page_not_found_view(request, exception):
+def page_not_found_view(request, *args, **argv):
     return render(request, 'library/error404.html', status=404)
 
 # TODO : add functions for 403, 400, 500 error views
+
+
+def handler500(request,  *args, **argv):
+    return render(request, 'library/error500.html', status=500)

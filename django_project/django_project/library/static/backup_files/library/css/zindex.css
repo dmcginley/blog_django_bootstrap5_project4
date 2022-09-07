@@ -1,9 +1,0 @@
-/* to fix the z-index quickly as I was running short on time */
-.messages-container {
-    z-index: 100;
-}
-
-.profile-pic-container {
-    z-index: -1;
-
-}
