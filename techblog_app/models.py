@@ -1,5 +1,4 @@
 from email.policy import default
-from turtle import title
 import django
 from django.db import models
 from django.utils import timezone
