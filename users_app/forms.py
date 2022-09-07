@@ -1,7 +1,5 @@
 from dataclasses import field
 from importlib.resources import contents
-from pyexpat import model
-from tkinter import Widget
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
