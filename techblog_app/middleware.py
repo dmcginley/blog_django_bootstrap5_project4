@@ -1,4 +1,8 @@
-import backports.zoneinfo
+
+try:
+    from zoneinfo import ZoneInfo
+except ImportError:
+    from backports.zoneinfo import ZoneInfo
 
 from django.utils import timezone
 
@@ -10,7 +14,7 @@ class TimezoneMiddleware:
     def __call__(self, request):
         tzname = request.session.get('django_timezone')
         if tzname:
-            timezone.activate(backports.zoneinfo.ZoneInfo(tzname))
+            timezone.activate(ZoneInfo(tzname))
         else:
             timezone.deactivate()
         return self.get_response(request)
