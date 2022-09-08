@@ -12,6 +12,7 @@ gunicorn==20.1.0
 jmespath==1.0.1
 markdownify==0.11.6
 pip==20.1.1
+psycopg2-binary==2.9.3
 pycodestyle==2.9.1
 python-dateutil==2.8.2
 s3transfer==0.6.0
