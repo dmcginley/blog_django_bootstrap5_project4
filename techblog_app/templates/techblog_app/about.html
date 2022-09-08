@@ -15,7 +15,7 @@
 
                 <div>
                     {%  if user.is_authenticated %}
-                    <a class="btn btn-lg btn-primary fw-semibold px-4 mb-4 me-sm-3 d-block d-sm-inline text"
+                    <a class="btn btn-lg btn-primary px-4 mb-4 me-sm-3 d-block d-sm-inline text"
                         href="{% url 'techblog-home' %}">Go to main page</a>
                     <a class="btn btn-lg btn-outline-secondary px-4 me-md-2 d-block d-sm-inline text"
                         href="{% url 'user-posts' user.username %}">View your profile</a>
@@ -30,7 +30,7 @@
 
             </div>
         </div>
-        <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+        <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden">
             <img class="rounded-lg-3" src="{% static 'techblog_app/images/hero_image4.png' %}" alt="" width="720">
         </div>
     </div>
@@ -77,7 +77,7 @@
         </div>
     </div>
 </section>
-<section class="container px-3">
+<section class="row container px-3">
     <div class="col-lg-6">
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus ipsam eius sapiente consectetur
             corrupti

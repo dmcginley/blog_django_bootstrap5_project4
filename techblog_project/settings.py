@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG = False
+DEBUG = os.environ.get("DEBUG_VALUE") == "True"
 
 ALLOWED_HOSTS = ["*"]
 
@@ -102,11 +102,11 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd7cb0198ailjme',
-        'USER': 'bysdujyzyeutub',
-        'PASSWORD': '89dd7871549476c472edf798115da9be377c8a821bfc7d6e44b71440e4f47b7b',
-        'HOST': 'ec2-107-23-76-12.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'NAME': os.environ.get('DATABASE_NAME'),
+        'USER': os.environ.get('DATABASE_USER'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
+        'HOST': os.environ.get('DATABASE_HOST'),
+        'PORT': os.environ.get('DATABASE_PORT'),
     }
 }
 
