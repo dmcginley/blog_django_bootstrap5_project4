@@ -1,7 +1,10 @@
+from csv import list_dialects
 from django.contrib import admin
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
 from django.utils.html import format_html
+
+from techblog_app.models import Comment, Post
 
 from .models import Profile
 
@@ -42,3 +45,25 @@ class CustomUserAdmin(UserAdmin):
         'date_joined',
         'last_login'
     ]
+
+
+admin.site.unregister(Post)
+
+
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ('title', 'date_posted', 'author',)
+
+    def get_readonly_fields(self, request, obj=None):
+        return ('date_posted', 'author', )
+
+
+admin.site.unregister(Comment)
+
+
+@admin.register(Comment)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ('title', 'post', 'date_posted', 'author',)
+
+    def get_readonly_fields(self, request, obj=None):
+        return ('post', 'date_posted', 'author', )
