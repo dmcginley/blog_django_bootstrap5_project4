@@ -19,9 +19,14 @@
         <link rel="stylesheet" type="text/css" href="{% static 'techblog_app/css/zindex-container-size.css' %}" />
         <script src="{% static 'techblog_app/js/dist/main.js' %}"></script>
 
+        {% comment %}
         <!-- SimpleMDE markdown editor for post body -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
-        <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+        <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script> -->
+        {% endcomment %}
+        {# fork of simpleMDE #}
+        <link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
+        <script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
 
         {# favicon generated using favicon.io #}
         <link rel="apple-touch-icon" sizes="180x180"
