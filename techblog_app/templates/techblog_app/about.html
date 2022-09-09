@@ -35,56 +35,64 @@
         </div>
     </div>
 </section>
-<section class="container px-3">
-    <h2 class="my-5">Tools used</h2>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
-        <div class="col">
-            <img class="mx-auto d-block brand-icon" src="{% static 'techblog_app/images/brand_svg/bootstrap.svg' %}"
-                height="80" alt="Bootstrap icon">
-            <div class="px-3 py-5">
-                <h5>Bootstrap 5</h5>
-                <p>The UI is created with <strong>Bootstrap 5</strong>, and compiled using <strong>Webpack</strong>,
-                    pushing the CSS & JS files to the
-                    Django project folder.</p>
+
+
+<section class="container">
+    <h2 class="my-5 text-sm-start">Tools used</h2>
+
+    <div class="d-flex justify-content-center px-3">
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 col-12 col-md-12">
+            <div class="col">
+                <img class="mx-auto d-block brand-icon" src="{% static 'techblog_app/images/brand_svg/bootstrap.svg' %}"
+                    height="80" alt="Bootstrap icon">
+                <div class="px-sm-3 py-5">
+                    <h5>Bootstrap 5</h5>
+                    <p>The UI is created with <strong>Bootstrap 5</strong>, and compiled using <strong>Webpack</strong>,
+                        pushing the CSS & JS files to the
+                        Django project folder.</p>
+                </div>
             </div>
-        </div>
-        <div class="col">
-            <img class="mx-auto d-block brand-icon" src="{% static 'techblog_app/images/brand_svg/django.svg' %}"
-                height="80" alt="Django icon">
-            <div class="px-3 py-5">
-                <h5>Django</h5>
-                <p class="">The Blog is built using <strong>Django 4.0.5</strong>, a Python-based web framework that
-                    follows the model, template, views architectural pattern.</p>
+            <div class="col">
+                <img class="mx-auto d-block brand-icon" src="{% static 'techblog_app/images/brand_svg/django.svg' %}"
+                    height="80" alt="Django icon">
+                <div class="px-sm-3 py-5">
+                    <h5>Django</h5>
+                    <p class="">The Blog is built using <strong>Django 4.0.5</strong>, a Python-based web framework that
+                        follows the model, template, views architectural pattern.</p>
+                </div>
             </div>
-        </div>
-        <div class="col">
-            <img class="mx-auto d-block brand-icon" src="{% static 'techblog_app/images/brand_svg/python.svg' %}"
-                height="80" alt="Python icon">
-            <div class="px-3 py-5">
-                <h5>Python 3</h5>
-                <p class="">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
+            <div class="col">
+                <img class="mx-auto d-block brand-icon" src="{% static 'techblog_app/images/brand_svg/python.svg' %}"
+                    height="80" alt="Python icon">
+                <div class="px-sm-3 py-5">
+                    <h5>Python 3</h5>
+                    <p class="">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
             </div>
-        </div>
-        <div class="col">
-            <img class="mx-auto d-block brand-icon" src="{% static 'techblog_app/images/brand_svg/postgresql.svg' %}"
-                height="80" alt="PostgreSQL icon">
-            <div class="px-3 py-5">
-                <h5>PostgreSQL</h5>
-                <p class="">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
+            <div class="col">
+                <img class="mx-auto d-block brand-icon"
+                    src="{% static 'techblog_app/images/brand_svg/postgresql.svg' %}" height="80" alt="PostgreSQL icon">
+                <div class="px-sm-3 py-5">
+                    <h5>PostgreSQL</h5>
+                    <p class="">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 <section class="my-5 container">
     <div class="row">
-        <div class="col-lg-5">
-            <div class="pt-lg-5"></div>
-            <h2>Title of section</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quam cumque atque expedita! Consequuntur
-                velit
-                incidunt eligendi ab deleniti accusamus, temporibus maiores veniam!</p>
+        <div class="d-flex justify-content-center col-lg-5">
+            <div class="pt-lg-5 pb-3 col-10 col-lg-12">
+                <h2>Title of section</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quam cumque atque expedita!
+                    Consequuntur
+                    velit
+                    incidunt eligendi ab deleniti accusamus, temporibus maiores veniam!</p>
+            </div>
         </div>
         <div class="col-lg-7">
             <img class="img-fluid" src="{% static 'techblog_app/images/md_post.png' %}" alt="">
