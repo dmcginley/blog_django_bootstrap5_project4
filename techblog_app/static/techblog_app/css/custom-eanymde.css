@@ -24,6 +24,11 @@ td {
     width: 32px;
 }
 
+.editor-toolbar button {
+    color: #566573;
+}
+
+
 code {
     color: var(--black) !important;
 }

@@ -77,15 +77,26 @@
         </div>
     </div>
 </section>
-<section class="row container px-3">
-    <div class="col-lg-6">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus ipsam eius sapiente consectetur
-            corrupti
-            possimus, similique ab perferendis labore accusamus maxime, itaque aliquam deleniti dolor debitis placeat.
-            Distinctio, commodi excepturi.</p>
-    </div>
-    <div class="col-lg-6">
-        <p class="text-warning">image</p>
+<section class="my-5 container">
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="pt-lg-5"></div>
+            <h2>Title of section</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quam cumque atque expedita! Consequuntur
+                velit
+                incidunt eligendi ab deleniti accusamus, temporibus maiores veniam!</p>
+        </div>
+        <div class="col-lg-7">
+            <img class="img-fluid" src="{% static 'techblog_app/images/md_post.png' %}" alt="">
+        </div>
     </div>
 </section>
+<section class="container pt-3 pb-5">
+    <div>
+        <h2 class="mt-5">Markdown editor used <strong>- EasyMDE</strong></h2>
+        <h5 class="mb-4 text-muted">...can test it out here</h5>
+        <textarea id="id_content"></textarea>
+    </div>
+</section>
+{% include 'techblog_app/post_markdown_editor_script.html' %}
 {% endblock content %}

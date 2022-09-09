@@ -1,15 +1,10 @@
 <script>
     // https://github.com/sparksuite/simplemde-markdown-editor
 
-
-    document.addEventListener('selectionchange', function (event) {
-        console.log(event.type);
-    });
-
     var contentTextArea = document.getElementById("id_content");
     var markdownEditor = new EasyMDE({
         element: contentTextArea,
-        showIcons: ['strikethrough', 'code', 'table', 'redo', 'heading'],
+        showIcons: ['strikethrough', 'code', 'table', 'heading'],
         hideIcons: ["fullscreen", "side-by-side"],
         spellChecker: false,
         status: ["autosave", "lines", "words"], // Optional usage
