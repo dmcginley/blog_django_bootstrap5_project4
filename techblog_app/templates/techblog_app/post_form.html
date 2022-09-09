@@ -1,5 +1,4 @@
 {% extends 'techblog_app/base.html' %}
-{% load crispy_forms_tags %}
 {% block content %}
 <section class="py-5 px-3" style="min-height: 560px;">
     <div class="container form-container col-md-10 col-lg-8">
@@ -7,7 +6,7 @@
             {% csrf_token %}
             <fieldset class="form-group">
                 <legend class="pb-3 text-capitalize">create blog post</legend>
-                {{ form|crispy }}
+                {{ form }}
             </fieldset>
             <!-- <div class="d-flex justify-content-center mt-3"> -->
             <div class="d-flex">
