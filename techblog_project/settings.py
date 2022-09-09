@@ -91,14 +91,6 @@ WSGI_APPLICATION = 'techblog_project.wsgi.application'
 # }
 # postgres://dgcnegxhxsbyuv:f68e441ad2c4ad7edc531470f5d885374a2d56b61a5e2a0879fa57e5a0df822f@ec2-3-208-79-113.compute-1.amazonaws.com:5432/d15n2ofqhba19t
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'project_four_blog',
-    #     'USER': 'project_four_user',
-    #     'PASSWORD': 'la9jFUZBFNcDCYMrrz7P',
-    #     'HOST': '127.0.0.1',
-    #     'PORT': '5432',
-    # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.environ.get('DATABASE_NAME'),
