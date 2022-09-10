@@ -32,6 +32,9 @@ top level folder for the project 4 containing bootstrap django and python files
 This blog website is aimed at developers or people interested in coding & development, as it has a built in markdown editor.
 The interface is designed to allow you to create short quick snippets of text or code with the emphases on text over images. 
 
+* a group of people interested in discussion about coding
+* a few admin users to help keep the site clean and free from online abuse through the admin panel.
+
 ## User Stories
 
 #### Admin
@@ -43,10 +46,25 @@ The interface is designed to allow you to create short quick snippets of text or
 	
 &nbsp;
 
+* "As a admin, I want to be able to login to the admin panel so that I can see the users details and the users profile on the same page"
+
+	Acceptance criteria:
+
+	1. Given that I'm the admin, when I login I'm able to go to click on *User* and see their details and profile in the one section.
+	
+&nbsp;
+
+* "As a admin, I want to be able to login to the admin panel from the main site so that it is  easy to access the admin area."
+
+	Acceptance criteria:
+
+	1. Given that I'm the admin, when I login to the site then I'm able to see the the *Admin Panel* link in the dropdown menu.
+	
+&nbsp;
 
 #### Unregistered user
 
-* "As a unregistered user, I want be able to see posts and comments on the sit so that I don't have to be logged in just to see the content on the blog."
+* "As a unregistered user, I want to be able to see posts and comments on the sit so that I don't have to be logged in just to see the content on the blog."
 
 	Acceptance criteria:
 
@@ -55,6 +73,14 @@ The interface is designed to allow you to create short quick snippets of text or
 	2. Given that
 when I 
 Then
+
+&nbsp;
+
+* "As a unregistered user, I want to be able to see and test out the markdown editor used so that I don't have to create an account straight away to be able to see its functionality."
+
+	Acceptance criteria:
+
+	1. Given that I'm an unregistered user when I navigate to the About page and scroll down the page I can see and use the markdown editor in the page.
 
 &nbsp;
 
@@ -136,15 +162,17 @@ Then
 
 ## Technologies Used
 
-- [Visual Studio Code](https://code.visualstudio.com/) IDE I used for Bootstrap, JavaScript, & Django
-- [Heroku](https://www.heroku.com/)
-- [GitHub](https://github.com/)
+* [Visual Studio Code](https://code.visualstudio.com/) IDE I used for Bootstrap, JavaScript, & Django
+* [Webpack](https://webpack.js.org/) - for packing the scss file along with the bootstrap files to export to the main project
+* [Amazon Web Services (AWS)](https://aws.amazon.com/) - for hosting the static files
+* [Heroku](https://www.heroku.com/) for deploying the blog
+* [GitHub](https://github.com/) - the version control
 * [SQLite](https://www.sqlite.org/index.html) - database used in development
 * [PostgreSQL](https://www.postgresql.org/) - database for production
 
 ### The Code
 
-- [Bootstrap](https://getbootstrap.com/), HTML & CSS
+- [Bootstrap 5](https://getbootstrap.com/), HTML & CSS
 - [JavaScript](https://www.javascript.com/)
 - [Django](https://www.djangoproject.com/)
 - [Python3](https://www.python.org/)
@@ -156,9 +184,9 @@ Then
 * [bootstrap-icons]()
 * [webpack 4.10](https://webpack.js.org/)
 * [Pillow 9.2.0](https://pypi.org/project/Pillow/) - Python Imaging Library
-* [SimpleMDE - Markdown Editor](https://github.com/sparksuite/simplemde-markdown-editor#toolbar-icons)
-
-
+* [EasyMDE - Markdown Editor](https://easy-markdown-editor.tk/) - a fork of SimpleMDE 
+* [django-crispy-forms 1.14.0](https://django-crispy-forms.readthedocs.io/en/latest/) - for form handling
+* [gunicorn 20.1.0](https://gunicorn.org/) - the Python WSGI HTTP Server
 
 ## Features
 

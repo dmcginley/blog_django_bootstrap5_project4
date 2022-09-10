@@ -10,8 +10,6 @@ pre {
 p img {
     max-width: 100%;
     border-radius: 3px;
-    /* border: 2px red solid; */
-    /* padding: 1rem; */
 }
 
 th,
@@ -32,10 +30,3 @@ td {
 code {
     color: var(--black) !important;
 }
-
-/* code a {
-    color: #77afe4;
-}
-code a:hover {
-    color: #5a8dbd;
-} */

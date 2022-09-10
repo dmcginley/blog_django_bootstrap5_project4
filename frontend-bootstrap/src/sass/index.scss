@@ -36,8 +36,9 @@ $btn-border-radius-lg: 0.4rem;
     --primary: #583ccc;
     --secondary: #384142;
     --light-gray: #f9fafb;
-    --link: #3e7ab6;
-    --link-hover: #2c6196;
+    --link: #a10a41;
+    --link-hover: #711939;
+    --name: #b7b9bb;
 }
 
 h1,
@@ -103,4 +104,8 @@ pre {
     max-width: 560px;
     border-radius: 3px;
     background-color: var(--light-gray);
+}
+
+footer .name-color {
+    color: var(--name);
 }
