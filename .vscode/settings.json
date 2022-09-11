@@ -3,6 +3,7 @@
         "blockquote",
         "MARKDOWNIFY",
         "pagedown",
+        "summernote",
         "techblog"
     ]
 }

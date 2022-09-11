@@ -1,7 +1,6 @@
 {% extends 'techblog_app/base.html' %}
 {% load markdownify %}
 {% block content %}
-
 <div class="container">
     <div class=p-3">
         <div class="d-flex align-items-center position-relative justify-content-center profile-pic-container">
@@ -17,7 +16,8 @@
             <div class="bio d-inline-block p-2 mb-2 border">
                 {{ user.profile.bio|default:"No bio details yet..." }}
             </div>
-            <p class="mt-3">You have <span class="fw-bold text-secondary">{{ page_obj.paginator.count }}</span> posts
+            <p class="mt-3">You have <span class="fw-bold text-secondary">{{ page_obj.paginator.count }}</span>
+                posts
             </p>
             {% else %}
             {% if user.profile.bio %}

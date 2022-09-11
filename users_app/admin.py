@@ -1,14 +1,18 @@
 from csv import list_dialects
+from pyexpat import model
+from statistics import mode
 from django.contrib import admin
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
 from django.utils.html import format_html
-
+from django_summernote.admin import SummernoteModelAdmin
 from techblog_app.models import Comment, Post
-
 from .models import Profile
+from users_app import models
+from techblog_app import models
 
 
+# admin profile
 class ProfileAdmin(admin.ModelAdmin):
     def avatar(self, obj):
         return format_html('<img src="{}" style="max-width:100px; max-height:200px"/>'.format(obj.image.url))
@@ -19,16 +23,19 @@ class ProfileAdmin(admin.ModelAdmin):
 admin.site.register(Profile, ProfileAdmin)
 
 
+# Unregister the provided model admin, and Register out own model admin
+# from https://realpython.com/manage-users-in-django-admin/?utm_source=pocket_mylist
+
+
+# admin user +profile field
+admin.site.unregister(User)
+
+
 class ProfileInline(admin.StackedInline):
     model = Profile
     can_delete = False
     verbose_name_plural = 'Profile'
     fk_name = 'user'
-
-
-# Unregister the provided model admin, and Register out own model admin
-# from https://realpython.com/manage-users-in-django-admin/?utm_source=pocket_mylist
-admin.site.unregister(User)
 
 
 @admin.register(User)
@@ -47,17 +54,30 @@ class CustomUserAdmin(UserAdmin):
     ]
 
 
+# admin area posts
 admin.site.unregister(Post)
 
 
-@admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
+# @admin.register(Post)
+# class PostAdmin(admin.ModelAdmin):
+#     list_display = ('title', 'date_posted', 'author',)
+
+#     def get_readonly_fields(self, request, obj=None):
+#         return ('date_posted', 'author', )
+
+
+class PostAdmin(SummernoteModelAdmin):
     list_display = ('title', 'date_posted', 'author',)
+    summernote_fields = '__all__'
 
     def get_readonly_fields(self, request, obj=None):
         return ('date_posted', 'author', )
 
 
+admin.site.register(Post, PostAdmin)
+
+
+# admin area comments
 admin.site.unregister(Comment)
 
 
@@ -67,3 +87,10 @@ class PostAdmin(admin.ModelAdmin):
 
     def get_readonly_fields(self, request, obj=None):
         return ('post', 'date_posted', 'author', )
+
+
+# class PostAdmin(SummernoteModelAdmin):  # instead of ModelAdmin
+#     summernote_fields = '__all__'
+
+
+# admin.site.register(models.Post,  PostAdmin)

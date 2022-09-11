@@ -7,6 +7,7 @@
             {% csrf_token %}
             <fieldset class="form-group">
                 <legend class="pb-3 text-capitalize">create blog post</legend>
+                <!-- {{ form.media }} -->
                 {{ form|crispy }}
             </fieldset>
             <div class="d-flex">
@@ -15,5 +16,5 @@
         </form>
     </div>
 </section>
-{% include 'techblog_app/post_markdown_editor_script.html' %}
+<!-- {% include 'techblog_app/post_markdown_editor_script.html' %} -->
 {% endblock content %}
