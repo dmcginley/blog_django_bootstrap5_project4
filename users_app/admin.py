@@ -5,7 +5,6 @@ from django.contrib import admin
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
 from django.utils.html import format_html
-from django_summernote.admin import SummernoteModelAdmin
 from techblog_app.models import Comment, Post
 from .models import Profile
 from users_app import models

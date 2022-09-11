@@ -8,7 +8,6 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from users_app.models import Profile
 from datetime import datetime
-# from ckeditor.fields import RichTextField
 
 
 class DateTimeWithoutTZField(models.DateTimeField):
