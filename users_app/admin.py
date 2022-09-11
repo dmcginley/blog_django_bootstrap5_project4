@@ -58,23 +58,26 @@ class CustomUserAdmin(UserAdmin):
 admin.site.unregister(Post)
 
 
-# @admin.register(Post)
-# class PostAdmin(admin.ModelAdmin):
-#     list_display = ('title', 'date_posted', 'author',)
-
-#     def get_readonly_fields(self, request, obj=None):
-#         return ('date_posted', 'author', )
-
-
-class PostAdmin(SummernoteModelAdmin):
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'date_posted', 'author',)
-    summernote_fields = '__all__'
 
     def get_readonly_fields(self, request, obj=None):
         return ('date_posted', 'author', )
 
 
-admin.site.register(Post, PostAdmin)
+# --------------------------
+# for use with summernote
+# class PostAdmin(SummernoteModelAdmin):
+#     list_display = ('title', 'date_posted', 'author',)
+#     summernote_fields = '__all__'
+
+#     def get_readonly_fields(self, request, obj=None):
+#         return ('date_posted', 'author', )
+
+
+# admin.site.register(Post, PostAdmin)
+# --------------------------
 
 
 # admin area comments
