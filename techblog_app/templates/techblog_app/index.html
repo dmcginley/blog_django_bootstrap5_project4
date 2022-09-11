@@ -1,6 +1,6 @@
 {% extends 'techblog_app/base.html' %}
 {% load tz %}
-{% load markdownify %}
+<!-- {% load markdownify %} -->
 {% block content %}
 
 {# post section #}
@@ -20,7 +20,7 @@
                 </a>
             </h2>
             <p class="text-dark p-2">
-                {{ post.content|markdownify  }}
+                {{ post.content|safe  }}
             </p>
             <small class="text-muted">
                 By

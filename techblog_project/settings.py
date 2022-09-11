@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'markdownify',
+    'ckeditor',
     'storages',
 ]
 
@@ -148,6 +149,9 @@ STATIC_URL = '/static/'
 
 # STATIC_ROOT = BASE_DIR / 'staticfiles'  # for production with cdn
 
+CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
+
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 MEDIA_URL = '/media/'
@@ -206,6 +210,20 @@ MARKDOWNIFY = {
             'http',
             'https',
         ]
+    }
+}
+
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-',
+                'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat']
+        ],
     }
 }
 

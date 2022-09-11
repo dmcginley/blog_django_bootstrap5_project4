@@ -30,3 +30,16 @@ td {
 code {
     color: var(--black) !important;
 }
+
+
+
+/* #django-ckeditor-widget {
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+}
+
+
+#cke_description {
+    width: auto !important;
+} */
