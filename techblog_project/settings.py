@@ -167,49 +167,83 @@ LOGIN_URL = 'login'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-MARKDOWNIFY = {
-    "default": {
-        "MARKDOWN_EXTENSIONS": [
-            'markdown.extensions.fenced_code',
-            'markdown.extensions.extra',
+# MARKDOWNIFY = {
+#     "default": {
+#         "MARKDOWN_EXTENSIONS": [
+#             'markdown.extensions.fenced_code',
+#             'markdown.extensions.extra',
+#         ],
+#         "STRIP": False,
+#         "WHITELIST_TAGS": [
+#             'a',
+#             'abbr',
+#             'acronym',
+#             'b',
+#             'blockquote',
+#             'em',
+#             'i',
+#             'li',
+#             'ol',
+#             'p',
+#             'strong',
+#             'ul',
+#             'code',
+#             'span',
+#             'div', 'class',
+#             'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+#             'img',
+#             'table', 'thead', 'tr', 'th', 'td', 'tbody'
+#         ],
+#         "WHITELIST_ATTRS": [
+#             'href',
+#             'src',
+#             'alt',
+#             'class',
+#         ],
+#         "WHITELIST_STYLES": [
+#             'color',
+#             'font-weight',
+#         ],
+#         "WHITELIST_PROTOCOLS": [
+#             'http',
+#             'https',
+#         ]
+#     }
+# }
+
+
+SUMMERNOTE_CONFIG = {
+
+    # You can put custom Summernote settings
+    'summernote': {
+        # As an example, using Summernote Air-mode
+        'airMode': False,
+
+        # Change editor size
+        'width': '100%',
+        'height': '440',
+
+        # Use proper language setting automatically (default)
+        'lang': None,
+
+        # Toolbar customization
+        # https://summernote.org/deep-dive/#custom-toolbar-popover
+        'toolbar': [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['fontname', ['fontname']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']],
         ],
-        "STRIP": False,
-        "WHITELIST_TAGS": [
-            'a',
-            'abbr',
-            'acronym',
-            'b',
-            'blockquote',
-            'em',
-            'i',
-            'li',
-            'ol',
-            'p',
-            'strong',
-            'ul',
-            'code',
-            'span',
-            'div', 'class',
-            'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-            'img',
-            'table', 'thead', 'tr', 'th', 'td', 'tbody'
-        ],
-        "WHITELIST_ATTRS": [
-            'href',
-            'src',
-            'alt',
-            'class',
-        ],
-        "WHITELIST_STYLES": [
-            'color',
-            'font-weight',
-        ],
-        "WHITELIST_PROTOCOLS": [
-            'http',
-            'https',
-        ]
-    }
+
+    },
+
+
 }
+
 
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
