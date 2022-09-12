@@ -22,6 +22,10 @@ td {
     color: #566573 !important;
 }
 
+.ql-editor {
+    min-height: 200px;
+}
+
 pre {
     color: var(--light-gray);
     border-radius: 3px;
@@ -30,6 +34,15 @@ pre {
 }
 
 
-.post-body img {
+blockquote {
+    background-color: rgb(241, 237, 237);
+    margin: 0 1rem !important;
+    padding: 0 1rem !important;
+    border-left: 8px solid rgb(125, 91, 170) !important;
+}
+
+
+article img {
     max-width: 100%;
+    border-radius: 3px;
 }
