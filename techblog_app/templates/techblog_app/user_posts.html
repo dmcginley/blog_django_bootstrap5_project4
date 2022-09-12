@@ -82,8 +82,8 @@
                         {{ post.title }}
                     </a>
                 </h2>
-                <p class="comment-body text-dark p-2">
-                    {{ post.content|markdownify }}
+                <p class="comment-body p-2">
+                    {{ post.content.html|safe }}
                 </p>
                 <small class="text-muted">
                     By

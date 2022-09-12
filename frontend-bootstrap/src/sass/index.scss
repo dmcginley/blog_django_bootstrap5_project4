@@ -94,12 +94,6 @@ a:hover {
     opacity: 0.5;
 }
 
-/* the background color is changed here because when changed
-in the custom-simpleMDE.css, simpleMDE pre background gets overwritten */
-pre {
-    border-radius: 3px;
-    background-color: #e2e2df;
-}
 .bio {
     max-width: 560px;
     border-radius: 3px;

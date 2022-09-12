@@ -46,9 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'markdownify',
-    'ckeditor',
+    # 'ckeditor',
     'django_quill',
-    'django_summernote',
     'storages',
 ]
 
@@ -170,50 +169,49 @@ LOGIN_URL = 'login'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-MARKDOWNIFY = {
-    "default": {
-        "MARKDOWN_EXTENSIONS": [
-            'markdown.extensions.fenced_code',
-            'markdown.extensions.extra',
-        ],
-        "STRIP": False,
-        "WHITELIST_TAGS": [
-            'a',
-            'abbr',
-            'acronym',
-            'b',
-            'blockquote',
-            'em',
-            'i',
-            'li',
-            'ol',
-            'p',
-            'strong',
-            'ul',
-            'code',
-            'span',
-            'div', 'class',
-            'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-            'img',
-            'table', 'thead', 'tr', 'th', 'td', 'tbody'
-        ],
-        "WHITELIST_ATTRS": [
-            'href',
-            'src',
-            'alt',
-            'class',
-        ],
-        "WHITELIST_STYLES": [
-            'color',
-            'font-weight',
-        ],
-        "WHITELIST_PROTOCOLS": [
-            'http',
-            'https',
-        ]
-    }
-}
+# MARKDOWNIFY = {
+#     "default": {
+#         "MARKDOWN_EXTENSIONS": [
+#             'markdown.extensions.fenced_code',
+#             'markdown.extensions.extra',
+#         ],
+#         "STRIP": False,
+#         "WHITELIST_TAGS": [
+#             'a',
+#             'abbr',
+#             'acronym',
+#             'b',
+#             'blockquote',
+#             'em',
+#             'i',
+#             'li',
+#             'ol',
+#             'p',
+#             'strong',
+#             'ul',
+#             'code',
+#             'span',
+#             'div', 'class',
+#             'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+#             'img',
+#             'table', 'thead', 'tr', 'th', 'td', 'tbody'
+#         ],
+#         "WHITELIST_ATTRS": [
+#             'href',
+#             'src',
+#             'alt',
+#             'class',
+#         ],
+#         "WHITELIST_STYLES": [
+#             'color',
+#             'font-weight',
+#         ],
+#         "WHITELIST_PROTOCOLS": [
+#             'http',
+#             'https',
+#         ]
+#     }
+# }
 
 
 # CKEDITOR_CONFIGS = {
@@ -236,16 +234,18 @@ QUILL_CONFIGS = {
             'syntax': True,
             'toolbar': [
                 [
-                    {'font': []},
-                    {'header': []},
+                    {'header': [1, 2, 3, 4, 5, 6]},
+
+                    'bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block',
                     {'align': []},
-                    'bold', 'italic', 'underline', 'strike', 'blockquote',
                     {'color': []},
                     {'background': []},
                 ],
-                ['code-block', 'link'],
+                ['image', 'link'],
                 ['clean'],
             ]
+
+
         }
     }
 }

@@ -1,6 +1,5 @@
 {% extends 'techblog_app/base.html' %}
 {% load tz %}
-<!-- {% load markdownify %} -->
 {% block content %}
 
 {# post section #}
@@ -14,13 +13,13 @@
 
         {# the main body of text #}
         <article class="p-3 pt-0 pt-sm-3 d-block overflow-hidden">
-            <h2>
+            <h2 class="pt-sm-3">
                 <a class="post-title-color" href="{% url 'post-detail' post.id %}">
                     {{ post.title }}
                 </a>
             </h2>
-            <p class="text-dark p-2">
-                {{ post.content|safe  }}
+            <p class="post-body">
+                {{ post.content.html|safe }}
             </p>
             <small class="text-muted">
                 By

@@ -8,10 +8,10 @@ from django.utils.html import format_html
 from techblog_app.models import Comment, Post
 from .models import Profile
 from users_app import models
-from django_summernote.admin import SummernoteModelAdmin
-
 
 # admin profile
+
+
 class ProfileAdmin(admin.ModelAdmin):
     def avatar(self, obj):
         return format_html('<img src="{}" style="max-width:100px; max-height:200px"/>'.format(obj.image.url))
@@ -60,13 +60,12 @@ admin.site.unregister(Post)
 
 
 @admin.register(Post)
-class PostAdmin(SummernoteModelAdmin):
+class PostAdmin(admin.ModelAdmin):
     search_fields = ('title', 'content')
     list_display = ['title', 'author', 'date_posted']
     list_filter = ('author', 'date_posted')
 
     readonly_fields = [
-        'author',
         'date_posted'
     ]
 
@@ -86,10 +85,8 @@ class PostAdmin(admin.ModelAdmin):
     search_fields = ('title', 'content')
     list_display = ['title', 'author', 'date_posted']
     list_filter = ('author', 'date_posted')
-    summernote_fields = '__all__'
 
     readonly_fields = [
-        'author',
         'date_posted'
     ]
 

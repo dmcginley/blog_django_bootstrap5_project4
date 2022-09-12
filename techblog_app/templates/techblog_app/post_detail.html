@@ -1,15 +1,11 @@
 {% extends 'techblog_app/base.html' %}
-
 {% load crispy_forms_tags %}
-{% load markdownify %}
-
 {% block content %}
 
-
-<!-- new card -->
+{# new card #}
 <div class="container mt-5">
     <div class="d-flex flex-column flex-sm-row position-relative  rounded border shadow-sm bg-light my-4">
-        <!-- the drop-down -->
+        {# the drop-down #}
         {% if object.author == user %}
         <div class="dropdown position-absolute top-0 end-0 pt-3">
             <a class="comment data-toggle comment-btn d-flex align-items-center pe-3" role="button"
@@ -38,13 +34,13 @@
                 alt="post profile image of the author">
         </a>
 
-        <!-- the main body of text -->
+        {# the main body of text #}
         <article class="p-3 pt-0 pt-sm-3 d-block overflow-hidden">
             <h2>
                 {{ object.title }}
             </h2>
-            <p class="comment-body text-dark p-2">
-                {{ post.content|markdownify }}
+            <p class="comment-body text-light p-2" id="editor">
+                {{ post.content.html|safe }}
             </p>
             <small class="text-muted">
                 By
@@ -56,7 +52,7 @@
                 {{ post.date_posted|date:"dS F, Y" }}
             </small>
             <div class="d-flex pt-2">
-                <!-- the links to post-detail so you can view the comments before replaying -->
+                {# the links to post-detail so you can view the comments before replaying #}
                 <div class="d-flex align-items-center text-decoration-none text-muted me-3 post-link-color">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-chat-right-fill me-2" viewBox="0 0 16 16">
@@ -84,7 +80,7 @@
 </div>
 
 
-<!-- the comment section -->
+{# the comment section #}
 <section class="container">
     {% if not post.comments.all %}
     <div class="post-container p-2">
@@ -93,7 +89,7 @@
         {% for comment in post.comments.all %}
         <div class="p-2 ps-sm-5 pt-4 d-sm-flex position-relative">
 
-            <!-- the drop-down -->
+            {# the drop-down #}
             {% if comment.author == user %}
             <div class="dropdown position-absolute top-0 end-0 pt-4">
                 <a class="comment data-toggle comment-btn d-flex align-items-center pe-3" role="button"
@@ -126,10 +122,10 @@
                     <h3 class="text-black">{{ comment.title }}</h3>
                 </div>
                 <div class="pb-4">
-                    <p class="text-dark">
-                        {{ comment.content|markdownify }}
+                    <p class="">
+                        {{ comment.content.html|safe }}
                     </p>
-                    <!-- <p class="text-dark">{{ comment.content }}</p> -->
+                    {# <p class="text-dark">{{ comment.content }}</p> #}
                     <small class="text-muted">
                         By
                         <a class="fw-bold post-link-color"
@@ -146,9 +142,6 @@
     </div>
     {% endif %}
 </section>
-
-
-
 
 <div class="d-flex justify-content-center my-4">
     {% if is_paginated %}
@@ -167,9 +160,4 @@
     {% endif %}
     {% endif %}
 </div>
-
-
-
-
-
 {% endblock content %}

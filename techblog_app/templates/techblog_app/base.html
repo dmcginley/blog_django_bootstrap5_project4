@@ -15,25 +15,9 @@
         {% endif %}
 
         <link rel="stylesheet" type="text/css" href="{% static 'techblog_app/css/index.css' %}" />
-        <link rel="stylesheet" type="text/css" href="{% static 'techblog_app/css/custom-eanymde.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'techblog_app/css/custom-text-editor.css' %}" />
         <link rel="stylesheet" type="text/css" href="{% static 'techblog_app/css/zindex-container-size.css' %}" />
         <script src="{% static 'techblog_app/js/dist/main.js' %}"></script>
-
-        {% comment %}
-        <!-- SimpleMDE markdown editor for post body -->
-        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
-        <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script> -->
-        {% endcomment %}
-        {# fork of simpleMDE, EasyMDE #}
-        <link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
-
-        {# quill CDN #}
-        <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-        <!-- Include the Quill library -->
-        <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-
-
-        <script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
 
         {# favicon generated using favicon.io #}
         <link rel="apple-touch-icon" sizes="180x180"
@@ -42,8 +26,8 @@
             href="{% static 'techblog_app/images/favicon/favicon-32x32.png' %}">
         <link rel="icon" type="image/png" sizes="16x16"
             href="{% static 'techblog_app/images/favicon/favicon-16x16.png' %}">
-        {{ form.media }}
 
+        {% include 'django_quill/media.html' %}
     </head>
 
     <body class="flex-100 d-flex flex-column h-100">
