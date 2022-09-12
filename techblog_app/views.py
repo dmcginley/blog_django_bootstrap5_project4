@@ -123,6 +123,7 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 # ------------------------------
     # the 4 comment views: DetailView Create, Update, Delete.
 # ------------------------------
+
 class CommentDetailView(DetailView):
     model = Comment
 

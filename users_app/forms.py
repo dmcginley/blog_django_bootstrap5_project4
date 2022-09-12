@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .models import Profile
 from techblog_app.models import Comment
+# from techblog_app.models import Post
 
 
 class UserRegisterForm(UserCreationForm):

@@ -32,7 +32,7 @@ urlpatterns = [
         template_name='users_app/logout.html'), name='logout'),
     path('', include('techblog_app.urls')),
 
-    # path('summernote/', include('django_summernote.urls')),
+    path('summernote/', include('django_summernote.urls')),
 
 ]
 

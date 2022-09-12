@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'markdownify',
     'ckeditor',
+    'django_quill',
+    'django_summernote',
     'storages',
 ]
 
@@ -149,7 +151,7 @@ STATIC_URL = '/static/'
 
 # STATIC_ROOT = BASE_DIR / 'staticfiles'  # for production with cdn
 
-CKEDITOR_BASEPATH = "/ckeditor/ckeditor/"
+# CKEDITOR_BASEPATH = "/ckeditor/ckeditor/"
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
@@ -214,16 +216,37 @@ MARKDOWNIFY = {
 }
 
 
-CKEDITOR_CONFIGS = {
+# CKEDITOR_CONFIGS = {
+#     'default': {
+#         'toolbar': 'Custom',
+#         'toolbar_Custom': [
+#             ['Bold', 'Italic', 'Underline'],
+#             ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-',
+#                 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+#             ['Link', 'Unlink'],
+#             ['RemoveFormat']
+#         ],
+#     }
+# }
+
+QUILL_CONFIGS = {
     'default': {
-        'toolbar': 'Custom',
-        'toolbar_Custom': [
-            ['Bold', 'Italic', 'Underline'],
-            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-',
-                'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
-            ['Link', 'Unlink'],
-            ['RemoveFormat']
-        ],
+        'theme': 'snow',
+        'modules': {
+            'syntax': True,
+            'toolbar': [
+                [
+                    {'font': []},
+                    {'header': []},
+                    {'align': []},
+                    'bold', 'italic', 'underline', 'strike', 'blockquote',
+                    {'color': []},
+                    {'background': []},
+                ],
+                ['code-block', 'link'],
+                ['clean'],
+            ]
+        }
     }
 }
 

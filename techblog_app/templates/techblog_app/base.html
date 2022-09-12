@@ -26,6 +26,13 @@
         {% endcomment %}
         {# fork of simpleMDE, EasyMDE #}
         <link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
+
+        {# quill CDN #}
+        <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+        <!-- Include the Quill library -->
+        <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+
         <script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
 
         {# favicon generated using favicon.io #}
@@ -35,6 +42,8 @@
             href="{% static 'techblog_app/images/favicon/favicon-32x32.png' %}">
         <link rel="icon" type="image/png" sizes="16x16"
             href="{% static 'techblog_app/images/favicon/favicon-16x16.png' %}">
+        {{ form.media }}
+
     </head>
 
     <body class="flex-100 d-flex flex-column h-100">

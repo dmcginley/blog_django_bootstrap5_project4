@@ -1,28 +1,16 @@
-import imp
-from xml.etree.ElementTree import Comment
+# import imp
+# from xml.etree.ElementTree import Comment
 from django.contrib import admin
 from .models import Post, Comment
-from users_app.models import Profile
+# from users_app.models import Profile
+# from django_summernote.admin import SummernoteModelAdmin
 
 
+@admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ['title', 'author', 'date_posted']
-    search_fields = ('title', 'content')
-
-    list_filter = ('author', 'date_posted')
-    readonly_fields = [
-        'title',
-        'content',
-        'author',
-        'date_posted'
-    ]
+    pass
 
 
+@admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ['title', 'author', 'date_posted']
-    search_fields = ('title', 'content')
-    list_filter = ('author', 'date_posted')
-
-
-admin.site.register(Post, PostAdmin)
-admin.site.register(Comment, CommentAdmin)
+    pass

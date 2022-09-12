@@ -8,7 +8,7 @@ from django.utils.html import format_html
 from techblog_app.models import Comment, Post
 from .models import Profile
 from users_app import models
-from techblog_app import models
+from django_summernote.admin import SummernoteModelAdmin
 
 
 # admin profile
@@ -53,43 +53,48 @@ class CustomUserAdmin(UserAdmin):
     ]
 
 
+# ------------------------
 # admin area posts
+# ------------------------
 admin.site.unregister(Post)
 
 
 @admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'date_posted', 'author',)
+class PostAdmin(SummernoteModelAdmin):
+    search_fields = ('title', 'content')
+    list_display = ['title', 'author', 'date_posted']
+    list_filter = ('author', 'date_posted')
 
-    def get_readonly_fields(self, request, obj=None):
-        return ('date_posted', 'author', )
-
-
-# --------------------------
-# for use with summernote
-# class PostAdmin(SummernoteModelAdmin):
-#     list_display = ('title', 'date_posted', 'author',)
-#     summernote_fields = '__all__'
-
-#     def get_readonly_fields(self, request, obj=None):
-#         return ('date_posted', 'author', )
+    readonly_fields = [
+        'author',
+        'date_posted'
+    ]
 
 
-# admin.site.register(Post, PostAdmin)
-# --------------------------
+def get_readonly_fields(self, request, obj=None):
+    return ('date_posted', 'author',)
 
 
+# ------------------------
 # admin area comments
+# ------------------------
 admin.site.unregister(Comment)
 
 
 @admin.register(Comment)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'post', 'date_posted', 'author',)
+    search_fields = ('title', 'content')
+    list_display = ['title', 'author', 'date_posted']
+    list_filter = ('author', 'date_posted')
+    summernote_fields = '__all__'
+
+    readonly_fields = [
+        'author',
+        'date_posted'
+    ]
 
     def get_readonly_fields(self, request, obj=None):
         return ('post', 'date_posted', 'author', )
-
 
 # class PostAdmin(SummernoteModelAdmin):  # instead of ModelAdmin
 #     summernote_fields = '__all__'

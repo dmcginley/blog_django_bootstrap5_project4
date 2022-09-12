@@ -47,3 +47,7 @@ def edit_profile(request):
     }
 
     return render(request, 'users_app/edit_profile.html', context)
+
+
+def form_view(request):
+    return render(request, 'form_view.html', {'form': QuillFieldForm()})
