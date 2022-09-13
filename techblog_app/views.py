@@ -28,14 +28,14 @@ class PostListView(ListView):
 
     context_object_name = 'posts'
     ordering = ['-date_posted']  # date posted in reverse order
-    paginate_by = 8
+    paginate_by = 6
 
 
 class UserPostListView(ListView):
     model = Post
     template_name = 'techblog_app/user_posts.html'
     context_object_name = 'posts'
-    paginate_by = 8
+    paginate_by = 6
 
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
@@ -56,22 +56,22 @@ class UserPostListView(ListView):
         return context
 
 
-class UserProfilePostView(LoginRequiredMixin, ListView):
-    model = Post
-    template_name = 'techblog_app/profile.html'
-    context_object_name = 'posts'
-    paginate_by = 8
+# class UserProfilePostView(LoginRequiredMixin, ListView):
+#     model = Post
+#     template_name = 'techblog_app/profile.html'
+#     context_object_name = 'posts'
+#     paginate_by = 7
 
-    def test_func(self):
+#     def test_func(self):
 
-        profile = Profile.user
-        if self.request.user == profile:
-            return True
-        return False
+#         profile = Profile.user
+#         if self.request.user == profile:
+#             return True
+#         return False
 
-    def get_queryset(self):
-        user = get_object_or_404(User, username=self.kwargs.get('username'))
-        return Post.objects.filter(author=user).order_by('-date_posted')
+#     def get_queryset(self):
+#         user = get_object_or_404(User, username=self.kwargs.get('username'))
+#         return Post.objects.filter(author=user).order_by('-date_posted')
 
 
 # ------------------------------
@@ -82,6 +82,7 @@ class PostDetailView(DetailView):
 
 
 # to create a post
+
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['title', 'content']
@@ -187,11 +188,21 @@ def about(request):
 
     return render(request, 'techblog_app/about.html', {'title': 'About'})
 
+# ------------------------------
+#   error views: 400, 403, 404, & 500
+# ------------------------------
+
+
+def bad_request(request, *args, **argv):
+    return render(request, 'techblog_app/error400.html', status=400)
+
+
+def access_denied(request,  *args, **argv):
+    return render(request, 'techblog_app/error403.html', status=403)
+
 
 def page_not_found_view(request, *args, **argv):
     return render(request, 'techblog_app/error404.html', status=404)
-
-# TODO : add functions for 403, 400, 500 error views
 
 
 def handler500(request,  *args, **argv):

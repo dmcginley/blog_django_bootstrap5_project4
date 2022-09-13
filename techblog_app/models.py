@@ -8,7 +8,6 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from users_app.models import Profile
 from datetime import datetime
-# from ckeditor.fields import RichTextField
 from django_quill.fields import QuillField
 
 
@@ -19,10 +18,7 @@ class DateTimeWithoutTZField(models.DateTimeField):
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
-    # content = RichTextField(blank=True, null=True)
     content = QuillField(blank=True, null=True)
-
-    # content = models.TextField(blank=True, null=True)
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -40,12 +36,8 @@ class Comment(models.Model):
         Post, related_name="comments", on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     content = QuillField(blank=True, null=True)
-    # content = models.TextField()
-
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-
     date_posted = models.DateTimeField(default=timezone.now)
-    # date_posted = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ('-date_posted',)

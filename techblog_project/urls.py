@@ -37,7 +37,8 @@ urlpatterns = [
 ]
 
 # TODO: add references to error views - DEBUG must be False for custom views
-#handler403 = 'techblog_app.views.access_denied'
+handler403 = "techblog_app.views.access_denied"
+handler400 = "techblog_app.views.bad_request"
 handler404 = "techblog_app.views.page_not_found_view"
 handler500 = "techblog_app.views.handler500"
 

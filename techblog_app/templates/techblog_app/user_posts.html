@@ -111,25 +111,23 @@
         </div>
     </div>
     {% endfor %}
-
-    <!-- BUG: to fix is_paginated doesn't work -->
-    <div class="d-flex justify-content-center my-4">
-        {% if is_paginated %}
-        {% if post.comments.has_previous %}
-        <a class="pagination-btn btn btn-outline-secondary m-1" href="?page=1">First</a>
-        {% endif %}
-        {% for num in post.comments.paginator.page_range %}
-        {% if post.comments.number == num %}
-        <a class="pagination-btn btn btn-secondary m-1" href="?page={{ num }}">{{ num }}</a>
-        {% elif num > post.comments.number|add:'-3' and num < post.comments.number|add:'3' %}
-        <a class="pagination-btn btn btn-outline-secondary m-1" href="?page={{ num }}">{{ num }}</a>
-        {% endif %}
-        {% endfor %}
-        {% if post.comments.has_next %}
-        <a class="pagination-btn btn btn-outline-secondary m-1"
-            href="?page={{ post.comments.paginator.num_pages }}">Last</a>
-        {% endif %}
-    </div>
 </div>
-{% endif %}
+<!-- BUG: to fix is_paginated doesn't work -->
+<div class="d-flex justify-content-center my-4">
+    {% if is_paginated %}
+    {% if page_obj.has_previous %}
+    <a class="pagination-btn btn btn-outline-secondary m-1" href="?page=1">First</a>
+    {% endif %}
+    {% for num in page_obj.paginator.page_range %}
+    {% if page_obj.number == num %}
+    <a class="pagination-btn btn btn-secondary m-1" href="?page={{ num }}">{{ num }}</a>
+    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+    <a class="pagination-btn btn btn-outline-secondary m-1" href="?page={{ num }}">{{ num }}</a>
+    {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+    <a class="pagination-btn btn btn-outline-secondary m-1" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+    {% endif %}
+    {% endif %}
+</div>
 {% endblock content %}

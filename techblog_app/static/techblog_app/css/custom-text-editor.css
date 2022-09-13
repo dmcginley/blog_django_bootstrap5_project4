@@ -74,7 +74,8 @@ blockquote {
     word-wrap: break-word;
 }
 
+.ql-editor img,
 article img {
-    max-width: 100%;
     border-radius: 3px;
+    width: clamp(100px, 100%, 700px);
 }

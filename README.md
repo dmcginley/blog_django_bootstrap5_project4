@@ -16,9 +16,6 @@ top level folder for the project 4 containing bootstrap django and python files
 
 
 ## Folder layout
- ![_Folder-tree_](readme_images/folder-tree.png)
-
-##### Updated folder layout for deploying to Heroku
 
 ![_Folder-tree_](readme_images/new_django-folder-tree.png)
 > short description of the folder setup...
@@ -26,6 +23,9 @@ top level folder for the project 4 containing bootstrap django and python files
 ## Agile development - kanban board
 ![_The board_](readme_images/kanban.png)
 
+
+## Agile development - kanban board
+![_The board_](readme_images/kanban_wall.png)
 > Issues, methods user....
 
 ## Who is this website for
