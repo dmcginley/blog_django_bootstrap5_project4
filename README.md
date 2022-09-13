@@ -7,13 +7,14 @@ top level folder for the project 4 containing bootstrap django and python files
 ## Wireframe
 
 ![_Desktop and Mobile mockup_](readme_images/desktop-mobile.png)
-
+###### _Desktop and Mobile mockup_
 &nbsp;
 
 ![_Login and Register pages_](readme_images/login_reg.png)
+###### _Login and Register pages_
 
 ![_Profile and logout page_](readme_images/profile_logout.png)
-
+###### _Profile and logout page_
 
 ## Folder layout
 
@@ -23,9 +24,18 @@ top level folder for the project 4 containing bootstrap django and python files
 ## Agile development - kanban board
 ![_The board_](readme_images/kanban.png)
 
+<details>
+<summary>kanban board in my office</summary>
+<br>
 
-## Agile development - kanban board
 ![_The board_](readme_images/kanban_wall.png)
+###### Development - marked in red is the kanban board
+
+</details>
+
+
+
+
 > Issues, methods user....
 
 ## Who is this website for
