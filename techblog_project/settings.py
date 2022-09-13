@@ -214,19 +214,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # }
 
 
-# CKEDITOR_CONFIGS = {
-#     'default': {
-#         'toolbar': 'Custom',
-#         'toolbar_Custom': [
-#             ['Bold', 'Italic', 'Underline'],
-#             ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-',
-#                 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
-#             ['Link', 'Unlink'],
-#             ['RemoveFormat']
-#         ],
-#     }
-# }
-
 QUILL_CONFIGS = {
     'default': {
         'theme': 'snow',
@@ -234,7 +221,11 @@ QUILL_CONFIGS = {
             'syntax': True,
             'toolbar': [
                 [
-                    {'header': [1, 2, 3, 4, 5, 6]},
+                    # {'header': [1, 2, 3, 4, 5, 6, 'false']},
+                    {'header': []},
+                    # {'size': ['small', 'normal', 'large', 'huge']},
+                    # {'size': ['normal', 'small', 'large', 'huge']},
+                    # {'header': ['1', '2', '3', 'normal']},
 
                     'bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block',
                     {'align': []},
@@ -244,8 +235,6 @@ QUILL_CONFIGS = {
                 ['image', 'link'],
                 ['clean'],
             ]
-
-
         }
     }
 }

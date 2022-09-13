@@ -8,7 +8,7 @@ p img {
     border-radius: 3px;
 }
 
-th,
+/* th,
 td {
     border: 1px #bebebe solid !important;
     padding: 2px 4px !important;
@@ -16,16 +16,40 @@ td {
 
 .table {
     width: 32px;
-}
+} */
 
-.editor-toolbar button {
-    color: #566573 !important;
-}
-
+/* -------------------------- */
+/* quill editor css setting */
+/* -------------------------- */
 .ql-editor {
     min-height: 200px;
 }
 
+.ql-formats svg {
+    opacity: .8;
+}
+
+.ql-picker-label {
+    color: #5c5c5c;
+}
+
+.ql-toolbar {
+    border: 1px solid #ced4da !important;
+    border-radius: 0.4rem 0.4rem 0 0;
+}
+
+.ql-container {
+    font-size: 2rem;
+    border: 1px solid #ced4da !important;
+    border-radius: 0 0 4px 4px;
+    border-top: 0 !important;
+}
+
+.ql-container:nth-child(n) {
+    font-size: 1rem;
+}
+
+/* quill pre element */
 pre {
     color: var(--light-gray);
     border-radius: 3px;
@@ -33,14 +57,22 @@ pre {
     padding: .8rem;
 }
 
+/* code color in pre */
+.hljs-keyword {
+    color: #ff723a !important;
+}
+
+.hljs-string {
+    color: #76b850 !important;
+}
 
 blockquote {
     background-color: rgb(241, 237, 237);
     margin: 0 1rem !important;
-    padding: 0 1rem !important;
+    padding: 0 .6rem 0 1rem !important;
     border-left: 8px solid rgb(125, 91, 170) !important;
+    word-wrap: break-word;
 }
-
 
 article img {
     max-width: 100%;

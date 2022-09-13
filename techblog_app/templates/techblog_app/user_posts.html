@@ -1,5 +1,4 @@
 {% extends 'techblog_app/base.html' %}
-{% load markdownify %}
 {% block content %}
 <div class="container">
     <div class=p-3">
@@ -82,7 +81,7 @@
                         {{ post.title }}
                     </a>
                 </h2>
-                <p class="comment-body p-2">
+                <p>
                     {{ post.content.html|safe }}
                 </p>
                 <small class="text-muted">
