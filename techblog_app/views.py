@@ -55,28 +55,11 @@ class UserPostListView(ListView):
         })
         return context
 
-
-# class UserProfilePostView(LoginRequiredMixin, ListView):
-#     model = Post
-#     template_name = 'techblog_app/profile.html'
-#     context_object_name = 'posts'
-#     paginate_by = 7
-
-#     def test_func(self):
-
-#         profile = Profile.user
-#         if self.request.user == profile:
-#             return True
-#         return False
-
-#     def get_queryset(self):
-#         user = get_object_or_404(User, username=self.kwargs.get('username'))
-#         return Post.objects.filter(author=user).order_by('-date_posted')
-
-
 # ------------------------------
 #    the 4 post views: DetailVie, Create, Update, Delete.
 # ------------------------------
+
+
 class PostDetailView(DetailView):
     model = Post
 
@@ -94,6 +77,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 
 # update a post
+
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
     fields = ['title', 'content']
