@@ -169,50 +169,6 @@ LOGIN_URL = 'login'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# MARKDOWNIFY = {
-#     "default": {
-#         "MARKDOWN_EXTENSIONS": [
-#             'markdown.extensions.fenced_code',
-#             'markdown.extensions.extra',
-#         ],
-#         "STRIP": False,
-#         "WHITELIST_TAGS": [
-#             'a',
-#             'abbr',
-#             'acronym',
-#             'b',
-#             'blockquote',
-#             'em',
-#             'i',
-#             'li',
-#             'ol',
-#             'p',
-#             'strong',
-#             'ul',
-#             'code',
-#             'span',
-#             'div', 'class',
-#             'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-#             'img',
-#             'table', 'thead', 'tr', 'th', 'td', 'tbody'
-#         ],
-#         "WHITELIST_ATTRS": [
-#             'href',
-#             'src',
-#             'alt',
-#             'class',
-#         ],
-#         "WHITELIST_STYLES": [
-#             'color',
-#             'font-weight',
-#         ],
-#         "WHITELIST_PROTOCOLS": [
-#             'http',
-#             'https',
-#         ]
-#     }
-# }
-
 
 QUILL_CONFIGS = {
     'default': {
@@ -221,12 +177,7 @@ QUILL_CONFIGS = {
             'syntax': True,
             'toolbar': [
                 [
-                    # {'header': [1, 2, 3, 4, 5, 6, 'false']},
                     {'header': []},
-                    # {'size': ['small', 'normal', 'large', 'huge']},
-                    # {'size': ['normal', 'small', 'large', 'huge']},
-                    # {'header': ['1', '2', '3', 'normal']},
-
                     'bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block',
                     {'align': []},
                     {'color': []},

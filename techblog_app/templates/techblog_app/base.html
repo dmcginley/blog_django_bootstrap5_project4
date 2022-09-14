@@ -7,16 +7,16 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description"
-            content="The blog for discussing everything to do with code programing, and development.">
+            content="The blog for discussing everything to do with code, programing, and development.">
         {% if title %}
         <title>Tech Blog Home - {{ title }}</title>
         {% else %}
         <title>Tech Blog Home</title>
         {% endif %}
 
+        {# my two css files #}
         <link rel="stylesheet" type="text/css" href="{% static 'techblog_app/css/index.css' %}" />
         <link rel="stylesheet" type="text/css" href="{% static 'techblog_app/css/custom-text-editor.css' %}" />
-        <link rel="stylesheet" type="text/css" href="{% static 'techblog_app/css/zindex-container-size.css' %}" />
         <script src="{% static 'techblog_app/js/dist/main.js' %}"></script>
 
         {# favicon generated using favicon.io #}
@@ -28,6 +28,7 @@
             href="{% static 'techblog_app/images/favicon/favicon-16x16.png' %}">
 
         {% include 'django_quill/media.html' %}
+
     </head>
 
     <body class="flex-100 d-flex flex-column h-100">
@@ -37,8 +38,9 @@
                 <div class="container d-flex">
 
                     {# the navbar-brand #}
-                    <a class="d-flex align-items-center navbar-brand" href="{% url 'techblog-home' %}">
-                        <img class="me-2" height="34" src="{% static 'techblog_app/images/logo.svg' %}" alt="">
+                    <a class="d-flex align-items-center navbar-brand" href="{% url 'techblog-home' %}"">
+                        <img class=" me-2" height="34" src="{% static 'techblog_app/images/logo.svg' %}"
+                        alt="site logo link">
                         <div class="text-white navbar-brand-text">
                             Tech<span class="fw-bold">Blog</span>
                         </div>
@@ -47,7 +49,7 @@
 
                         {# the new post button #}
                         <a class="new-post-btn btn btn-white text-white me-2 d-flex align-items-center" type="button"
-                            href="{% url 'post-create' %}">
+                            href="{% url 'post-create' %}" alt="create new post">
                             <svg xmlns=" http://www.w3.org/2000/svg" width="20" height="20" fill="white"
                                 class="bi bi-plus-circle me-0 me-md-2" viewBox="0 0 16 16">
                                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -56,8 +58,8 @@
                             </svg>
                             <span class="d-none d-md-block text-white">New post</span>
                         </a>
-                        <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" value="nav dropdown">
                             <span class=" navbar-toggler-icon"></span>
                         </button>
 
@@ -68,15 +70,9 @@
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     {%  if user.is_authenticated %}
                                     {% comment %}
-                                    <!-- <img src="{{ user.profile.image.url }}" class="rounded-circle text-white" height="40"
-                                    alt="avatar, portrait of user" loading="lazy" /> -->
                                     {% endcomment %}
-
-
                                     <img src="{{ request.user.profile.image.url }}" class="rounded-circle text-white"
                                         height="40" alt="avatar, portrait of user" loading="lazy" />
-
-
                                     {% else %}
                                     {# the blank svg image for button when not logged in, so you can still click on the menu #}
                                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#f7f7f785"

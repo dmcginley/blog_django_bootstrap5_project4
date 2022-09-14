@@ -8,16 +8,6 @@ p img {
     border-radius: 3px;
 }
 
-/* th,
-td {
-    border: 1px #bebebe solid !important;
-    padding: 2px 4px !important;
-}
-
-.table {
-    width: 32px;
-} */
-
 /* -------------------------- */
 /* quill editor css setting */
 /* -------------------------- */
@@ -78,4 +68,26 @@ blockquote {
 article img {
     border-radius: 3px;
     width: clamp(100px, 100%, 700px);
+}
+
+
+/* work-around to fix the z-index  of success message going under the profile image in the profile page*/
+.messages-container {
+    z-index: 100;
+}
+
+.profile-pic-container {
+    z-index: -1;
+
+}
+
+
+
+/* to limit the for width for login register page.... */
+.edit-profile-max-width {
+    max-width: 660px
+}
+
+.form-max-width {
+    max-width: 560px
 }
