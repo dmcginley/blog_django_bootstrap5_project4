@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'techblog_project.wsgi.application'
+# WSGI_APPLICATION = 'techblog_project.wsgi.application'
 
 
 DATABASES = {
