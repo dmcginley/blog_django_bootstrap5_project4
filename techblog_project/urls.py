@@ -31,9 +31,6 @@ urlpatterns = [
     path('logout', auth_views.LogoutView.as_view(
         template_name='users_app/logout.html'), name='logout'),
     path('', include('techblog_app.urls')),
-
-    # path('summernote/', include('django_summernote.urls')),
-
 ]
 
 # TODO: add references to error views - DEBUG must be False for custom views

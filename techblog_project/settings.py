@@ -13,21 +13,13 @@ import sys
 import os
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-ggvhv5t6+kutly-blg$t^*bnus$aycw!#c!vhs$^9gemf7mrsy'
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-# DEBUG = os.environ.get("DEBUG_VALUE") == "True"
 
 ALLOWED_HOSTS = ["*"]
 
@@ -46,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'markdownify',
-    # 'ckeditor',
     'django_quill',
     'storages',
 ]
@@ -83,16 +74,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'techblog_project.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-# postgres://dgcnegxhxsbyuv:f68e441ad2c4ad7edc531470f5d885374a2d56b61a5e2a0879fa57e5a0df822f@ec2-3-208-79-113.compute-1.amazonaws.com:5432/d15n2ofqhba19t
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -137,25 +118,15 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.0/howto/static-files/
-
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# STATIC_ROOT = '/static/'
-STATIC_URL = '/static/'
-
-# added for pagedown to work
-# STATICFILES_DIRS = [
-#     BASE_DIR / 'static',  # os.path.join(BASE_DIR, 'static)
-# ]
-
+STATIC_URL = '/staticfiles/'
 # STATIC_ROOT = BASE_DIR / 'staticfiles'  # for production with cdn
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
-# CKEDITOR_BASEPATH = "/ckeditor/ckeditor/"
-
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 
@@ -200,7 +171,3 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-
-# Configure Django App for Heroku.
-# django_on_heroku.settings(locals())
