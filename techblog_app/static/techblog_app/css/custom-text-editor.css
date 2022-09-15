@@ -67,7 +67,8 @@ blockquote {
 .ql-editor img,
 article img {
     border-radius: 3px;
-    width: clamp(100px, 100%, 700px);
+    /* width: clamp(100px, 100%, 700px); */
+    width: 100%;
 }
 
 
