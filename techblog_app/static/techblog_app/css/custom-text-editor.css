@@ -36,7 +36,7 @@
 
 /* quill pre element */
 pre {
-    /* color: var(--light-gray); */
+    color: var(--light-gray);
     border-radius: 3px;
     background-color: #353535;
     padding: .8rem;
