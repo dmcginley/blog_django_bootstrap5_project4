@@ -74,11 +74,12 @@
                                     {%  if user.is_authenticated %}
                                     {% comment %}
                                     {% endcomment %}
-                                    <img src="{{ request.user.profile.image.url }}" class="rounded-circle text-white"
-                                        height="40" alt="avatar, portrait of user" loading="lazy" />
+                                    <img src="{{ request.user.profile.image.url }}"
+                                        class="avatar-img-nav rounded-circle text-white" alt="avatar, portrait of user"
+                                        loading="lazy" />
                                     {% else %}
                                     {# the blank svg image for button when not logged in, so you can still click on the menu #}
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#f7f7f785"
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" fill="#f7f7f785"
                                         class="bi bi-person-circle" viewBox="0 0 16 16">
                                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                                         <path fill-rule="evenodd"
@@ -215,14 +216,14 @@
                     {%  if user.is_authenticated %}
                     <a class="d-flex align-items-center text-decoration-none"
                         href="{% url 'user-posts' user.username %}">
-                        <img src="{{ user.profile.image.url }}" class="rounded-circle" height="46"
+                        <img src="{{ user.profile.image.url }}" class="avatar-img-nav rounded-circle"
                             alt="avatar, portrait of user" loading="lazy" />
                         <h4 class="offcanvas-title text-dark fw-bold ps-3" id="offcanvasNavbarLabel">{{ user.username }}
                         </h4>
                     </a>
                     {% else %}
                     <div class="d-flex">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#f7f7f785"
+                        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" fill="#f7f7f785"
                             class="bi bi-person-circle" viewBox="0 0 16 16">
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                             <path fill-rule="evenodd"

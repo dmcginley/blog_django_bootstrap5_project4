@@ -6,6 +6,33 @@
 /* -------------------------- */
 /* quill editor css setting */
 /* -------------------------- */
+
+.avatar-img-nav {
+    object-fit: cover;
+    height: 44px;
+    width: 44px;
+}
+
+.avatar-img-profile {
+    object-fit: cover;
+    height: 160px;
+    width: 160px;
+}
+
+.avatar-img-post {
+    object-fit: cover;
+    height: 74px;
+    width: 74px;
+}
+
+.avatar-img-comment {
+    object-fit: cover;
+    height: 58px;
+    width: 58px;
+}
+
+
+
 .ql-editor {
     min-height: 200px;
 }

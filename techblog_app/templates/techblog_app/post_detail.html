@@ -30,7 +30,7 @@
         {% endif %}
 
         <a class="d-inline align-self-start rounded-circle m-2" href="{% url 'user-posts' object.author.username %}">
-            <img src=" {{ object.author.profile.image.url }}" class="rounded-circle m-2" height="74"
+            <img src=" {{ object.author.profile.image.url }}" class="avatar-img-post rounded-circle m-2" height="74"
                 alt="post profile image of the author">
         </a>
 
@@ -114,7 +114,7 @@
             </div>
             {% endif %}
             <a href="{% url 'user-posts' comment.author.username %}">
-                <img src="{{ comment.author.profile.image.url }}" class="rounded-circle me-4 mb-3" height="58"
+                <img src="{{ comment.author.profile.image.url }}" class="avatar-img-comment rounded-circle me-4 mb-3"
                     alt="profile image of the commenter">
             </a>
             <article class="pt-0 pt-sm-3 d-block overflow-hidden">
