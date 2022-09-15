@@ -125,18 +125,12 @@ article img {
         height: 200px;
         width: 200px;
     }
-
-    .ql-editor img,
-    article img {
-        max-width: 70%;
-    }
 }
 
 @media only screen and (min-width: 992px) {
 
     ql-editor img,
     article img {
-        max-width: 800px;
+        max-width: 860px;
     }
-
 }
