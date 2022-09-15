@@ -19,12 +19,6 @@
         {% else %}
         <title>Tech Blog Home</title>
         {% endif %}
-
-        {# my two css files #}
-        <link rel="stylesheet" type="text/css" href="{% static 'techblog_app/css/index.css' %}" />
-        <link rel="stylesheet" type="text/css" href="{% static 'techblog_app/css/custom-text-editor.css' %}" />
-        <script src="{% static 'techblog_app/js/dist/main.js' %}"></script>
-
         {# favicon generated using favicon.io #}
         <link rel="apple-touch-icon" sizes="180x180"
             href="{% static 'techblog_app/images/favicon/apple-touch-icon.png' %}">
@@ -33,6 +27,13 @@
         <link rel="icon" type="image/png" sizes="16x16"
             href="{% static 'techblog_app/images/favicon/favicon-16x16.png' %}">
         {% include 'django_quill/media.html' %}
+
+
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/darcula.min.css">
+        {# my two css files #}
+        <link rel="stylesheet" type="text/css" href="{% static 'techblog_app/css/index.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'techblog_app/css/custom-text-editor.css' %}" />
+        <script src="{% static 'techblog_app/js/dist/main.js' %}"></script>
     </head>
 
     <body class="flex-100 d-flex flex-column h-100">
