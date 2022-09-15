@@ -4,9 +4,8 @@
 }
 
 /* -------------------------- */
-/* quill editor css setting */
+/* image sizing ...because AWS doesn't suport local image resizing */
 /* -------------------------- */
-
 .avatar-img-nav {
     object-fit: cover;
     height: 44px;
@@ -31,8 +30,9 @@
     width: 58px;
 }
 
-
-
+/* -------------------------- */
+/* quill editor css setting */
+/* -------------------------- */
 .ql-editor {
     min-height: 200px;
 }
@@ -94,8 +94,9 @@ article img {
     background-color: #ced4da;
 }
 
-
-/* work-around to fix the z-index  of success message going under the profile image in the profile page*/
+/* -------------------------- */
+/* work-around to fix the z-index  ...of success message going under the profile image in the profile page*/
+/* -------------------------- */
 .messages-container {
     z-index: 100;
 }
@@ -105,8 +106,9 @@ article img {
 
 }
 
-
-
+/* -------------------------- */
+/* limit width of forms */
+/* -------------------------- */
 /* to limit the for width for login register page.... */
 .edit-profile-max-width {
     max-width: 660px
@@ -114,4 +116,14 @@ article img {
 
 .form-max-width {
     max-width: 560px
+}
+
+
+@media screen and (min-width: 768px) {
+
+    .avatar-img-profile {
+        object-fit: cover;
+        height: 200px;
+        width: 200px;
+    }
 }
