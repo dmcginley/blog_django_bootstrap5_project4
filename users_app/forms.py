@@ -7,7 +7,7 @@ from .models import Profile
 from techblog_app.models import Comment
 # from techblog_app.models import Post
 # from django.forms import ModelForm
-from django_quill.fields import QuillField
+from django_quill.fields import QuillField, QuillFormField
 
 
 # class BaseForm(ModelForm):
@@ -32,6 +32,11 @@ class UserUpdateForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['email']
+
+
+class QuillFieldForm(forms.Form):
+    title = forms.CharField()
+    content = QuillFormField()
 
 
 class ProfileUpdateForm(forms.ModelForm):

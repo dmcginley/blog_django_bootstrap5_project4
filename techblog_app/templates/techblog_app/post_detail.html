@@ -31,7 +31,7 @@
 
         <a class="d-inline align-self-start rounded-circle m-2" href="{% url 'user-posts' object.author.username %}">
             <img src=" {{ object.author.profile.image.url }}" class="avatar-img-post rounded-circle m-2" height="74"
-                alt="post profile image of the author">
+                alt="profile image of the author">
         </a>
 
         {# the main body of text #}
@@ -40,7 +40,7 @@
                 {{ object.title }}
             </h2>
             <p>
-                {{ post.content.html|safe }}
+                {{ post.content.html | safe}}
             </p>
             <small class="text-muted">
                 By
@@ -87,7 +87,7 @@
         <p class="text-muted mt-4 ps-5">No comments yet...</p>
         {% else %}
         {% for comment in post.comments.all %}
-        <div class="p-2 ps-sm-5 pt-4 d-sm-flex position-relative">
+        <div class="p-2 ps-sm-5 pt-4 d-sm-flex position-relative" id="comment-{{comment.id}}">
 
             {# the drop-down #}
             {% if comment.author == user %}
@@ -142,6 +142,7 @@
     </div>
     {% endif %}
 </section>
+
 
 <!-- <div class="d-flex justify-content-center my-4">
     {% if is_paginated %}

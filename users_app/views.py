@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.views.generic import ListView, DetailView
 from .models import Profile
-from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm, QuillFieldForm
 
 
 def register(request):
@@ -47,7 +47,3 @@ def edit_profile(request):
     }
 
     return render(request, 'users_app/edit_profile.html', context)
-
-
-def form_view(request):
-    return render(request, 'form_view.html', {'form': QuillFieldForm()})

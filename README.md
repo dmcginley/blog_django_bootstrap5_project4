@@ -16,7 +16,8 @@ top level folder for the project 4 containing bootstrap django and python files
 ![_Profile and logout page_](readme_images/profile_logout.png)
 ###### _Profile and logout page_
 
-## Folder layout
+## Project folder layout
+
 
 ![_Folder-tree_](readme_images/new_django-folder-tree.png)
 > short description of the folder setup...
@@ -25,7 +26,7 @@ top level folder for the project 4 containing bootstrap django and python files
 ![_The board_](readme_images/kanban.png)
 
 <details>
-<summary>kanban board in my office</summary>
+<summary>Physical kanban board in my office</summary>
 <br>
 
 ![_The board_](readme_images/kanban_wall.png)
@@ -36,7 +37,13 @@ top level folder for the project 4 containing bootstrap django and python files
 
 
 
-> Issues, methods user....
+## Design thinking
+
+** Empathies **
+** Define **
+** Ideate **
+** Prototype **
+** Test **
 
 ## Who is this website for
 This blog website is aimed at developers or people interested in coding & development, as it has a built in markdown editor.

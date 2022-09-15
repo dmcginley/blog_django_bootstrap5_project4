@@ -65,7 +65,7 @@
 pre {
     color: var(--light-gray);
     border-radius: 3px;
-    background-color: #353535;
+    background-color: var(--black);
     padding: .8rem;
 }
 
@@ -91,7 +91,6 @@ article img {
     border-radius: 3px;
     max-width: 100%;
     margin: .2rem;
-    background-color: #ced4da;
 }
 
 /* -------------------------- */
@@ -126,4 +125,18 @@ article img {
         height: 200px;
         width: 200px;
     }
+
+    .ql-editor img,
+    article img {
+        max-width: 70%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+
+    ql-editor img,
+    article img {
+        max-width: 800px;
+    }
+
 }

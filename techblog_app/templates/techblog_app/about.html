@@ -33,7 +33,8 @@
             </div>
         </div>
         <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden">
-            <img class="rounded-lg-3" src="{% static 'techblog_app/images/hero_image4.png' %}" alt="" width="720">
+            <img class="rounded-lg-3" src="{% static 'techblog_app/images/hero_image4.png' %}"
+                alt="image of the front page of the blog" width="720">
         </div>
     </div>
 </section>
@@ -46,7 +47,7 @@
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 col-12 col-md-12">
             <div class="col">
                 <img class="mx-auto d-block brand-icon" src="{% static 'techblog_app/images/brand_svg/bootstrap.svg' %}"
-                    height="80" alt="Bootstrap icon">
+                    height="80" alt="Bootstrap card icon">
                 <div class="px-sm-3 py-5">
                     <h5>Bootstrap 5</h5>
                     <p>The UI is created with <strong>Bootstrap 5</strong>, and compiled using <strong>Webpack</strong>,
@@ -56,7 +57,7 @@
             </div>
             <div class="col">
                 <img class="mx-auto d-block brand-icon" src="{% static 'techblog_app/images/brand_svg/django.svg' %}"
-                    height="80" alt="Django icon">
+                    height="80" alt="Django card icon">
                 <div class="px-sm-3 py-5">
                     <h5>Django</h5>
                     <p class="">The Blog is built using <strong>Django 4.0.5</strong>, a Python-based web framework that
@@ -65,7 +66,7 @@
             </div>
             <div class="col">
                 <img class="mx-auto d-block brand-icon" src="{% static 'techblog_app/images/brand_svg/python.svg' %}"
-                    height="80" alt="Python icon">
+                    height="80" alt="Python card icon">
                 <div class="px-sm-3 py-5">
                     <h5>Python 3</h5>
                     <p class="">Some quick example text to build on the card title and make up the bulk of the
@@ -74,7 +75,8 @@
             </div>
             <div class="col">
                 <img class="mx-auto d-block brand-icon"
-                    src="{% static 'techblog_app/images/brand_svg/postgresql.svg' %}" height="80" alt="PostgreSQL icon">
+                    src="{% static 'techblog_app/images/brand_svg/postgresql.svg' %}" height="80"
+                    alt="PostgreSQL card icon">
                 <div class="px-sm-3 py-5">
                     <h5>PostgreSQL</h5>
                     <p class="">Some quick example text to build on the card title and make up the bulk of the
@@ -96,16 +98,15 @@
             </div>
         </div>
         <div class=" col-lg-7">
-            <img class="img-fluid" src="{% static 'techblog_app/images/md_post.png' %}" alt="">
+            <img class="img-fluid" src="{% static 'techblog_app/images/quill_post.png' %}"
+                alt="a picture of the text editor in use">
         </div>
     </div>
 </section>
-<section class="container pt-3 pb-3">
+<section class="container pt-3 pb-2">
     <div class="px-2 px-sm-3">
-        <h2 class="mt-5">Markdown editor used - <strong><a href="https://quilljs.com/"
+        <h2 class="mt-5 pb-3">Rich text editor used - <strong><a href="https://quilljs.com/"
                     target="_blank">Quill</a></strong></h2>
-        <h5 class="mb-4 text-muted">...can test it out here</h5>
-
         <section class="pb-5">
             {% include 'techblog_app/about_quill_form.html' %}
         </section>

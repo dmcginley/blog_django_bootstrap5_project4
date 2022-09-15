@@ -9,7 +9,8 @@
             </fieldset>
             <div class="d-flex flex-column  mt-3">
                 <button class="btn btn-outline-danger" type="submit">Confirm</button>
-                <a class="btn btn-outline-muted mt-3" href="{% url 'post-detail' object.id %}">Cancel</a>
+                <a class="btn btn-outline-muted mt-3"
+                    href="{% url 'post-detail' object.post.id %}#comment-{{object.id}}">Cancel</a>
             </div>
         </form>
     </div>

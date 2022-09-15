@@ -13,7 +13,6 @@
         <meta name="author" content="Donnchadh Mc Ginley">
         <meta name="theme-color" content="#3d4545">
 
-
         {% if title %}
         <title>Tech Blog Home - {{ title }}</title>
         {% else %}
@@ -41,10 +40,10 @@
                 <div class="container d-flex">
 
                     {# the navbar-brand #}
-                    <a class="d-flex align-items-center navbar-brand" href="{% url 'techblog-home' %}"">
+                    <a class="d-flex align-items-center navbar-brand" href="{% url 'techblog-home' %}">
                         <img class=" me-2" height="34" src="{% static 'techblog_app/images/logo.svg' %}"
-                        alt="site logo link">
-                        <div class="text-white navbar-brand-text">
+                            alt="site logo link">
+                        <div class=" text-white navbar-brand-text">
                             Tech<span class="fw-bold">Blog</span>
                         </div>
                     </a>
@@ -52,7 +51,7 @@
 
                         {# the new post button #}
                         <a class="new-post-btn btn btn-white text-white me-2 d-flex align-items-center" type="button"
-                            href="{% url 'post-create' %}" alt="create new post">
+                            href="{% url 'post-create' %}" alt="new post button" title="Create new post">
                             <svg xmlns=" http://www.w3.org/2000/svg" width="20" height="20" fill="white"
                                 class="bi bi-plus-circle me-0 me-md-2" viewBox="0 0 16 16">
                                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -76,7 +75,7 @@
                                     {% endcomment %}
                                     <img src="{{ request.user.profile.image.url }}"
                                         class="avatar-img-nav rounded-circle text-white" alt="avatar, portrait of user"
-                                        loading="lazy" />
+                                        title="Dropdown menu" />
                                     {% else %}
                                     {# the blank svg image for button when not logged in, so you can still click on the menu #}
                                     <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" fill="#f7f7f785"
@@ -217,7 +216,7 @@
                     <a class="d-flex align-items-center text-decoration-none"
                         href="{% url 'user-posts' user.username %}">
                         <img src="{{ user.profile.image.url }}" class="avatar-img-nav rounded-circle"
-                            alt="avatar, portrait of user" loading="lazy" />
+                            alt="avatar, portrait of user" loading="lazy" title="View profile" />
                         <h4 class="offcanvas-title text-dark fw-bold ps-3" id="offcanvasNavbarLabel">{{ user.username }}
                         </h4>
                     </a>

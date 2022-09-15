@@ -11,7 +11,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post, Comment
 from users_app.models import Profile
-from users_app.forms import CommentForm
+from users_app.forms import CommentForm, QuillFieldForm
 
 
 def home(request):
@@ -63,6 +63,15 @@ class UserPostListView(ListView):
 class PostDetailView(DetailView):
     model = Post
 
+    # def get_context_data(self, **kwargs):
+    #     context = super(PostDetailView, self).get_context_data(**kwargs)
+
+    #     context.update({
+    #         'form': QuillFieldForm()
+    #     })
+    #     print(">>> ", context)
+    #     return context
+
 
 # to create a post
 
@@ -70,6 +79,15 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['title', 'content']
     template_name = 'techblog_app/post_form.html'
+
+    # def get_context_data(self, **kwargs):
+    #     context = super(PostCreateView, self).get_context_data(**kwargs)
+
+    #     context.update({
+    #         'form': QuillFieldForm()
+    #     })
+    #     print("!>>> ", context)
+    #     return context
 
     def form_valid(self, form):
         form.instance.author = self.request.user
