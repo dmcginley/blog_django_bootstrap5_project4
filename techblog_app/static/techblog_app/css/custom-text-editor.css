@@ -32,6 +32,28 @@
     width: 58px;
 }
 
+
+/* -------------------------- */
+/* the post colors */
+/* -------------------------- */
+article .post-title-color {
+    color: var(--secondary);
+}
+
+article .post-title-color:hover {
+    color: var(--link);
+}
+
+article .post-link-color {
+    color: var(--link);
+}
+
+article .post-link-color:hover {
+    color: var(--link-hover);
+}
+
+
+
 /* -------------------------- */
 /* quill editor css setting */
 /* -------------------------- */

@@ -66,22 +66,6 @@ a:hover {
     padding-left: 88px;
 }
 
-// the post colors
-article .post-title-color {
-    color: var(--secondary);
-}
-article .post-title-color:hover {
-    color: var(--link);
-}
-
-article .post-link-color {
-    color: var(--link);
-}
-
-article .post-link-color:hover {
-    color: var(--link-hover);
-}
-
 .brand-icon {
     opacity: 0.5;
 }
@@ -94,14 +78,4 @@ article .post-link-color:hover {
 
 footer .name-color {
     color: var(--name);
-}
-
-.ql-editor a,
-article a {
-    color: var(--article-link);
-}
-
-.ql-editor a:hover,
-article a:hover {
-    color: var(--article-link-hover);
 }
