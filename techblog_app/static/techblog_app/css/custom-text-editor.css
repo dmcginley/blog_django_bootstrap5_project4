@@ -96,7 +96,15 @@ article img {
 }
 
 
+.ql-editor a,
+article a {
+    color: var(--article-link);
+}
 
+.ql-editor a:hover,
+article a:hover {
+    color: var(--article-link-hover);
+}
 
 /* -------------------------- */
 /* work-around to fix the z-index  ...of success message going under the profile image in the profile page*/
