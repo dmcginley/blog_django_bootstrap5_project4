@@ -67,18 +67,18 @@ a:hover {
 }
 
 // the post colors
-.post-title-color {
+article .post-title-color {
     color: var(--secondary);
 }
-.post-title-color:hover {
+article .post-title-color:hover {
     color: var(--link);
 }
 
-.post-link-color {
+article .post-link-color {
     color: var(--link);
 }
 
-.post-link-color:hover {
+article .post-link-color:hover {
     color: var(--link-hover);
 }
 
@@ -96,11 +96,12 @@ footer .name-color {
     color: var(--name);
 }
 
-ql-editor a,
+.ql-editor a,
 article a {
-    color: var(--article-link) !important;
+    color: var(--article-link);
 }
-ql-editor a:hover,
+
+.ql-editor a:hover,
 article a:hover {
-    color: var(--article-link-hover) !important;
+    color: var(--article-link-hover);
 }
