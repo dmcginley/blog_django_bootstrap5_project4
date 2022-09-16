@@ -152,6 +152,25 @@ article a:hover {
     max-width: 560px
 }
 
+.register-form-h {
+    min-height: 910px;
+}
+
+.login-form-h,
+.edit-profile-form-h {
+    min-height: 530px;
+}
+
+.post-form-h,
+.comment-form-h {
+    min-height: 560px;
+}
+
+
+footer {
+    height: 100px;
+}
+
 
 @media only screen and (min-width: 768px) {
 
