@@ -11,7 +11,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post, Comment
 from users_app.models import Profile
-from users_app.forms import CommentForm, QuillFieldForm
+from users_app.forms import CommentForm
 
 
 def home(request):
@@ -28,14 +28,14 @@ class PostListView(ListView):
 
     context_object_name = 'posts'
     ordering = ['-date_posted']  # date posted in reverse order
-    paginate_by = 6
+    paginate_by = 5
 
 
 class UserPostListView(ListView):
     model = Post
     template_name = 'techblog_app/user_posts.html'
     context_object_name = 'posts'
-    paginate_by = 6
+    paginate_by = 5
 
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
@@ -55,39 +55,19 @@ class UserPostListView(ListView):
         })
         return context
 
+
 # ------------------------------
 #    the 4 post views: DetailVie, Create, Update, Delete.
 # ------------------------------
-
-
 class PostDetailView(DetailView):
     model = Post
 
-    # def get_context_data(self, **kwargs):
-    #     context = super(PostDetailView, self).get_context_data(**kwargs)
-
-    #     context.update({
-    #         'form': QuillFieldForm()
-    #     })
-    #     print(">>> ", context)
-    #     return context
-
 
 # to create a post
-
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['title', 'content']
     template_name = 'techblog_app/post_form.html'
-
-    # def get_context_data(self, **kwargs):
-    #     context = super(PostCreateView, self).get_context_data(**kwargs)
-
-    #     context.update({
-    #         'form': QuillFieldForm()
-    #     })
-    #     print("!>>> ", context)
-    #     return context
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -95,7 +75,6 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 
 # update a post
-
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
     fields = ['title', 'content']
@@ -126,7 +105,6 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 # ------------------------------
     # the 4 comment views: DetailView Create, Update, Delete.
 # ------------------------------
-
 class CommentDetailView(DetailView):
     model = Comment
 
@@ -165,9 +143,8 @@ class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         print("updating ", self.object.post.pk, self.object.pk)
         return reverse('post-detail', kwargs={'pk': self.object.post.pk})
 
+
 # delete a post, and goes back to homepage
-
-
 class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Comment
 
@@ -190,11 +167,10 @@ def about(request):
 
     return render(request, 'techblog_app/about.html', {'title': 'About'})
 
+
 # ------------------------------
 #   error views: 400, 403, 404, & 500
 # ------------------------------
-
-
 def bad_request(request, *args, **argv):
     return render(request, 'techblog_app/error400.html', status=400)
 

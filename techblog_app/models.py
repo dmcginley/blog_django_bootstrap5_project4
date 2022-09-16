@@ -1,6 +1,5 @@
 from email.policy import default
 import imp
-from tabnanny import verbose
 import django
 from django.db import models
 from django.utils import timezone
