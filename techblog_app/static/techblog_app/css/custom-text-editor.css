@@ -105,6 +105,15 @@ pre {
 
 code {
     color: var(--primary);
+    background-color: #f0f0f0;
+    border: 1px solid #b4b4b4 !important;
+    border-radius: 2px;
+    margin: 0 2px 0 2px;
+
+}
+
+code a {
+    color: var(--primary);
 }
 
 blockquote {
