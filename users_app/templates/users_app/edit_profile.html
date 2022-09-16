@@ -1,10 +1,10 @@
 {% extends 'techblog_app/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-<div class="edit-profile-form-h px-3">
+<div class="edit-profile-form-h">
     <main class="container form-container col-md-8 col-lg-6">
-        <section class="p-3">
-            <img class="avatar-img-profile rounded-circle m-4 mx-auto d-block" src="{{ user.profile.image.url }}"
+        <section class="">
+            <img class="avatar-img-profile rounded-circle mx-auto my-5 d-block" src="{{ user.profile.image.url }}"
                 alt="profile image" srcset="">
             <h1 class="text-capitalize text-center mb-2">
                 {{ user.username  }}
@@ -21,7 +21,7 @@
                 {{ profile_form|crispy }}
 
             </fieldset>
-            <div class="d-grid gap-2 mt-2 col-12 col-md-6 col-lg-4">
+            <div class="d-grid gap-2 mt-2 pb-4 col-12 col-md-6 col-lg-4">
                 <button class="btn btn-primary d-block d-md-inline mb-4" type="submit">Update</button>
             </div>
         </form>

@@ -102,6 +102,11 @@ pre {
     color: #76b850 !important;
 }
 
+
+code {
+    color: var(--primary);
+}
+
 blockquote {
     background-color: rgb(241, 237, 237);
     margin: 0 1rem !important;
