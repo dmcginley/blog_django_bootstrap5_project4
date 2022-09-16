@@ -39,17 +39,31 @@ top level folder for the project 4 containing bootstrap django and python files
 
 ## Design thinking
 
-** Empathies **
-** Define **
-** Ideate **
-** Prototype **
-** Test **
+**Empathies**
+
+**Define**
+
+**Ideate**
+
+**Prototype**
+
+**Test**
+
 
 ## Who is this website for
 This blog website is aimed at developers or people interested in coding & development, as it has a built in markdown editor.
 The interface is designed to allow you to create short quick snippets of text or code with the emphases on text over images. 
 
-* a group of people interested in discussion about coding
+* a group of people interested in discussion about coding/Webdev
+* People who want a quick forum to chat or jot down coding ideas and concepts.
+
+* The blog fills the the purpose giving like minded coders a place to congregate and discuss code projects, and smiler in the style of a social media platform.
+
+* On the blog you can upload code blocks, images, links, and rich-text 
+
+
+
+
 * a few admin users to help keep the site clean and free from online abuse through the admin panel.
 
 ## User Stories
@@ -290,9 +304,15 @@ Github
 
 #### Images & Icons
 
-[pexels.com](https://www.pexels.com/search/cat/) - for the profile images
+* [pexels.com](https://www.pexels.com/search/cat/) - for the profile images
 
-[Simple Icons](https://simpleicons.org/) - icons for the about page
+* [Simple Icons](https://simpleicons.org/) - icons for the about page
+
+
+* [Stack**overflow**](https://stackoverflow.com/) - for the content of the majority of the poste
+* [Web.dev Blog](https://web.dev/blog/) - for the more complicated and longer posts
+* []()
+[]()
 
 #### Bootstrap
 

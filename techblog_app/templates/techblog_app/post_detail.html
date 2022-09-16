@@ -113,7 +113,8 @@
                     </li>
             </div>
             {% endif %}
-            <a href="{% url 'user-posts' comment.author.username %}">
+            <a class="d-inline align-self-start rounded-circle m-2"
+                href="{% url 'user-posts' comment.author.username %}">
                 <img src="{{ comment.author.profile.image.url }}" class="avatar-img-comment rounded-circle me-4 mb-3"
                     alt="profile image of the commenter">
             </a>
