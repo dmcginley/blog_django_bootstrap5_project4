@@ -219,15 +219,17 @@ Then
 * [django-crispy-forms 1.14.0](https://django-crispy-forms.readthedocs.io/en/latest/) - for form handling
 * [gunicorn 20.1.0](https://gunicorn.org/) - the Python WSGI HTTP Server
 
-## Features
+## Features 
 
-* Create account
-* Change profile picture
-* Change email address
-* View posts and comments
-* Create a post or comment on a post
-* Edit or delete my post or my comment
-* View a users profile and all their posts
+1. Create an account & change profile picture & email.
+2. View posts and comments.
+3. Create posts or comment on posts.
+4. Edit or delete my post or my comment.
+5. I used Quill as the **rich text editor**.
+6. The post (& the comment) shows the Auther, Time & Date posted, & number of comments on the post.
+7. View a users profile and all their posts.
+8. All posts & comments are in reverse order so newest posts and comments are always seen first.
+9. Pagination on the home page and the profile page - shoes 5 posts at a time for example purposes.
 
 
 ## Files & classes ???
@@ -312,7 +314,6 @@ Github
 * [Stack**overflow**](https://stackoverflow.com/) - for the content of the majority of the poste
 * [Web.dev Blog](https://web.dev/blog/) - for the more complicated and longer posts
 * []()
-[]()
 
 #### Bootstrap
 

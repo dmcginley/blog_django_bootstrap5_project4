@@ -10776,6 +10776,8 @@ textarea.form-control-lg {
   --link: #a10a41;
   --link-hover: #711939;
   --name: #b7b9bb;
+  --article-link: #4a27ca;
+  --article-link-hover: rgb(70, 46, 167);
 }
 
 h1, .h1,
@@ -10842,4 +10844,14 @@ a:hover {
 
 footer .name-color {
   color: var(--name);
+}
+
+ql-editor a,
+article a {
+  color: var(--article-link) !important;
+}
+
+ql-editor a:hover,
+article a:hover {
+  color: var(--article-link-hover) !important;
 }

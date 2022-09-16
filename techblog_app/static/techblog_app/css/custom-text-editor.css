@@ -95,10 +95,7 @@ article img {
     margin: .2rem;
 }
 
-ql-editor a,
-article a {
-    color: var(--link) !important;
-}
+
 
 
 
