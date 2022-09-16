@@ -117,17 +117,6 @@ article img {
     margin: .2rem;
 }
 
-
-.ql-editor a,
-article a {
-    color: var(--article-link);
-}
-
-.ql-editor a:hover,
-article a:hover {
-    color: var(--article-link-hover);
-}
-
 /* -------------------------- */
 /* work-around to fix the z-index  ...of success message going under the profile image in the profile page*/
 /* -------------------------- */
@@ -166,9 +155,21 @@ article a:hover {
     min-height: 560px;
 }
 
-
-footer {
+.footer {
     height: 100px;
+}
+
+.footer-content {
+    height: 100% !important;
+}
+
+footer .name-color {
+    color: var(--name);
+}
+
+footer p {
+    /* padding: 0; */
+    margin-bottom: 0;
 }
 
 

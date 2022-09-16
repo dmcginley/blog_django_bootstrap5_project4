@@ -29,8 +29,6 @@ $btn-border-radius-lg: 0.4rem;
     --link: #a10a41;
     --link-hover: #711939;
     --name: #b7b9bb;
-    --article-link: #4a27ca;
-    --article-link-hover: rgb(70, 46, 167);
 }
 
 h1,
@@ -74,8 +72,4 @@ a:hover {
     max-width: 560px;
     border-radius: 3px;
     background-color: var(--light-gray);
-}
-
-footer .name-color {
-    color: var(--name);
 }
