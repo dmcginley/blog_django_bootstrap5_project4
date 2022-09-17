@@ -92,9 +92,3 @@ class PostAdmin(admin.ModelAdmin):
 
     def get_readonly_fields(self, request, obj=None):
         return ('post', 'date_posted', 'author', )
-
-# class PostAdmin(SummernoteModelAdmin):  # instead of ModelAdmin
-#     summernote_fields = '__all__'
-
-
-# admin.site.register(models.Post,  PostAdmin)

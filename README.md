@@ -50,7 +50,7 @@ The site would be best suited to a group of people interested in discussion abou
 * A few admin users to help keep the site clean and free from online abuse through the admin panel, with the ability when necessary to edit or delete posts & comments.
 
 
-* The blog fills the the purpose giving like minded coders a place to congregate and discuss code projects, and smiler in the style of a social media platform.
+* The blog fills the purpose of giving like minded coders a place to congregate and discuss code projects, in an environment smiler in the style of a social media platform.
 
 * On the blog you can upload rich-text, code blocks, images, and links. 
 
@@ -58,7 +58,7 @@ The site would be best suited to a group of people interested in discussion abou
 
 ## Epic
 
-Create a blog app that can have multiple registered users who can post and leave comments to posts. They can view or edit their profile, view other users profiles. A site that is half open so that it is not completely walled off, so it is a place of learning so you don't have to be a member before being able to view content.
+Create a blog app that can have multiple registered users who can post and leave comments to posts. They can view or edit their profile, view other users profiles. A site that is half open so that it is not completely walled off to the public.
 
 ## User Stories
 
@@ -216,7 +216,7 @@ Create a blog app that can have multiple registered users who can post and leave
 
 ### The Code
 
-- [Bootstrap 5](https://getbootstrap.com/), HTML & CSS
+- [Bootstrap 5](https://getbootstrap.com/), & HTML & CSS
 - [JavaScript](https://www.javascript.com/)
 - [Django](https://www.djangoproject.com/)
 - [Python3](https://www.python.org/)
@@ -224,12 +224,12 @@ Create a blog app that can have multiple registered users who can post and leave
 
 ### Libraries &  utilities used 
 
-* [crispy-bootstrap5 0.6](https://pypi.org/project/crispy-bootstrap5/) - form control & rendering 
-* [bootstrap-icons]()
-* [webpack 4.10](https://webpack.js.org/)
+* [Django-crispy-forms 1.14.0](https://django-crispy-forms.readthedocs.io/en/latest/) - for form handling
+* [Crispy-bootstrap5 0.6](https://pypi.org/project/crispy-bootstrap5/) - form control & rendering 
+* [Bootstrap-icons]()
+* [Webpack 4.10](https://webpack.js.org/)
 * [Pillow 9.2.0](https://pypi.org/project/Pillow/) - Python Imaging Library
-* [EasyMDE - Markdown Editor](https://easy-markdown-editor.tk/) - a fork of SimpleMDE 
-* [django-crispy-forms 1.14.0](https://django-crispy-forms.readthedocs.io/en/latest/) - for form handling
+* [Django-quill-editor](https://django-quill-editor.readthedocs.io/en/latest/) - the rich text editor
 * [gunicorn 20.1.0](https://gunicorn.org/) - the Python WSGI HTTP Server
 
 ## Features 
@@ -244,6 +244,11 @@ Create a blog app that can have multiple registered users who can post and leave
 8. All posts & comments are in reverse order so newest posts and comments are always seen first.
 9. Pagination on the home page and the profile page - shoes 5 posts at a time for example purposes.
 
+## Color Choices
+
+Using the 60, 30, 10 Color Rule so not to overwhelm the user with too much color that would distract for the text in each post.
+
+![image of the color rule 60 purple, 30 blue gray, 10 gray](readme_images/color_chart.png)
 
 ## Site layout
 
@@ -252,56 +257,87 @@ Create a blog app that can have multiple registered users who can post and leave
 ![images of desktop and mobile menu](readme_images/menu.png)
 
 
-## Color Choices
-
-Using the 60, 30, 10 Color Rule so not to overwhelm the user with too much color that would distract for the text in each post.
-
-![image of the color rule 60 purple, 30 blue gray, 10 gray](readme_images/color_chart.png)
-
-
-
-
-
 ## Accessibility
 
-* clean minimal design with use of white-space
-* contrasting colors e.g. a lighter blue on the dark background of the code box in a post
-* alternative text to images and buttons
-* All elements the page are tab friendly 
+* Clean minimal design with use of white-space and small use of strong colors for text and links
+* Contrasting colors e.g. a lighter blue on the dark background of the code box in a post,
+I edited the < pre > text color so it would show up better on the dark terminal style background.
+* alternative text on images, buttons, and < a > tags, where appropriate
+* All elements on the page are tab friendly, mostly through the use of Bootstrap
 
 ## Testing
-User testing, lighthouse from Chrome..... 
 
-Image elements do not have [alt] attributes as they are just the images in the posts so alt attributes can't be applied.
+#### lighthouse from Chrome..... 
+
+![Chrome lighthouse test results](readme_images/seo.png)
+
+"Image elements do not have [alt] attributes" as they are the images in the posts so alt attributes can't be applied.
 
 Performance is quite low on mobile (54%), some down to the part of quill text editor and the images uploaded as I don't have a image resize function that deals easily with AWS.
+
+I looked into AWS lambda functions for image resizing and for creating thumbnails, but decided in the short time towards the end of the project that I hade to reallocate my time to other more important parts of the project. 
+
+#### User testing
 
 ### Validator Testing
 
 
-
-
-
-
-
 Image elements do not have [alt] attributes as they are just the images in the posts so alt attributes can't be applied.
 
 
-
-
-
 ### Manual Testing
-Creating multiple posts and comments bot editing them and deleting them to check the robust nature of the site.
+
+* Created multiple accounts
+* Created posts & comments to posts
+* Checked pagination is working on the home (index.html) page and the profile (user_posts.html) page
+* Deleted posts & comments, checked redirect is working properly
+* Edited/updated posts & comments
+* Edited profile (picture, bio, & email)
+* Checked post count is correct on profile page.
+
+* the only error I found is in the Quill rich text editor when entering a code block
+inside < pre > tags. The syntax highlighting doesn't show in the finished post the first about 70% of the time, but if you edit the post or comment and add two spaces at the end (still inside the black box) and save then the syntax highlighting shows up again
 
 ## Error Handling
 
+I created basic pages for handling the errors: 400, 403, 404, & 500 HTML error pages.
+
+
+
+
 ## Troubleshooting
 
-profile pick was showing an error......
+* Profile pick was showing an error......
 
-database broke during the creation of new tables while doing migrations, nothing fixed the error to resolve the issue. As I was only in the testing stage I deleted the database and reinitialized a new database. 
+* Database broke half way through the project, during the creation of new tables while doing migrations, nothing fixed the error to resolve the issue. As I was only in the testing stage I deleted the database and reinitialized a new database. Which fixed the problem.
+
+
+* Heroku kept showing H10 errors
+	* First time was due to the wrong Python version installed in my virtual environment, I uninstalled the older version and installed version 3.9.13, as in the [heroku docs](https://devcenter.heroku.com/articles/python-support).
+	* Later was with conflict of packages installed via the requirements.txt. I uninstall all unnecessary pip packages, which fixed the issue.
 
 ## Deployment
+
+###### prerequisite for deployment
+
+1. Install gunicorn
+
+		$ pip install gunicorn
+
+
+2.	I had [AWS](https://aws.amazon.com/) setup for this project to handel the static files.
+		
+		$ pip install boto3
+
+3. Create the requirements.txt file (pip freeze > requirements.txt)
+4. Create the Procfile, in the file have <code>web: python manage.py migrate && gunicorn techblog_project.wsgi</code>
+
+5. Do a final collectstatic of all static files
+
+		$ python manage.py collectstatic for files
+
+
+
 
 ## Version Control
 Github
