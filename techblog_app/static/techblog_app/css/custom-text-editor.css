@@ -52,7 +52,10 @@ article .post-link-color:hover {
     color: var(--link-hover);
 }
 
-
+/* for muted text */
+.text-soften {
+    color: #495f72;
+}
 
 /* -------------------------- */
 /* quill editor css setting */

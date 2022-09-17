@@ -42,7 +42,7 @@
             <p>
                 {{ post.content.html | safe}}
             </p>
-            <small class="text-muted">
+            <small class="text-soften">
                 By
                 <a class="fw-bold post-link-color" href="{% url 'user-posts' object.author.username %}">
                     {{ object.author }}</a>
@@ -53,7 +53,7 @@
             </small>
             <div class="d-flex pt-2">
                 {# the links to post-detail so you can view the comments before replaying #}
-                <div class="d-flex align-items-center text-decoration-none text-muted me-3 post-link-color">
+                <div class="d-flex align-items-center text-decoration-none text-soften me-3 post-link-color">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-chat-right-fill me-2" viewBox="0 0 16 16">
                         <path
@@ -84,7 +84,7 @@
 <section class="container">
     {% if not post.comments.all %}
     <div class="post-container p-2">
-        <p class="text-muted mt-4 ps-5">No comments yet...</p>
+        <p class="text-soften mt-4 ps-5">No comments yet...</p>
         {% else %}
         {% for comment in post.comments.all %}
         <div class="p-2 ps-sm-5 pt-4 d-sm-flex position-relative" id="comment-{{comment.id}}">
@@ -127,7 +127,7 @@
                         {{ comment.content.html|safe }}
                     </p>
                     {# <p class="text-dark">{{ comment.content }}</p> #}
-                    <small class="text-muted">
+                    <small class="text-soften">
                         By
                         <a class="fw-bold post-link-color"
                             href="{% url 'user-posts' comment.author.username %}">{{ comment.author }}</a>

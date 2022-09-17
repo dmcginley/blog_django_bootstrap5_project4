@@ -20,7 +20,7 @@
             <p>
                 {{ post.content.html|safe }}
             </p>
-            <small class="text-muted">
+            <small class="text-soften">
                 By
                 <a class="fw-bold post-link-color"
                     href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
