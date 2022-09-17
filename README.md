@@ -267,6 +267,10 @@ Using the 60, 30, 10 Color Rule so not to overwhelm the user with too much color
 ## Testing
 User testing, lighthouse from Chrome..... 
 
+Image elements do not have [alt] attributes as they are just the images in the posts so alt attributes can't be applied.
+
+Performance is quite low on mobile (54%), some down to the part of quill text editor and the images uploaded as I don't have a image resize function that deals easily with AWS.
+
 ### Validator Testing
 
 
