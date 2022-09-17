@@ -110,8 +110,6 @@ span.hljs-comment {
     color: #5595CE !important;
 }
 
-.ql-syntax {}
-
 code {
     color: var(--primary);
     background-color: #f0f0f0;
@@ -188,6 +186,7 @@ article img {
 
 footer .name-color {
     color: var(--name);
+    font-size: .9rem;
 }
 
 footer p {
