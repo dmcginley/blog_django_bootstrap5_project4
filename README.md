@@ -245,7 +245,12 @@ Create a blog app that can have multiple registered users who can post and leave
 9. Pagination on the home page and the profile page - shoes 5 posts at a time for example purposes.
 
 
-## Files & classes ???
+## Site layout
+
+![images of navbar](readme_images/navbar.png)
+![images of the footer](readme_images/footer.png)
+![images of desktop and mobile menu](readme_images/menu.png)
+
 
 ## Color Choices
 
