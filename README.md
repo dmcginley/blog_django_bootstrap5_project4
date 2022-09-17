@@ -20,8 +20,12 @@ top level folder for the project 4 containing bootstrap django and python files
 
 
 ![_Folder-tree_](readme_images/new_django-folder-tree.png)
-> short description of the folder setup...
 
+
+I setup my environment with a main folder where initialized the virtual environment  (venv),
+with two projects inside:
+ 1. A Bootstrap project folder, with Bootstrap & Webpack installed in it 
+ 2. A Django project folder, with the blog app 
 ## Agile development - kanban board
 ![_The board_](readme_images/kanban.png)
 
@@ -35,36 +39,26 @@ top level folder for the project 4 containing bootstrap django and python files
 </details>
 
 
-
-
-## Design thinking
-
-**Empathies**
-
-**Define**
-
-**Ideate**
-
-**Prototype**
-
-**Test**
-
-
 ## Who is this website for
-This blog website is aimed at developers or people interested in coding & development, as it has a built in markdown editor.
+This blog website is aimed at developers or people interested in coding & development, as it has a built in rich text editor with code blocks.
 The interface is designed to allow you to create short quick snippets of text or code with the emphases on text over images. 
 
-* a group of people interested in discussion about coding/Webdev
+The site would be best suited to a group of people interested in discussion about coding/Webdev
+	
 * People who want a quick forum to chat or jot down coding ideas and concepts.
+	
+* A few admin users to help keep the site clean and free from online abuse through the admin panel, with the ability when necessary to edit or delete posts & comments.
+
 
 * The blog fills the the purpose giving like minded coders a place to congregate and discuss code projects, and smiler in the style of a social media platform.
 
-* On the blog you can upload code blocks, images, links, and rich-text 
+* On the blog you can upload rich-text, code blocks, images, and links. 
 
 
 
+## Epic
 
-* a few admin users to help keep the site clean and free from online abuse through the admin panel.
+Create a blog app that can have multiple registered users who can post and leave comments to posts. They can view or edit their profile, view other users profiles. A site that is half open so that it is not completely walled off, so it is a place of learning so you don't have to be a member before being able to view content.
 
 ## User Stories
 
@@ -89,9 +83,19 @@ The interface is designed to allow you to create short quick snippets of text or
 
 	Acceptance criteria:
 
-	1. Given that I'm the admin, when I login to the site then I'm able to see the the *Admin Panel* link in the dropdown menu.
+	1. Given that I'm the admin, when I login to the site then I'm able to see the the *Admin Panel* link in the drop-down menu.
 	
 &nbsp;
+
+* "As a admin, I want the same rich text editor as on the blog so that I can create posts in the same way as the users, from the admin panel"
+
+	Acceptance criteria:
+
+	1. Given that I'm the admin, when I login to the admin panel to edit or create a post or comment, I can see the same editor there with all the same functionality.
+ 
+	
+&nbsp;
+
 
 #### Unregistered user
 
@@ -100,10 +104,6 @@ The interface is designed to allow you to create short quick snippets of text or
 	Acceptance criteria:
 
 	1. Given that I'm an unregistered user when I navigate to the site I can see the home page with posts and click on them to view the comments.
-
-	2. Given that
-when I 
-Then
 
 &nbsp;
 
@@ -123,6 +123,13 @@ Then
 
 &nbsp;
 
+* "As a unregistered user, I want to be able to test out the text editor, so that I'll be able to see what a post or section of code would look like"
+
+	Acceptance criteria:
+
+	1. Given that I'm an unregistered user when I navigate to the about page at the bottom there is a rich text field where I can test out the editor.
+
+&nbsp;
 
 #### Registered user
 
@@ -136,21 +143,47 @@ Then
 
 &nbsp;
 
+* "As a registered user, I want to be able to create a post so that so that I can tell people what I'm working on or tell them of something cool I've found."
 
+	Acceptance criteria:
+
+	1. Given that I'm a registered user, when I click **New post** (or the **+** symbol), then I'm redirect to the create post form where I can create the post.
+
+&nbsp;
+
+* "As a registered user, I want to be able to create a comment so that so that I can respond to people or discuss the topic posted"
+
+	Acceptance criteria:
+
+	1. Given that I'm a registered user, when I click on **comments** on a post, I'm taken to the post with all the comments below, where I can click on the **reply** icon in the post, where by I'll be taken to the comment, form where I'll be able to write a comment.
+
+&nbsp;
+
+* "As a registered user, I want to be able to update a comment so that so that I can edit my response for spelling or other corrections"
+
+	Acceptance criteria:
+
+	1. Given that I'm a registered user, when I click on the three dots in the top right hand corner of my comment, a drop-down will appear with **Edit** or **Delete**.
+	Then I can click on the **Edit** link where I'll be taken to the edit form.
+
+&nbsp;
+
+* "As a registered user, I want to be able to delete a post or comment so that I can remove it from the site."
+
+	Acceptance criteria:
+
+	1. Given that I'm a registered user, when I click on the three dots in the top right hand corner of my post or comment, a drop-down will appear with **Edit** or **Delete**.
+	Then I can click on the **Delete** link where I'll be taken to the delete confirmation page, where I can hit **Confirm**.
+
+	2. Given that I'm a registered user, when on the delete confirmation page, if I chose to cancel deleting the post or comment, I get taken back to the previous page.
+
+&nbsp;
 
 * "As a registered user, I want to be able to view my profile page that contains all my posts, so that I can keep track of what I posted on the site."
 
 	Acceptance criteria:
 
 	1. Given that I'm a registered user, when I go to my profile page I can then view all my previous posts as well as my profile details at the top of the page.
-
-&nbsp;
-
-* "As a registered user, I want to be able to "
-
-	Acceptance criteria:
-
-	1. Given that I'm a registered user, when I .
 
 &nbsp;
 
@@ -162,33 +195,13 @@ Then
 
 &nbsp;
 
-* "As a registered user, I want to be able to "
+* "As a registered user, I want to be able to style my text and code so that I can make a colourful and easily understood, structured post."
 
 	Acceptance criteria:
 
-	1. Given that I'm a registered user, when I .
+	1. Given that I'm a registered user, when I create a post or comment I can clearly see the toolbar within the rich text editor.
 
 &nbsp;
-
-
----------------------------
-"As a
-I want
-so that ."
-
-Acceptance criteria:
-
-1. Given that
-when I 
-Then
-	2. Given that
-when I 
-Then
-	3. Given that
-when I 
-Then
----------------------------
-
 
 
 ## Technologies Used
@@ -255,6 +268,18 @@ Using the 60, 30, 10 Color Rule so not to overwhelm the user with too much color
 User testing, lighthouse from Chrome..... 
 
 ### Validator Testing
+
+
+
+
+
+
+
+Image elements do not have [alt] attributes as they are just the images in the posts so alt attributes can't be applied.
+
+
+
+
 
 ### Manual Testing
 Creating multiple posts and comments bot editing them and deleting them to check the robust nature of the site.
