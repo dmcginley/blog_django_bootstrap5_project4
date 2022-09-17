@@ -102,9 +102,15 @@ pre {
 }
 
 .hljs-string {
-    color: #76b850 !important;
+    color: #849bb3 !important;
+
 }
 
+span.hljs-comment {
+    color: #5595CE !important;
+}
+
+.ql-syntax {}
 
 code {
     color: var(--primary);
