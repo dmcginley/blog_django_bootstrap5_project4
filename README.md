@@ -322,7 +322,7 @@ I edited the < pre > text color so it would show up better on the dark terminal 
 
 ## Testing
 
-#### lighthouse from Chrome..... 
+#### lighthouse from Chrome
 
 ![Chrome lighthouse test results](readme_images/seo.png)
 
@@ -403,11 +403,9 @@ All errors should redirect to these pages when a specified location cant be got.
 ![_get object or 404 error_](readme_images/error_or_404.png)
 
 
-
-
 ## Troubleshooting
 
-* Profile pick was showing an error......
+* Profile pick was showing an error as was page was only looking at one view the post view.
 Database broke halfway through the project, during the creation of new tables while doing migrations, nothing fixed the error to resolve the issue. As I was only in the testing stage I deleted the database and reinitialized a new database. Which fixed the problem.
 
 
@@ -457,7 +455,7 @@ Database broke halfway through the project, during the creation of new tables wh
 
 Once everything is compiled & ran correctly I checked everything was working okay. 
 
-My Blog Project can be found here - https://...................... (same link as above).
+My Blog Project can be found here - https://librarytechblog.herokuapp.com/ (same link as above).
 
 
 ## Version Control
