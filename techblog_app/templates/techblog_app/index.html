@@ -2,7 +2,7 @@
 {% load tz %}
 {% block content %}
 {# post section #}
-<div class="container pt-5">
+<div class="container pt-sm-3 pt-md-5">
     {% for post in posts %}
     <div class="d-flex flex-column flex-sm-row rounded border bg-light my-4">
         <a class="d-inline align-self-start rounded-circle m-2" href="{% url 'user-posts' post.author.username %}">

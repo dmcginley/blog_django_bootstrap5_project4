@@ -1,8 +1,49 @@
-# project_4_main
+## project 4 - Tech**Blog**
 
-top-level folder for project 4 containing bootstrap Django and python files
+
+
+
+
+
+
+
 
 ## About the Project
+
+Link to GitHub repository **https://github.com/dmcginley/Project4_django-bootstrap5**
+Link to site on Heroku **https://librarytechblog.herokuapp.com/**
+
+
+I have created a few users for testing purposes:
+
+**Users**
+
+* username: Catsby
+password: user1234
+<br>
+* username: Catlin    (they have a default profile image)
+password: user1234
+<br>
+* username: Muta    
+password: user1234
+
+**Superuser**
+* username: superuser    
+password: admin2314
+
+## Who is this website for
+This blog website is aimed at developers or people interested in coding & development, as it has a built-in rich text editor with code blocks.
+The interface is designed to allow you to create short quick snippets of text or code with an emphasis on text over images. 
+
+The site would be best suited to a group of people interested in a discussion about coding/Webdev
+	
+* People who want a quick forum to chat or jot down coding ideas and concepts.
+	
+* A few admin users to help keep the site clean and free from online abuse through the admin panel, with the ability when necessary to edit or delete posts & comments.
+
+
+* The blog fills the purpose of giving like-minded coders a place to congregate and discuss code projects, in an environment smiler in the style of a social media platform.
+* On the blog, you can upload rich text, code blocks, images, and links. 
 
 ## Wireframe
 
@@ -25,35 +66,21 @@ top-level folder for project 4 containing bootstrap Django and python files
 I setup my environment with the main folder where I initialized the virtual environment  (venv),
 with two projects inside:
  1. A Bootstrap project folder, with Bootstrap & Webpack installed in it 
- 2. A Django project folder, with the blog app 
+ 2. A Django **project** folder, with the **blog** app and **users** app
 ## Agile development - kanban board
 ![_The board_](readme_images/kanban.png)
 
+
+
+## Physical kanban board in my office
 <details>
-<summary>Physical kanban board in my office</summary>
+<summary>Click to open drop-down</summary>
 <br>
 
 ![_The board_](readme_images/kanban_wall.png)
-###### Development - marked in red is the kanban board
+###### Development - marked in orange is the kanban board
 
 </details>
-
-
-## Who is this website for
-This blog website is aimed at developers or people interested in coding & development, as it has a built-in rich text editor with code blocks.
-The interface is designed to allow you to create short quick snippets of text or code with an emphasis on text over images. 
-
-The site would be best suited to a group of people interested in a discussion about coding/Webdev
-	
-* People who want a quick forum to chat or jot down coding ideas and concepts.
-	
-* A few admin users to help keep the site clean and free from online abuse through the admin panel, with the ability when necessary to edit or delete posts & comments.
-
-
-* The blog fills the purpose of giving like-minded coders a place to congregate and discuss code projects, in an environment smiler in the style of a social media platform.
-On the blog, you can upload rich text, code blocks, images, and links. 
-
-
 
 ## Epic
 
@@ -67,7 +94,11 @@ Create a blog app that can have multiple registered users who can post and leave
 	Acceptance criteria:
 
 	1. Given that I'm the admin when I log in I'm able to go to the user section and see a list of users and who is online.
-"As an admin, I want to be able to login to the admin panel so that I can see the user's details and the user's profile on the same page"
+
+&nbsp;
+
+
+* "As an admin, I want to be able to login to the admin panel so that I can see the user's details and the user's profile on the same page"
 
 	Acceptance criteria:
 
@@ -103,7 +134,7 @@ Create a blog app that can have multiple registered users who can post and leave
 
 &nbsp;
 
-* "As an unregistered user, I want to be able to see people's profiles so that I as see their other comments if I find the user's content to be of interest."
+* "As an unregistered user, I want to be able to see people's profiles so that I can see their other comments if I find the user's content to be of interest."
 
 	Acceptance criteria:
 
@@ -228,19 +259,21 @@ Create a blog app that can have multiple registered users who can post and leave
 4. Edit or delete my post or my comment.
 5. I used Quill as the _rich text editor_.
 6. The post (& the comment) shows the author, Time & Date posted, & the number of comments on the post.
-View a user's profile and all their posts.
+7. View a user's profile and all their posts.
 8. All posts & comments are in reverse order so the newest posts and comments are always seen first.
 9. Pagination on the home page and the profile page - shoes 5 posts at a time for example purposes.
 
 ## Color Choices
 
-Using the 60, 30, 10 Color Rule so as not to overwhelm the user with too much color that would distract from the text in each post.
+Using the 60, 30, 10 Color Rule, so as not to overwhelm the user with too much color that would distract from the text in each post. 
+The black & white look to the site is designed to give it a retro style of your typical tech website.
+The font was chosen to reflect that as well:
+* [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono?query=JetBrains+Mono)
+* [Noto Sans](https://fonts.google.com/noto/specimen/Noto+Sans?query=Noto+Sans)
 
 ![image of the color rule 60 purple, 30 blue gray, 10 gray](readme_images/color_chart.png)
 
 ## Site layout
-
-
 
 ###### The general look and feel of the blog
 ![image of home page](readme_images/home.png)
@@ -256,11 +289,11 @@ Using the 60, 30, 10 Color Rule so as not to overwhelm the user with too much co
 
 ## Accessibility
 
-* Clean minimal design with the use of white space and small use of strong colors for text and links
+* Clean minimal design with the use of white space and small use of strong colors for text and links.
 * Contrasting colors e.g. a lighter blue on the dark background of the code box in a post,
 I edited the < pre > text color so it would show up better on the dark terminal style background.
-* alternative text on images, buttons, and < a > tags, where appropriate
-* All elements on the page are tab friendly, mostly through the use of Bootstrap
+* alternative text on images, buttons, and < a > tags, where appropriate.
+* All elements on the page are tab friendly, mostly through the use of Bootstrap.
 
 ## Testing
 
@@ -314,7 +347,7 @@ I looked into AWS lambda functions for image resizing and for creating thumbnail
 * **lighthouse**
 		Image elements do not have [alt] attributes as they are just the images in the posts so alt attributes can't be applied.
 
-* All but one python file passed the [PEP8 online](http://pep8online.com/) - (line length set at 79 ch)
+* All but one line in a python file passed the [PEP8 online](http://pep8online.com/) - (line length set at 79 ch)
 In _settings.py_ the first NAME of the AUTH_PASSWORD_VALIDATORS is 83 characters long, I kept it like that as splitting it was throwing up an error.
 
 
@@ -334,7 +367,8 @@ In _settings.py_ the first NAME of the AUTH_PASSWORD_VALIDATORS is 83 characters
 * Checked post count is correct on the profile page.
 
 * the only error I found is in the Quill rich text editor when entering a code block
-inside < pre > tags. The syntax highlighting doesn't show in the finished post the first about 70% of the time, but if you edit the post or comment and add two spaces at the end (still inside the black box) and save then the syntax highlighting shows up again
+inside < pre > tags. The syntax highlighting doesn't show in the finished post the first about 70% of the time, but if you edit the post or comment and add two spaces at the end (still inside the black box) and save then the syntax highlighting shows up again. (using this method of entering a double space
+ has never failed to date).
 
 ## Error Handling
 
@@ -426,15 +460,17 @@ The version control is done using Git through [GitHub](https://github.com/).
 * [Bootstrap's Examples](https://getbootstrap.com/docs/5.0/examples/#snippets) - to help understand the structure of elements on the page
 * [Getting Started with Bootstrap 5](https://www.youtube.com/watch?v=1nxSE0R27Gg&t=101) - YouTube Tutorial
 * [Create A Simple Blog With Python and Django](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi) - YouTube Tutorial
+* [bootstrap-icons](https://icons.getbootstrap.com/)
 
 
 #### Django
 
 * [Django documentation](https://docs.djangoproject.com/en/4.0/)
 
-* [bootstrap-icons](https://icons.getbootstrap.com/)
 
 #### Python
+
+* [Real Python](https://realpython.com/)
 
 ## Credits
 
