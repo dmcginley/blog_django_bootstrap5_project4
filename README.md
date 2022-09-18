@@ -240,10 +240,19 @@ Using the 60, 30, 10 Color Rule so as not to overwhelm the user with too much co
 
 ## Site layout
 
+
+
+###### The general look and feel of the blog
+![image of home page](readme_images/home.png)
+![image of profile page](readme_images/profile.png)
+![image of about page](readme_images/about.png)
+
+###### Navbar & footer
 ![images of navbar](readme_images/navbar.png)
 ![images of the footer](readme_images/footer.png)
-![images of desktop and mobile menu](readme_images/menu.png)
 
+###### Drop-down menu in desktop & mobile
+![images of desktop and mobile menu](readme_images/menu.png)
 
 ## Accessibility
 
