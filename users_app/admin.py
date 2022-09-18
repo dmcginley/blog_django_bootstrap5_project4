@@ -14,7 +14,8 @@ from users_app import models
 
 class ProfileAdmin(admin.ModelAdmin):
     def avatar(self, obj):
-        return format_html('<img src="{}" style="max-width:100px; max-height:200px"/>'.format(obj.image.url))
+        return format_html('<img src="{}" style="max-width:100px;\
+             max-height:200px"/>'.format(obj.image.url))
 
     list_display = ['user', 'avatar', ]
 
@@ -23,7 +24,8 @@ admin.site.register(Profile, ProfileAdmin)
 
 
 # Unregister the provided model admin, and Register out own model admin
-# from https://realpython.com/manage-users-in-django-admin/?utm_source=pocket_mylist
+# from
+# https://realpython.com/manage-users-in-django-admin/?utm_source=pocket_mylist
 
 
 # admin user +profile field

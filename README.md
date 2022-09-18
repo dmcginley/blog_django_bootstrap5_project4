@@ -305,7 +305,10 @@ I looked into AWS lambda functions for image resizing and for creating thumbnail
 * **lighthouse**
 		Image elements do not have [alt] attributes as they are just the images in the posts so alt attributes can't be applied.
 
-* All python files Pass the [PEP8 online](http://pep8online.com/) - line length set at 79 ch
+* All but one python file passed the [PEP8 online](http://pep8online.com/) - (line length set at 79 ch)
+In _settings.py_ the first NAME of the AUTH_PASSWORD_VALIDATORS is 83 characters long, I kept it like that as splitting it was throwing up an error.
+
+
 &nbsp;
 
 ![_PEP8 online example of code_](readme_images/pep8.png)

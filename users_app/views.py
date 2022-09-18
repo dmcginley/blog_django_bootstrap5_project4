@@ -3,12 +3,14 @@ import imp
 from multiprocessing import context
 import django
 from django.shortcuts import get_object_or_404, render, redirect
-# from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.views.generic import ListView, DetailView
 from .models import Profile
-from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm, QuillFieldForm
+from .forms import (
+    UserRegisterForm, UserUpdateForm,
+    ProfileUpdateForm, QuillFieldForm
+)
 
 
 def register(request):
@@ -18,7 +20,8 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(
-                request, f'Thank you {username}, your account has now been created')
+                request,
+                f'Thank you {username}, your account has now been created')
             return redirect('login')
     else:
         form = UserRegisterForm()
