@@ -1,12 +1,37 @@
 ## project 4 - Tech**Blog**
 
+![mockup on different displays](readme_images/mockup.png)
 
+# Table of contents
 
+- [About the Project](#about-the-project)
+- [Who is this website for](#who-is-this-website-for)
+- [Wireframe](#wireframe)
+- [Project folder layout](#project-folder-layout)
+- [Agile development - kanban board](#agile-development---kanban-board)
+- [Physical kanban board in my office](#physical-kanban-board-in-my-office)
+- [Epic](#epic)
+- [User Stories](#user-stories)
+- [Technologies Used](#technologies-used)
+  - [The Code](#the-code)
+  - [Libraries &  utilities used](#libraries---utilities-used)
+- [Features](#features)
+- [Color Choices](#color-choices)
+- [Site layout](#site-layout)
+- [Accessibility](#accessibility)
+- [Testing](#testing)
+- [User tests](#user-tests)
+  - [Validator Testing](#validator-testing)
+  - [Manual Testing](#manual-testing)
+- [Error Handling](#error-handling)
+- [Troubleshooting](#troubleshooting)
+- [Deployment](#deployment)
+- [Version Control](#version-control)
+  - [How To Clone The Project](#how-to-clone-the-project)
+- [Resources](#resources)
+- [Credits](#credits)
 
-
-
-
-
+&nbsp;
 
 ## About the Project
 
