@@ -1,5 +1,6 @@
 asgiref==3.5.2
 autopep8==1.7.0
+backports.zoneinfo==0.2.1
 beautifulsoup4==4.11.1
 bleach==5.0.1
 boto3==1.24.67
