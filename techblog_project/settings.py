@@ -26,7 +26,7 @@ DEBUG = os.environ.get("DEBUG"),
 
 
 ALLOWED_HOSTS = ['https://railway.app/',
-                 'https://web-production-ce89.up.railway.app', 'web-production-ce89.up.railway.app', '127.0.0.1']
+                 'web-production-ce89.up.railway.app', '127.0.0.1']
 
 # Application definition
 
